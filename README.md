@@ -1,4 +1,4 @@
-# hope-cemitery-game
+# hope-cemitary-game
 
 
 # hello
