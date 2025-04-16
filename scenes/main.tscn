@@ -1,3 +1,17 @@
-[gd_scene format=3 uid="uid://oh2basiek65h"]
+[gd_scene load_steps=3 format=3 uid="uid://oh2basiek65h"]
+
+[ext_resource type="PackedScene" uid="uid://b2sxib8l5xexe" path="res://scenes/player/player.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://cb5ljtqnl67oa" path="res://scenes/environments/map.tscn" id="2_0wfyh"]
 
 [node name="Main" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Map" parent="CanvasLayer" instance=ExtResource("2_0wfyh")]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Player" parent="CanvasLayer2" instance=ExtResource("1_o5qli")]
+position = Vector2(600, 250)
+scale = Vector2(0.25, 0.251)
