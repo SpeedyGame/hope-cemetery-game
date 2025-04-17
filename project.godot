@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="hope-cemetery-game"
+run/main_scene="uid://dnsn84ulbrw0y"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GlobQuest="*res://scripts/globals/glob_quest.gd"
 
 [display]
 

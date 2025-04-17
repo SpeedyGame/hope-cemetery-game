@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://oh2basiek65h"]
+[gd_scene load_steps=3 format=3 uid="uid://oh2basiek65h"]
+
+[ext_resource type="Script" uid="uid://yprhxd75aj6w" path="res://scenes/main.gd" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://blj618qddarlu" path="res://scenes/ui/backpack_ui.tscn" id="2_0wfyh"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_sugp2")
+
+[node name="backpackUI" parent="." instance=ExtResource("2_0wfyh")]

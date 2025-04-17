@@ -1,0 +1,194 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnsn84ulbrw0y"]
+
+[ext_resource type="Script" uid="uid://c6k6xykkr1wvj" path="res://scenes/ui/quest_visibility.gd" id="1_rwxds"]
+[ext_resource type="Texture2D" uid="uid://b6gw85n7nla1i" path="res://scenes/ui/standing_menu_assets/edited_journal_pages.jpeg" id="2_uo60h"]
+[ext_resource type="Script" uid="uid://ciacq7puujx2" path="res://scenes/ui/scroll_visibility.gd" id="3_uo60h"]
+
+[node name="journal_gui" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_rwxds")
+
+[node name="EditedJournalPages" type="Sprite2D" parent="Control"]
+position = Vector2(621, 309)
+scale = Vector2(1.06286, 0.979094)
+texture = ExtResource("2_uo60h")
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 36.0
+offset_right = 612.0
+offset_bottom = 582.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel"]
+layout_mode = 0
+offset_top = 144.0
+offset_right = 444.0
+offset_bottom = 462.0
+theme_override_constants/separation = 40
+
+[node name="quest_button" type="Button" parent="Control/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Quests"
+
+[node name="people_button" type="Button" parent="Control/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "People"
+
+[node name="Button" type="Button" parent="Control/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Credits"
+
+[node name="quest_gui" type="CanvasLayer" parent="Control"]
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/quest_gui"]
+offset_left = 611.0
+offset_top = 37.0
+offset_right = 1062.0
+offset_bottom = 583.0
+script = ExtResource("3_uo60h")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/quest_gui/PanelContainer"]
+layout_mode = 2
+
+[node name="questLog" type="Label" parent="Control/quest_gui/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quest Log"
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="mainQuests" type="Label" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+text = "Main Quests"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="noQuests" type="Label" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer"]
+layout_mode = 2
+text = "No Active Main Quests"
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+
+[node name="sideQuests" type="Label" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer3/PanelContainer"]
+layout_mode = 2
+text = "Side Quests"
+
+[node name="MarginContainer4" type="MarginContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer4"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer4/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer4/PanelContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer4/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="noSideQuests" type="Label" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer4/PanelContainer"]
+layout_mode = 2
+text = "No Active Side Quests"
+
+[node name="compQuest" type="Label" parent="Control/quest_gui/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Completed Quests"
+
+[node name="MarginContainer5" type="MarginContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer5"]
+layout_mode = 2
+
+[node name="mainQuests" type="Label" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer5/PanelContainer"]
+layout_mode = 2
+text = "Main Quests (completed)"
+
+[node name="MarginContainer6" type="MarginContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="noQuests" type="Label" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer"]
+layout_mode = 2
+text = "No Completed Main Quests"
+
+[node name="MarginContainer7" type="MarginContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer7"]
+layout_mode = 2
+
+[node name="sideQuests" type="Label" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer7/PanelContainer"]
+layout_mode = 2
+text = "Side Quests (completed)"
+
+[node name="MarginContainer8" type="MarginContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer8"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer8/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer8/PanelContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer8/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="noSideQuests" type="Label" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer8/PanelContainer"]
+layout_mode = 2
+text = "No Completed Side Quests"
+
+[connection signal="pressed" from="Control/Panel/VBoxContainer/quest_button" to="Control" method="_on_quest_button_pressed"]
