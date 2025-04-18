@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="hope-cemetery-game"
+run/main_scene="uid://oh2basiek65h"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -21,7 +22,9 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={}
-directories/dtl_directory={}
+directories/dtl_directory={
+"test_timeline": "res://data/dialogue/test_timeline.dtl"
+}
 
 [editor_plugins]
 
