@@ -1,29 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnsn84ulbrw0y"]
+[gd_scene load_steps=6 format=3 uid="uid://dnsn84ulbrw0y"]
 
 [ext_resource type="Script" uid="uid://c6k6xykkr1wvj" path="res://scenes/ui/quest_visibility.gd" id="1_rwxds"]
 [ext_resource type="Texture2D" uid="uid://b6gw85n7nla1i" path="res://scenes/ui/standing_menu_assets/edited_journal_pages.jpeg" id="2_uo60h"]
 [ext_resource type="Script" uid="uid://ciacq7puujx2" path="res://scenes/ui/scroll_visibility.gd" id="3_uo60h"]
+[ext_resource type="Texture2D" uid="uid://q053v1v4d1vk" path="res://art/icon.svg" id="4_25tqd"]
+[ext_resource type="Script" uid="uid://b7e6bx3xmph36" path="res://scenes/ui/people_gui.gd" id="4_fko3c"]
 
 [node name="journal_gui" type="CanvasLayer"]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 140.0
+offset_top = 41.0
+offset_right = 1070.0
+offset_bottom = 602.0
 script = ExtResource("1_rwxds")
 
 [node name="EditedJournalPages" type="Sprite2D" parent="Control"]
-position = Vector2(621, 309)
+position = Vector2(466, 280)
 scale = Vector2(1.06286, 0.979094)
 texture = ExtResource("2_uo60h")
 
 [node name="Panel" type="Panel" parent="Control"]
 layout_mode = 0
-offset_left = 159.0
-offset_top = 36.0
-offset_right = 612.0
-offset_bottom = 582.0
+offset_left = 5.0
+offset_top = 11.0
+offset_right = 464.0
+offset_bottom = 557.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel"]
 layout_mode = 0
@@ -48,12 +52,13 @@ theme_override_font_sizes/font_size = 35
 text = "Credits"
 
 [node name="quest_gui" type="CanvasLayer" parent="Control"]
+visible = false
 
 [node name="PanelContainer" type="PanelContainer" parent="Control/quest_gui"]
-offset_left = 611.0
-offset_top = 37.0
-offset_right = 1062.0
-offset_bottom = 583.0
+offset_left = 602.0
+offset_top = 48.0
+offset_right = 1053.0
+offset_bottom = 594.0
 script = ExtResource("3_uo60h")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/quest_gui/PanelContainer"]
@@ -191,4 +196,23 @@ layout_mode = 2
 layout_mode = 2
 text = "No Completed Side Quests"
 
+[node name="people_gui" type="CanvasLayer" parent="Control"]
+script = ExtResource("4_fko3c")
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/people_gui"]
+offset_left = 608.0
+offset_top = 55.0
+offset_right = 1046.0
+offset_bottom = 588.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/people_gui/PanelContainer"]
+layout_mode = 2
+
+[node name="MenuButton" type="MenuButton" parent="Control/people_gui/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Abraham Lincoln"
+icon = ExtResource("4_25tqd")
+
 [connection signal="pressed" from="Control/Panel/VBoxContainer/quest_button" to="Control" method="_on_quest_button_pressed"]
+[connection signal="toggled" from="Control/people_gui/PanelContainer/VBoxContainer/MenuButton" to="Control/people_gui" method="_on_menu_button_toggled"]
