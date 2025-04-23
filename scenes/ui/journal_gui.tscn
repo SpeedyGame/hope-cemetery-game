@@ -214,5 +214,27 @@ theme_override_font_sizes/font_size = 35
 text = "Abraham Lincoln"
 icon = ExtResource("4_25tqd")
 
+[node name="popup_person1" type="PopupPanel" parent="Control/people_gui/PanelContainer/VBoxContainer/MenuButton"]
+position = Vector2i(0, 132)
+size = Vector2i(974, 100)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/people_gui/PanelContainer/VBoxContainer/MenuButton/popup_person1"]
+custom_minimum_size = Vector2(50, 30)
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 970.0
+offset_bottom = 96.0
+
+[node name="description" type="Label" parent="Control/people_gui/PanelContainer/VBoxContainer/MenuButton/popup_person1/VBoxContainer"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+text = "He was the 16th president of the united states during the Civil War. He held a debate at Knox college againt Stephen Douglas."
+autowrap_mode = 3
+
+[node name="close" type="Button" parent="Control/people_gui/PanelContainer/VBoxContainer/MenuButton/popup_person1/VBoxContainer"]
+layout_mode = 2
+
 [connection signal="pressed" from="Control/Panel/VBoxContainer/quest_button" to="Control" method="_on_quest_button_pressed"]
+[connection signal="pressed" from="Control/Panel/VBoxContainer/people_button" to="Control" method="_on_people_button_pressed"]
 [connection signal="toggled" from="Control/people_gui/PanelContainer/VBoxContainer/MenuButton" to="Control/people_gui" method="_on_menu_button_toggled"]
+[connection signal="pressed" from="Control/people_gui/PanelContainer/VBoxContainer/MenuButton/popup_person1/VBoxContainer/close" to="Control/people_gui" method="_on_close_pressed"]
