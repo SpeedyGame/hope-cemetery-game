@@ -21,9 +21,13 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
-directories/dch_directory={}
+directories/dch_directory={
+"alex": "res://data/dialogue/characters/alex.dch",
+"player": "res://data/dialogue/characters/player.dch"
+}
 directories/dtl_directory={
-"test_timeline": "res://data/dialogue/test_timeline.dtl"
+"dream-sequence": "res://data/dialogue/timelines/dream-sequence.dtl",
+"test_timeline": "res://data/dialogue/timelines/test_timeline.dtl"
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
@@ -52,6 +56,7 @@ variables={
 }
 layout/style_list=["res://data/dialogue/textbubble.tres"]
 layout/default_style="res://data/dialogue/textbubble.tres"
+glossary/default_case_sensitive=true
 
 [editor_plugins]
 
