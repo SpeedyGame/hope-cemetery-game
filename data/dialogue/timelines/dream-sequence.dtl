@@ -1,2 +1,26 @@
 player: Ow, my head.
 alex: Dude, are you okay?
+- I think so.
+	alex: Are you sure? That was one hell of a fall.
+- Yeah.
+	alex: Are you sure? That sounded pretty intense.
+- Who are you?
+	alex: C'mon, stop messing with me.
+alex: Here, take this just in case.
+player: Thanks.
+alex: No problem, you should try and get back to sleep.
+player: I uh, actually think I’m gonna take a walk first.
+alex: This late at night? Are you sure you’re okay? Is it because of that nightmare?
+player: Huh? Nightmare? What do you mean
+alex: Well, you were mumbling in your sleep about some letter and how you didn’t want to die, it seemed pretty spooky.
+player: Hmm. Maybe? It’s kind of a little fuzzy. 
+alex: Well, okay then. If you do go on that walk, just be careful, I can’t call an ambulance if you pass out there.
+- I'll be alright.
+	alex: Okaayyyy, just letting you know.
+- Shut up, dude.
+	alex: Hey! I'm just saying.
+- Bold of you to assume I'd want your help anyway.
+	alex: I mean, it's not like anyone else is around to do so.
+internal_dialogue: (They're so smug, look at the smile on their face.)
+alex: Oh! By the way, have you seen our blaze plushie? It was right up on top of the wardrobe earlier today.
+- Can we talk about this later?

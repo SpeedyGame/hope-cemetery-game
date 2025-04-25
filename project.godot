@@ -23,6 +23,7 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "alex": "res://data/dialogue/characters/alex.dch",
+"internal_dialogue": "res://data/dialogue/characters/internal_dialogue.dch",
 "player": "res://data/dialogue/characters/player.dch"
 }
 directories/dtl_directory={
@@ -54,7 +55,7 @@ variables={
 "Test": ""
 }
 }
-layout/style_list=["res://data/dialogue/textbubble.tres"]
+layout/style_list=["res://data/dialogue/styles/textbubble.tres", "res://data/dialogue/styles/thinking_style.tres"]
 layout/default_style="res://data/dialogue/textbubble.tres"
 glossary/default_case_sensitive=true
 
