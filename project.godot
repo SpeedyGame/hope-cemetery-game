@@ -24,7 +24,8 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 directories/dch_directory={
 "alex": "res://data/dialogue/characters/alex.dch",
 "internal_dialogue": "res://data/dialogue/characters/internal_dialogue.dch",
-"player": "res://data/dialogue/characters/player.dch"
+"player": "res://data/dialogue/characters/player.dch",
+"plushie": "res://data/dialogue/characters/plushie.dch"
 }
 directories/dtl_directory={
 "dream-sequence": "res://data/dialogue/timelines/dream-sequence.dtl",
@@ -51,7 +52,11 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 variables={
-"Test Variables": {
+"PlayerDescription": {
+"Major": "",
+"Name": "PLAYER"
+},
+"TestVariables": {
 "Test": ""
 }
 }

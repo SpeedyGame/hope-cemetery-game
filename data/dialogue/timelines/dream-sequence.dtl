@@ -1,3 +1,4 @@
+# The player character awakens after falling from their bed. Their clock reads 3:37 AM
 player: Ow, my head.
 alex: Dude, are you okay?
 - I think so.
@@ -6,14 +7,16 @@ alex: Dude, are you okay?
 	alex: Are you sure? That sounded pretty intense.
 - Who are you?
 	alex: C'mon, stop messing with me.
+# Alex gets out of bed and switches on the light, before walking over to the player.
 alex: Here, take this just in case.
+# They hand the player a glass of water and a small pill bottle.
 player: Thanks.
 alex: No problem, you should try and get back to sleep.
 player: I uh, actually think I’m gonna take a walk first.
 alex: This late at night? Are you sure you’re okay? Is it because of that nightmare?
 player: Huh? Nightmare? What do you mean
 alex: Well, you were mumbling in your sleep about some letter and how you didn’t want to die, it seemed pretty spooky.
-player: Hmm. Maybe? It’s kind of a little fuzzy. 
+player: Hmm. Maybe? It’s kind of a little fuzzy.
 alex: Well, okay then. If you do go on that walk, just be careful, I can’t call an ambulance if you pass out there.
 - I'll be alright.
 	alex: Okaayyyy, just letting you know.
@@ -24,3 +27,22 @@ alex: Well, okay then. If you do go on that walk, just be careful, I can’t cal
 internal_dialogue: (They're so smug, look at the smile on their face.)
 alex: Oh! By the way, have you seen our blaze plushie? It was right up on top of the wardrobe earlier today.
 - Can we talk about this later?
+	alex: I just thought I’d ask. Enjoy your walk dude.
+- I don’t think so, did you check under the beds?
+	alex: No, it’s not a big deal. We can look in the morning, go take your walk.
+- Yeah it was right — There *you look up and see the empty place where the plushie used to be*
+	alex: See I told you, it’s not there. Whatever, maybe you’ll find it on your walk *wink*
+alex: Well, be careful out there. I’m gonna take a tinkle.
+player: Did you have to say it like that?
+# Roommate laughs and leaves. Player character takes a long sigh.
+[wait time="2.0"]
+internal_dialogue: What (the hell) kind of dream was that?
+plushie: {PlayerDescription.Name}...
+player: What the..?
+plushie: {PlayerDescription.Name} …I need your help…come to Hope Cemetery… You’ll find what you’re looking for…
+player: I really gotta get out of here.
+[wait time="1.0"]
+# Alex returns from tinkle town
+alex: Dude, who are you talking to?
+player: Uhhh nobody, I- I think I’m gonna go now.
+alex: Okay, just be quiet when you come back.
