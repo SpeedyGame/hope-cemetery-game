@@ -209,6 +209,7 @@ offset_bottom = 588.0
 layout_mode = 2
 
 [node name="MenuButton" type="MenuButton" parent="Control/people_gui/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(20, 10)
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Abraham Lincoln"
