@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://blj618qddarlu"]
 
 [ext_resource type="Texture2D" uid="uid://dsh3xpqi7ms74" path="res://scenes/ui/standing_menu_assets/closed_backpack.jpg" id="1_ompis"]
-[ext_resource type="Script" uid="uid://dmqibapscqjh6" path="res://scenes/ui/backpack_ui.gd" id="1_sy68c"]
+[ext_resource type="Script" path="res://scenes/ui/backpack_ui.gd" id="1_sy68c"]
 [ext_resource type="Texture2D" uid="uid://dllmn8d0ou48y" path="res://scenes/ui/standing_menu_assets/open_backpack.jpg" id="2_sy68c"]
 [ext_resource type="Texture2D" uid="uid://b3i2q1wc3paao" path="res://scenes/ui/standing_menu_assets/small_map.jpg" id="3_n2kom"]
 [ext_resource type="Texture2D" uid="uid://dgmo00l0w666h" path="res://scenes/ui/standing_menu_assets/small_question.jpg" id="4_qt74l"]
@@ -14,10 +14,10 @@
 script = ExtResource("1_sy68c")
 
 [node name="backpack" type="TextureButton" parent="."]
-offset_left = 1196.0
-offset_top = 600.0
-offset_right = 1272.0
-offset_bottom = 700.0
+offset_left = 1182.0
+offset_top = 593.0
+offset_right = 1258.0
+offset_bottom = 693.0
 toggle_mode = true
 texture_normal = ExtResource("1_ompis")
 texture_pressed = ExtResource("2_sy68c")
