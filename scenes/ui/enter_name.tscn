@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=3 uid="uid://dt12qu1qkqr6h"]
+
+[ext_resource type="Texture2D" uid="uid://qcd4elcd5n4m" path="res://art/beauty_shots/warflashback1.png" id="1_2awha"]
+[ext_resource type="Script" uid="uid://dp6s2hwh7qo6p" path="res://scripts/ui/enter_name.gd" id="1_x5l0v"]
+
+[sub_resource type="Curve2D" id="Curve2D_x5l0v"]
+_data = {
+"points": PackedVector2Array(26.5734, 139.953, -26.5734, -139.953, 240, 258, -189.557, -28.345, 189.557, 28.345, 648, 142, 47.8321, -31.8881, -47.8321, 31.8881, 707, 311, 104.522, 37.2028, -104.522, -37.2028, 412, 418, 1.61873, 16.547, -1.61873, -16.547, 240, 258)
+}
+point_count = 5
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x5l0v")
+
+[node name="Name" type="TextEdit" parent="."]
+z_index = 5
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.5
+offset_top = 28.5
+offset_right = 176.5
+offset_bottom = 69.5
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Enter name..."
+
+[node name="EnterName" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -312.0
+offset_top = -123.5
+offset_right = 312.0
+offset_bottom = -54.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Enter your name, player..."
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_x5l0v")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(240, 258)
+rotates = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D"]
+z_index = -5
+position = Vector2(82, -16)
+scale = Vector2(3.10286, 3.10286)
+texture = ExtResource("1_2awha")
+
+[node name="Confirm" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.5
+offset_top = 89.5
+offset_right = 35.5
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Confirm"
+
+[connection signal="button_down" from="Confirm" to="." method="_on_confirm_button_down"]
