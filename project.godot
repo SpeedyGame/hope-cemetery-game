@@ -67,6 +67,11 @@ layout/style_list=["res://data/dialogue/styles/textbubble.tres", "res://data/dia
 layout/default_style="res://data/dialogue/textbubble.tres"
 glossary/default_case_sensitive=true
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
@@ -85,5 +90,6 @@ dialogic_default_action={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
