@@ -196,6 +196,7 @@ layout_mode = 2
 text = "No Completed Side Quests"
 
 [node name="people_gui" type="CanvasLayer" parent="Control"]
+visible = false
 script = ExtResource("4_fko3c")
 
 [node name="PanelContainer" type="PanelContainer" parent="Control/people_gui"]

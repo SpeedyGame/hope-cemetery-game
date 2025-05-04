@@ -18,6 +18,7 @@ offset_bottom = 619.12
 script = ExtResource("1_vieii")
 
 [node name="PanelContainer" type="PanelContainer" parent="Control"]
+layout_mode = 0
 offset_top = 6.0
 offset_right = 777.0
 offset_bottom = 616.0
@@ -55,8 +56,6 @@ size_flags_horizontal = 0
 text = "Accept your first quest to gain this acheivement"
 autowrap_mode = 3
 max_lines_visible = 5
-visible_characters = 500
-visible_ratio = 4.0
 
 [node name="close" type="Button" parent="Control/PanelContainer/VBoxContainer/MenuButton/popup_person1/VBoxContainer"]
 layout_mode = 2

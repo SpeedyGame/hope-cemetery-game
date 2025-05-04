@@ -14,7 +14,7 @@ func _ready():
 func _on_backpack_pressed():
 	if journal.visible == true:
 		journal.visible = false
-		journal_control.hide_canvas()
+		#journal_control.hide_canvas(journal_control)
 	if backpack_items.visible == false:
 		backpack_items.visible = true
 	else:
@@ -26,13 +26,13 @@ func _on_quest_button_pressed():
 		journal.visible = true
 	else:
 		journal.visible = false
-		journal_control.hide_canvas()
+		#journal_control.hide_canvas()
 
 
 func _on_inventory_button_pressed():
 	if inventory.visible == true:
 		inventory.visible = false
-		inventory_control.hide_canvas()
+		#inventory_control.hide_canvas()
 	if backpack_items.visible == false:
 		backpack_items.visible = true
 	else:
