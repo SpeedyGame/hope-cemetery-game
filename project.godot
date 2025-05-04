@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="hope-cemetery-game"
-run/main_scene="uid://dnsn84ulbrw0y"
+run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="uid://q053v1v4d1vk"
 
