@@ -7,11 +7,15 @@ func _ready():
 	quest_gui.visible = false
 	people_gui.visible = false
 
-#func hide_canvas(node: Node):
-	#if node is CanvasLayer:
-		#node.visible = false
-	#for child in node.get_children():
-		#hide_canvas(child)
+func hide_canvas():
+	if not get_parent().visible:
+		recurse_turn_off(self)
+
+func recurse_turn_off(node: Node):
+	if node is CanvasLayer:
+		node.visible = false
+	for child in node.get_children():
+		recurse_turn_off(child)
 
 func _on_quest_button_pressed():
 	people_gui.visible = false
