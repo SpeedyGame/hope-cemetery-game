@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=6 format=3 uid="uid://bjqj421cefqkc"]
+
+[ext_resource type="Script" uid="uid://dwfs3y72tvaut" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_6dae4"]
+[ext_resource type="PackedScene" uid="uid://bquja8jyk8kbr" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn" id="2_f1l0a"]
+[ext_resource type="Script" uid="uid://dyemgtcnjc5js" path="res://addons/dialogic/Resources/dialogic_style.gd" id="2_ga2sg"]
+
+[sub_resource type="Resource" id="Resource_f1l0a"]
+script = ExtResource("1_6dae4")
+overrides = {
+"global_font_color": "Color(0.757813, 0.757813, 0.757813, 1)",
+"global_font_size": "13.0"
+}
+
+[sub_resource type="Resource" id="Resource_ga2sg"]
+script = ExtResource("1_6dae4")
+scene = ExtResource("2_f1l0a")
+overrides = {}
+
+[resource]
+script = ExtResource("2_ga2sg")
+name = "thinking_style"
+layer_list = Array[String](["10"])
+layer_info = {
+"": SubResource("Resource_f1l0a"),
+"10": SubResource("Resource_ga2sg")
+}
+base_overrides = {}
+layers = Array[ExtResource("1_6dae4")]([])
+metadata/_latest_layer = ""
