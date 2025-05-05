@@ -1,8 +1,14 @@
 extends Control
-
+@onready var pause_canvas = $CanvasLayer
 func _ready():
 	# Start with pause menu hidden
-	self.visible = false
+	pause_canvas.visible = false
+
+func turnbutton():
+	if pause_canvas.visible == false:
+		pause_canvas.visible = true
+	else:
+		pause_canvas.visible = false
 
 func pause():
 	get_tree().paused = true

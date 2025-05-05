@@ -3,14 +3,18 @@ extends CanvasLayer
 @onready var journal = $journal_gui
 @onready var inventory = $Inventory
 @onready var backpack_items = $backpack_buttons
+@onready var pause = $"../PauseMenu"
+@onready var pause_layer = pause.get_node("CanvasLayer")
 @onready var journal_control = journal.get_node("Control")
 @onready var inventory_control = inventory.get_node("Control")
+
 
 
 func _ready():
 	journal.visible = false
 	backpack_items.visible = false
 	inventory.visible = false
+	pause_layer.visible = false
 
 func _on_backpack_pressed():
 	if journal.visible == true:
@@ -41,3 +45,8 @@ func _on_inventory_button_pressed():
 		#backpack_items.visible = true
 	#else:
 		#backpack_items.visible = false
+
+
+func _on_button_pressed():
+	pause.turnbutton()
+	
