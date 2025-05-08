@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cu73cpyrhpan" path="res://scripts/ui/item.gd" id="1_x2pnp"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cwagn"]
-load_path = "res://.godot/imported/Iron Sword.png-618daba819fdf723345cca664e3ff151.ctex"
 
 [node name="Item" type="Node2D"]
 script = ExtResource("1_x2pnp")
