@@ -11,18 +11,9 @@ config_version=5
 [application]
 
 config/name="hope-cemetery-game"
-run/main_scene="uid://oh2basiek65h"
+run/main_scene="uid://ceflp50ayram5"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="uid://q053v1v4d1vk"
-
-[autoload]
-
-GlobQuest="*res://scripts/globals/glob_quest.gd"
-
-[display]
-
-window/size/viewport_width=1280
-window/size/viewport_height=720
+config/icon="res://icon.svg"
 
 [input]
 
