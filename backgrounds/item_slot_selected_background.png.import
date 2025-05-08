@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcqlgk50rvttu"
-path="res://.godot/imported/Iron Sword.png-618daba819fdf723345cca664e3ff151.ctex"
+uid="uid://ckxsq28bpkj3y"
+path="res://.godot/imported/item_slot_selected_background.png-b9dfe63577ba5fa89e0423a68028884e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Iron Sword.png"
-dest_files=["res://.godot/imported/Iron Sword.png-618daba819fdf723345cca664e3ff151.ctex"]
+source_file="res://backgrounds/item_slot_selected_background.png"
+dest_files=["res://.godot/imported/item_slot_selected_background.png-b9dfe63577ba5fa89e0423a68028884e.ctex"]
 
 [params]
 
