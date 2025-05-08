@@ -16,6 +16,18 @@ func _ready():
 	inventory.visible = false
 	pause_layer.visible = false
 
+func _process(delta):
+	if pause_layer.visible == true:
+		$backpack.disabled = true
+		for child in $backpack_buttons/Control.get_children():
+			if child is BaseButton:
+				child.disabled = true
+	else: 
+		$backpack.disabled = false
+		for child in $backpack_buttons/Control.get_children():
+			if child is BaseButton:
+				child.disabled = false
+
 func _on_backpack_pressed():
 	if journal.visible == true:
 		journal.visible = false
@@ -27,26 +39,27 @@ func _on_backpack_pressed():
 
 
 func _on_quest_button_pressed():
-	if journal.visible == false:
-		journal.visible = true
-	else:
-		journal.visible = false
-		journal_control.hide_canvas()
+	if pause_layer.visible == false:
+		if journal.visible == false:
+			journal.visible = true
+		else:
+			journal.visible = false
+			journal_control.hide_canvas()
 
 
 func _on_inventory_button_pressed():
-	if inventory.visible == true:
-		inventory.visible = false
-		inventory_control.hide_canvas()
-	if journal.visible == true:
-		journal_control.hide_canvas()
-		journal.visible = false
-	#if backpack_items.visible == false:
-		#backpack_items.visible = true
-	#else:
-		#backpack_items.visible = false
+	if pause_layer.visible == false:
+		if inventory.visible == true:
+			inventory.visible = false
+			inventory_control.hide_canvas()
+		if journal.visible == true:
+			journal_control.hide_canvas()
+			journal.visible = false
+		#if backpack_items.visible == false:
+			#backpack_items.visible = true
+		#else:
+			#backpack_items.visible = false
 
 
-func _on_button_pressed():
-	pause.turnbutton()
+	
 	

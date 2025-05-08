@@ -16,7 +16,7 @@ func pause():
 
 func resume():
 	get_tree().paused = false
-	self.visible = false
+	pause_canvas.visible = false
 
 # === BUTTON SIGNALS ===
 
@@ -60,3 +60,7 @@ func _on_go_back_to_cemetery_pressed() -> void:
 
 func _on_settings_pressed() -> void:
 	pass
+
+
+func _on_texture_button_pressed():
+	turnbutton()

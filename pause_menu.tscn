@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dawt3grro5es2"]
+[gd_scene load_steps=6 format=3 uid="uid://dawt3grro5es2"]
 
 [ext_resource type="Script" uid="uid://27b5hmgy0622" path="res://pause_menu.gd" id="1_05uyy"]
+[ext_resource type="Material" uid="uid://dquugtfyg82pf" path="res://art/blur.tres" id="2_05uyy"]
 [ext_resource type="Script" uid="uid://chu1xwjiew02x" path="res://panel_container.gd" id="3_2nc7s"]
+[ext_resource type="Texture2D" uid="uid://q053v1v4d1vk" path="res://art/icon.svg" id="4_p81d2"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mxa3g"]
 
@@ -21,25 +23,44 @@ grow_vertical = 2
 size_flags_stretch_ratio = 1.62
 script = ExtResource("1_05uyy")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource("2_05uyy")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 46.0
+offset_top = 1.0
+offset_right = 46.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 951.0
+offset_top = 25.0
+offset_right = 1079.0
+offset_bottom = 153.0
+texture_normal = ExtResource("4_p81d2")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 13.0
+offset_top = 6.0
+offset_right = 1291.0
+offset_bottom = 718.0
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.298
-anchor_top = 0.735
-anchor_right = 0.298
-anchor_bottom = 0.735
-offset_left = 376.224
-offset_top = 206.52
-offset_right = 822.224
-offset_bottom = 628.52
+offset_left = 460.0
+offset_top = 159.0
+offset_right = 906.0
+offset_bottom = 586.0
 script = ExtResource("3_2nc7s")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/PanelContainer"]
@@ -85,6 +106,8 @@ text = "Quest Menu
 layout_mode = 2
 text = "Go back to cemetery"
 
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="gui_input" from="CanvasLayer/Control" to="CanvasLayer/Control/PanelContainer" method="_on_control_gui_input"]
 [connection signal="pressed" from="CanvasLayer/Control/PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/PanelContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://oh2basiek65h"]
+[gd_scene load_steps=4 format=3 uid="uid://oh2basiek65h"]
 
 [ext_resource type="Script" uid="uid://yprhxd75aj6w" path="res://scenes/main.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://blj618qddarlu" path="res://scenes/ui/backpack_ui.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://dawt3grro5es2" path="res://pause_menu.tscn" id="3_jyhfs"]
-[ext_resource type="Texture2D" uid="uid://bno5uutw15j04" path="res://scripts/icon.svg" id="4_tbgi4"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_sugp2")
@@ -11,16 +10,7 @@ script = ExtResource("1_sugp2")
 [node name="backpackUI" parent="." instance=ExtResource("2_0wfyh")]
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_jyhfs")]
-offset_left = 342.0
-offset_top = 339.0
-offset_right = 342.0
-offset_bottom = 339.0
-
-[node name="Button" type="Button" parent="."]
-offset_left = 1127.0
-offset_top = 10.0
-offset_right = 1249.0
-offset_bottom = 136.0
-icon = ExtResource("4_tbgi4")
-
-[connection signal="pressed" from="Button" to="backpackUI" method="_on_button_pressed"]
+offset_left = 142.0
+offset_top = 4.0
+offset_right = 142.0
+offset_bottom = 4.0
