@@ -11,10 +11,10 @@ config_version=5
 [application]
 
 config/name="hope-cemetery-game"
-run/main_scene="uid://dcspcvlshrs75"
+# from game_level.tscn: run/main_scene="uid://dcspcvlshrs75"
 
 # from feature4-caharcterMove: run/main_scene="uid://oh2basiek65h"
-# from team4: run/main_scene="uid://ceflp50ayram5"
+run/main_scene="uid://ceflp50ayram5"
 
 
 config/features=PackedStringArray("4.4", "Forward Plus")
