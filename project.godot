@@ -22,12 +22,15 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"Charles": "res://data/dialogue/characters/Charles.dch",
+"Soldier": "res://data/dialogue/characters/Soldier.dch",
 "alex": "res://data/dialogue/characters/alex.dch",
 "internal_dialogue": "res://data/dialogue/characters/internal_dialogue.dch",
 "player": "res://data/dialogue/characters/player.dch",
 "plushie": "res://data/dialogue/characters/plushie.dch"
 }
 directories/dtl_directory={
+"Dream": "res://data/dialogue/timelines/Dream.dtl",
 "dream-sequence": "res://data/dialogue/timelines/dream-sequence.dtl",
 "test_timeline": "res://data/dialogue/timelines/test_timeline.dtl"
 }
