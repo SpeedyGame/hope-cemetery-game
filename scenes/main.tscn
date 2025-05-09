@@ -1,0 +1,126 @@
+[gd_scene load_steps=10 format=3 uid="uid://oh2basiek65h"]
+
+[ext_resource type="Script" uid="uid://cdbj58a8drvqr" path="res://scenes/roommate.gd" id="1_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://qivk0awgastc" path="res://art/sprites/alexroommatewalk.png" id="2_sugp2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jyhfs"]
+radius = 3.0
+height = 20.0
+
+[sub_resource type="Animation" id="Animation_tbgi4"]
+resource_name = "walk_right"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_tefeu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_o6xl0"]
+resource_name = "idle"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_tipki"]
+resource_name = "walk_down"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [9, 10, 11, 12]
+}
+
+[sub_resource type="Animation" id="Animation_85g3d"]
+resource_name = "walk_up"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [14, 15, 16, 17]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_choun"]
+_data = {
+&"RESET": SubResource("Animation_tefeu"),
+&"idle": SubResource("Animation_o6xl0"),
+&"walk_down": SubResource("Animation_tipki"),
+&"walk_right": SubResource("Animation_tbgi4"),
+&"walk_up": SubResource("Animation_85g3d")
+}
+
+[node name="Main" type="Node2D"]
+
+[node name="Roommate" type="CharacterBody2D" parent="."]
+script = ExtResource("1_0wfyh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Roommate"]
+position = Vector2(1, -1)
+texture = ExtResource("2_sugp2")
+hframes = 9
+vframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Roommate"]
+position = Vector2(1, -2)
+shape = SubResource("CapsuleShape2D_jyhfs")
+
+[node name="Timer" type="Timer" parent="Roommate"]
+
+[node name="AnimationTree" type="AnimationTree" parent="Roommate"]
+libraries = {
+&"": SubResource("AnimationLibrary_choun")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Roommate"]
+
+[connection signal="timeout" from="Roommate/Timer" to="Roommate" method="_on_timer_timeout"]
