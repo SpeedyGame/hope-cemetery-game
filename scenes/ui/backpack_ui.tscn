@@ -1,23 +1,23 @@
 [gd_scene load_steps=10 format=3 uid="uid://blj618qddarlu"]
 
 [ext_resource type="Texture2D" uid="uid://dsh3xpqi7ms74" path="res://scenes/ui/standing_menu_assets/closed_backpack.jpg" id="1_ompis"]
-[ext_resource type="Script" uid="uid://dmqibapscqjh6" path="res://scenes/ui/backpack_ui.gd" id="1_sy68c"]
+[ext_resource type="Script" uid="uid://dmqibapscqjh6" path="res://scripts/ui/backpack_ui.gd" id="1_sy68c"]
 [ext_resource type="Texture2D" uid="uid://dllmn8d0ou48y" path="res://scenes/ui/standing_menu_assets/open_backpack.jpg" id="2_sy68c"]
 [ext_resource type="Texture2D" uid="uid://b3i2q1wc3paao" path="res://scenes/ui/standing_menu_assets/small_map.jpg" id="3_n2kom"]
 [ext_resource type="Texture2D" uid="uid://dgmo00l0w666h" path="res://scenes/ui/standing_menu_assets/small_question.jpg" id="4_qt74l"]
 [ext_resource type="Texture2D" uid="uid://bp8w2bscq4slm" path="res://scenes/ui/standing_menu_assets/small_porto.jpg" id="5_jakuk"]
 [ext_resource type="Texture2D" uid="uid://b5yws2tiftsrw" path="res://scenes/ui/standing_menu_assets/small_full_journal.jpg" id="6_ny1vg"]
 [ext_resource type="PackedScene" uid="uid://dnsn84ulbrw0y" path="res://scenes/ui/journal_gui.tscn" id="7_r83im"]
-[ext_resource type="PackedScene" uid="uid://cgdd5qua83oct" path="res://scenes/ui/inventory_gui.tscn" id="9_n2kom"]
+[ext_resource type="PackedScene" uid="uid://ck37kvs6oh6wg" path="res://scenes/ui/inventory.tscn" id="9_n2kom"]
 
 [node name="backpackUI" type="CanvasLayer"]
 script = ExtResource("1_sy68c")
 
 [node name="backpack" type="TextureButton" parent="."]
-offset_left = 1196.0
-offset_top = 600.0
-offset_right = 1272.0
-offset_bottom = 700.0
+offset_left = 1182.0
+offset_top = 593.0
+offset_right = 1258.0
+offset_bottom = 693.0
 toggle_mode = true
 texture_normal = ExtResource("1_ompis")
 texture_pressed = ExtResource("2_sy68c")
@@ -64,7 +64,8 @@ icon = ExtResource("6_ny1vg")
 
 [node name="journal_gui" parent="." instance=ExtResource("7_r83im")]
 
-[node name="inventory_gui" parent="." instance=ExtResource("9_n2kom")]
+[node name="Inventory" parent="." instance=ExtResource("9_n2kom")]
+position = Vector2(-80, -37)
 
 [connection signal="pressed" from="backpack" to="." method="_on_backpack_pressed"]
 [connection signal="pressed" from="backpack_buttons/Control/inventory_button" to="." method="_on_inventory_button_pressed"]
