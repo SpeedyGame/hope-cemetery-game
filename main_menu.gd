@@ -3,6 +3,8 @@ extends Control
 @onready var credits = $credits
 @onready var stats = $stats
 @onready var main_menu = $VBoxContainer
+@onready var time_label = $stats/time_label
+var playtime_s: float = 0.0
 
 func _ready():
 	settings.visible = false
@@ -53,10 +55,13 @@ func _on_progress_pressed() -> void:
 func _on_achievements_pressed() -> void:
 	pass # Replace with function body.
 
+func _process(delta: float) -> void:
+	playtime_s += delta
 
 func _on_time_spent_pressed() -> void:
-	pass # Replace with function body.
-
+	var hours = playtime_s / 3600.0
+	var msg = "Time spent playing: %.2f hours" % hours
+	time_label.text = msg
 
 func _on_days_pressed() -> void:
 	pass # Replace with function body.
