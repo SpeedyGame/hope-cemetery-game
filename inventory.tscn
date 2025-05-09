@@ -10,10 +10,10 @@ texture = ExtResource("2_5tt2m")
 [node name="Inventory" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 635.0
-offset_top = 275.0
-offset_right = 904.0
-offset_bottom = 402.0
+offset_left = 11.0
+offset_top = 14.0
+offset_right = 280.0
+offset_bottom = 141.0
 texture = ExtResource("1_psafj")
 
 [node name="GridContainer" type="GridContainer" parent="TextureRect"]
@@ -25,54 +25,6 @@ offset_bottom = 125.0
 columns = 5
 
 [node name="Slot1" type="Panel" parent="TextureRect/GridContainer"]
-custom_minimum_size = Vector2(18, 18)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
-script = ExtResource("3_5tt2m")
-
-[node name="Slot5" type="Panel" parent="TextureRect/GridContainer"]
-custom_minimum_size = Vector2(18, 18)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
-script = ExtResource("3_5tt2m")
-
-[node name="Slot8" type="Panel" parent="TextureRect/GridContainer"]
-custom_minimum_size = Vector2(18, 18)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
-script = ExtResource("3_5tt2m")
-
-[node name="Slot9" type="Panel" parent="TextureRect/GridContainer"]
-custom_minimum_size = Vector2(18, 18)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
-script = ExtResource("3_5tt2m")
-
-[node name="Slot18" type="Panel" parent="TextureRect/GridContainer"]
-custom_minimum_size = Vector2(18, 18)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
-script = ExtResource("3_5tt2m")
-
-[node name="Slot16" type="Panel" parent="TextureRect/GridContainer"]
-custom_minimum_size = Vector2(18, 18)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
-script = ExtResource("3_5tt2m")
-
-[node name="Slot12" type="Panel" parent="TextureRect/GridContainer"]
-custom_minimum_size = Vector2(18, 18)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
-script = ExtResource("3_5tt2m")
-
-[node name="Slot7" type="Panel" parent="TextureRect/GridContainer"]
-custom_minimum_size = Vector2(18, 18)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
-script = ExtResource("3_5tt2m")
-
-[node name="Slot14" type="Panel" parent="TextureRect/GridContainer"]
 custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
@@ -96,13 +48,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
 script = ExtResource("3_5tt2m")
 
-[node name="Slot15" type="Panel" parent="TextureRect/GridContainer"]
-custom_minimum_size = Vector2(18, 18)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
-script = ExtResource("3_5tt2m")
-
-[node name="Slot11" type="Panel" parent="TextureRect/GridContainer"]
+[node name="Slot5" type="Panel" parent="TextureRect/GridContainer"]
 custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
@@ -114,7 +60,37 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
 script = ExtResource("3_5tt2m")
 
+[node name="Slot7" type="Panel" parent="TextureRect/GridContainer"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
+script = ExtResource("3_5tt2m")
+
+[node name="Slot8" type="Panel" parent="TextureRect/GridContainer"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
+script = ExtResource("3_5tt2m")
+
+[node name="Slot9" type="Panel" parent="TextureRect/GridContainer"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
+script = ExtResource("3_5tt2m")
+
 [node name="Slot10" type="Panel" parent="TextureRect/GridContainer"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
+script = ExtResource("3_5tt2m")
+
+[node name="Slot11" type="Panel" parent="TextureRect/GridContainer"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
+script = ExtResource("3_5tt2m")
+
+[node name="Slot12" type="Panel" parent="TextureRect/GridContainer"]
 custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
@@ -126,7 +102,31 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
 script = ExtResource("3_5tt2m")
 
+[node name="Slot14" type="Panel" parent="TextureRect/GridContainer"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
+script = ExtResource("3_5tt2m")
+
+[node name="Slot15" type="Panel" parent="TextureRect/GridContainer"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
+script = ExtResource("3_5tt2m")
+
+[node name="Slot16" type="Panel" parent="TextureRect/GridContainer"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
+script = ExtResource("3_5tt2m")
+
 [node name="Slot17" type="Panel" parent="TextureRect/GridContainer"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
+script = ExtResource("3_5tt2m")
+
+[node name="Slot18" type="Panel" parent="TextureRect/GridContainer"]
 custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
