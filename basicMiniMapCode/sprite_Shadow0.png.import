@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://q4edbwg6syou"
-
-path="res://.godot/imported/alexroommatewalk.png-02c51fda0cdad68473e168b17be2329a.ctex"
+uid="uid://d006l72tns772"
+path="res://.godot/imported/sprite_Shadow0.png-8a6fde0076223a22144be7363953de9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/sprites/alexroommatewalk.png"
-dest_files=["res://.godot/imported/alexroommatewalk.png-02c51fda0cdad68473e168b17be2329a.ctex"]
+source_file="res://basicMiniMapCode/sprite_Shadow0.png"
+dest_files=["res://.godot/imported/sprite_Shadow0.png-8a6fde0076223a22144be7363953de9c.ctex"]
 
 [params]
 

@@ -1,9 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://dcspcvlshrs75"]
+[gd_scene load_steps=37 format=3 uid="uid://dcspcvlshrs75"]
 
 [ext_resource type="Script" uid="uid://dcdk4ehpd3154" path="res://basicMiniMapCode/character_body_2d.gd" id="1_6gq18"]
 [ext_resource type="Script" uid="uid://qdiq6fcmonxi" path="res://basicMiniMapCode/mini_map_ui.gd" id="2_le112"]
 [ext_resource type="Texture2D" uid="uid://bq0frcp06bnk1" path="res://art/sprites/PlayerWalk.png" id="2_upmnq"]
 [ext_resource type="Script" uid="uid://ecuftyno8rkq" path="res://basicMiniMapCode/sub_viewport.gd" id="3_upmnq"]
+[ext_resource type="Script" uid="uid://chc72i78jlu8l" path="res://basicMiniMapCode/roommate.gd" id="5_lxs3h"]
+[ext_resource type="Texture2D" uid="uid://q4edbwg6syou" path="res://art/sprites/alexroommatewalk.png" id="6_kgf47"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_le112"]
 radius = 3.0
@@ -146,6 +148,7 @@ script = ExtResource("1_6gq18")
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(35, 26)
 texture = ExtResource("2_upmnq")
+
 hframes = 9
 vframes = 2
 
@@ -189,3 +192,28 @@ player_node = NodePath("../../../CharacterBody2D")
 
 [node name="Camera2D" type="Camera2D" parent="MiniMapUI/SubViewportContainer/SubViewport"]
 zoom = Vector2(0.1, 0.1)
+
+[node name="Roommate" type="CharacterBody2D" parent="."]
+script = ExtResource("5_lxs3h")
+
+[node name="Sprite2D" type="Sprite2D" parent="Roommate"]
+texture = ExtResource("6_kgf47")
+hframes = 9
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Roommate"]
+libraries = {
+&"": SubResource("AnimationLibrary_fdajn")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="Roommate"]
+tree_root = SubResource("AnimationNodeStateMachine_worw8")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Idle/blend_position = 0
+parameters/Walk/blend_position = Vector2(0, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Roommate"]
+shape = SubResource("CapsuleShape2D_nx2wl")
+
+[node name="Timer" type="Timer" parent="Roommate"]
+
