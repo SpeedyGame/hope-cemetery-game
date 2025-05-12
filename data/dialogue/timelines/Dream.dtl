@@ -1,7 +1,12 @@
 # *Looking up at Sky*
+[background arg="res://art/beauty_shots/warflashback1.png" fade="0.0"]
+[style name="no_input"]
 Charles: Lorraine…
+[wait time="1.0"]
+[background arg="res://art/beauty_shots/warflashback2.png" fade="0.0"]
 # *Looks at letter*
 Charles: If only I had…
+[background arg="res://art/beauty_shots/warflashback3.png" fade="0.0"]
 # (Soldier: A friend from Knox)
 # Soldier: *Tries to help Charles get up*
 Soldier: Stay with me, Charles!

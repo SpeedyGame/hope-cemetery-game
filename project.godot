@@ -63,9 +63,10 @@ variables={
 "Test": ""
 }
 }
-layout/style_list=["res://data/dialogue/styles/textbubble.tres", "res://data/dialogue/styles/thinking_style.tres"]
+layout/style_list=["res://data/dialogue/styles/textbubble.tres", "res://data/dialogue/styles/thinking_style.tres", "res://data/dialogue/styles/no_input.tres"]
 layout/default_style="res://data/dialogue/textbubble.tres"
 glossary/default_case_sensitive=true
+text/autoadvance_enabled=true
 
 [editor_plugins]
 
