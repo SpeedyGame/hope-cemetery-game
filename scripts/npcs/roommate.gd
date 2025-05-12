@@ -5,7 +5,8 @@ enum Roommate_State {IDLE, WALK}
 @export var idle_time: float = 5
 @export var walk_time: float = 2
 
-@onready var animTree: AnimationTree = $AnimationTree@onready var stateMachine = animTree.get("parameters/playback")
+@onready var animTree: AnimationTree = $AnimationTree
+@onready var stateMachine = animTree.get("parameters/playback")
 @onready var sprite = $Sprite2D
 @onready var timer = $Timer
 
