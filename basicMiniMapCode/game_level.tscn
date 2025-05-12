@@ -192,25 +192,3 @@ player_node = NodePath("../../../CharacterBody2D")
 
 [node name="Camera2D" type="Camera2D" parent="MiniMapUI/SubViewportContainer/SubViewport"]
 zoom = Vector2(0.1, 0.1)
-
-[node name="Roommate" type="CharacterBody2D" parent="."]
-script = ExtResource("5_lxs3h")
-
-[node name="Sprite2D" type="Sprite2D" parent="Roommate"]
-texture = ExtResource("6_kgf47")
-hframes = 9
-vframes = 2
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Roommate"]
-
-[node name="AnimationTree" type="AnimationTree" parent="Roommate"]
-tree_root = SubResource("AnimationNodeStateMachine_worw8")
-anim_player = NodePath("../AnimationPlayer")
-parameters/Idle/blend_position = 0
-parameters/Walk/blend_position = Vector2(0, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Roommate"]
-shape = SubResource("CapsuleShape2D_nx2wl")
-
-[node name="Timer" type="Timer" parent="Roommate"]
-
