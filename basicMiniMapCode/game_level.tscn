@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dcdk4ehpd3154" path="res://basicMiniMapCode/character_body_2d.gd" id="1_6gq18"]
 [ext_resource type="Script" uid="uid://4f8li4cg1hg5" path="res://basicMiniMapCode/mini_map_ui.gd" id="2_le112"]
 [ext_resource type="Texture2D" uid="uid://bq0frcp06bnk1" path="res://art/sprites/PlayerWalk.png" id="2_upmnq"]
-[ext_resource type="Script" uid="uid://ecuftyno8rkq" path="res://basicMiniMapCode/sub_viewport.gd" id="3_upmnq"]
+[ext_resource type="Script" uid="uid://04ijgr8nt0li" path="res://basicMiniMapCode/sub_viewport.gd" id="3_upmnq"]
 [ext_resource type="Script" uid="uid://chc72i78jlu8l" path="res://basicMiniMapCode/roommate.gd" id="5_lxs3h"]
 [ext_resource type="Texture2D" uid="uid://q4edbwg6syou" path="res://art/sprites/alexroommatewalk.png" id="6_kgf47"]
 
