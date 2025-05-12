@@ -202,9 +202,6 @@ hframes = 9
 vframes = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Roommate"]
-libraries = {
-"": SubResource("AnimationLibrary_fdajn")
-}
 
 [node name="AnimationTree" type="AnimationTree" parent="Roommate"]
 tree_root = SubResource("AnimationNodeStateMachine_worw8")
