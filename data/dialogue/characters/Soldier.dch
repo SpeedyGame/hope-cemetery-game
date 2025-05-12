@@ -2,14 +2,14 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 &"_translation_id": "",
-&"color": Color(1, 1, 1, 1),
+&"color": Color(0.433594, 0.428513, 0.428513, 1),
 &"custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
 "style": ""
 },
 &"default_portrait": "",
-&"description": "",
+&"description": "A friend of Charles",
 &"display_name": "Soldier",
 &"mirror": false,
 &"nicknames": [""],
