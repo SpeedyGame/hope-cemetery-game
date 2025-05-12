@@ -1,9 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://dcspcvlshrs75"]
+[gd_scene load_steps=20 format=3 uid="uid://oh2basiek65h"]
 
-[ext_resource type="Script" uid="uid://dcdk4ehpd3154" path="res://scripts/player/player.gd" id="1_3tmo4"]
-[ext_resource type="Texture2D" uid="uid://bq0frcp06bnk1" path="res://art/sprites/PlayerWalk.png" id="2_hjd5e"]
-[ext_resource type="Script" uid="uid://4f8li4cg1hg5" path="res://scripts/mini_map_ui.gd" id="3_oslck"]
-[ext_resource type="Script" uid="uid://ecuftyno8rkq" path="res://scripts/sub_viewport.gd" id="4_1k01j"]
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_qmak7"]
+[ext_resource type="Texture2D" uid="uid://bq0frcp06bnk1" path="res://art/sprites/PlayerWalk.png" id="2_8ra5a"]
+[ext_resource type="Script" path="res://scripts/mini_map_ui.gd" id="3_bq26l"]
+[ext_resource type="Script" path="res://scripts/sub_viewport.gd" id="4_u2c82"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_le112"]
 radius = 3.0
@@ -139,13 +139,14 @@ states/Walk/position = Vector2(297, 39)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_lxs3h")]
 
 [node name="Game Level" type="Node2D"]
+position = Vector2(2, 0)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("1_3tmo4")
+script = ExtResource("1_qmak7")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(35, 26)
-texture = ExtResource("2_hjd5e")
+texture = ExtResource("2_8ra5a")
 hframes = 9
 vframes = 2
 
@@ -167,7 +168,7 @@ parameters/Walk/blend_position = Vector2(0, 0)
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="MiniMapUI" type="CanvasLayer" parent="." node_paths=PackedStringArray("player", "sprite")]
-script = ExtResource("3_oslck")
+script = ExtResource("3_bq26l")
 player = NodePath("../CharacterBody2D")
 sprite = NodePath("../CharacterBody2D/Sprite2D")
 
@@ -181,7 +182,7 @@ offset_bottom = 239.0
 handle_input_locally = false
 size = Vector2i(200, 200)
 render_target_update_mode = 4
-script = ExtResource("4_1k01j")
+script = ExtResource("4_u2c82")
 camera_node = NodePath("../../../Camera2D")
 player_node = NodePath("../../../CharacterBody2D")
 
