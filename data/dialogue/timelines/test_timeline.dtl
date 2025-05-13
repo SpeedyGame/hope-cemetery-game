@@ -1,0 +1,10 @@
+[style]
+Awwwwwesome!
+This is a cool guy!
+- Stop!
+	No!
+	set {Test Variables.Test} = 1.0
+- What?
+	What what?
+	set {Test Variables.Test} = 1.0
+[save slot="Cool"]
