@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cv771p0bamqv6"]
+
+[ext_resource type="PackedScene" uid="uid://dds2ann75824i" path="res://scenes/npcs/Roommate.tscn" id="1_o5qli"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Roommate" parent="." instance=ExtResource("1_o5qli")]
+position = Vector2(81, 48)
