@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bq0frcp06bnk1" path="res://art/sprites/PlayerWalk.png" id="2_8ra5a"]
 [ext_resource type="Script" uid="uid://4f8li4cg1hg5" path="res://scripts/mini_map_ui.gd" id="3_bq26l"]
 [ext_resource type="Script" uid="uid://ecuftyno8rkq" path="res://scripts/sub_viewport.gd" id="4_u2c82"]
-[ext_resource type="PackedScene" uid="uid://ckeabtmbl0nnj" path="res://scenes/hopeCemetery.tscn" id="5_8ra5a"]
+[ext_resource type="PackedScene" uid="uid://ckeabtmbl0nnj" path="res://scenes/environments/hopeCemetery.tscn" id="5_8ra5a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_le112"]
 radius = 3.0
