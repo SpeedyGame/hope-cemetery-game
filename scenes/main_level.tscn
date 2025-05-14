@@ -1,9 +1,13 @@
-[gd_scene load_steps=20 format=3 uid="uid://oh2basiek65h"]
+[gd_scene load_steps=22 format=3 uid="uid://oh2basiek65h"]
 
-[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_qmak7"]
+[ext_resource type="Texture2D" uid="uid://bkex41xayommr" path="res://tests/icon.svg" id="1_8ra5a"]
+[ext_resource type="Script" uid="uid://dcdk4ehpd3154" path="res://scripts/player/player.gd" id="1_qmak7"]
 [ext_resource type="Texture2D" uid="uid://bq0frcp06bnk1" path="res://art/sprites/PlayerWalk.png" id="2_8ra5a"]
-[ext_resource type="Script" path="res://scripts/mini_map_ui.gd" id="3_bq26l"]
-[ext_resource type="Script" path="res://scripts/sub_viewport.gd" id="4_u2c82"]
+[ext_resource type="Script" uid="uid://4f8li4cg1hg5" path="res://scripts/mini_map_ui.gd" id="3_bq26l"]
+[ext_resource type="Script" uid="uid://ecuftyno8rkq" path="res://scripts/sub_viewport.gd" id="4_u2c82"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bq26l"]
+size = Vector2(100.952, 5.11995)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_le112"]
 radius = 3.0
@@ -139,7 +143,19 @@ states/Walk/position = Vector2(297, 39)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_lxs3h")]
 
 [node name="Game Level" type="Node2D"]
-position = Vector2(2, 0)
+
+[node name="npc_vision" type="Area2D" parent="."]
+scale = Vector2(1.129, 1.27988)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc_vision"]
+position = Vector2(136.846, -124.231)
+scale = Vector2(1.06163, -19.8385)
+shape = SubResource("RectangleShape2D_bq26l")
+
+[node name="Icon" type="Sprite2D" parent="npc_vision"]
+position = Vector2(134.632, -125.012)
+scale = Vector2(0.48616, 0.46948)
+texture = ExtResource("1_8ra5a")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_qmak7")
@@ -190,3 +206,5 @@ player_node = NodePath("../../../CharacterBody2D")
 
 [node name="Camera2D" type="Camera2D" parent="MiniMapUI/SubViewportContainer/SubViewport"]
 zoom = Vector2(0.1, 0.1)
+
+[connection signal="area_entered" from="npc_vision" to="CharacterBody2D" method="_on_npc_vision_area_entered"]

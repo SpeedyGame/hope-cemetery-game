@@ -17,11 +17,8 @@ config/icon="uid://q053v1v4d1vk"
 
 [autoload]
 
-GlobQuest="*res://scripts/globals/glob_quest.gd"
-
-[autoload]
-
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+GlobQuest="*res://scripts/globals/glob_quest.gd"
 
 [dialogic]
 

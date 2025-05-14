@@ -38,3 +38,8 @@ func pick_new_state():
 		stateMachine.travel("Walk")
 	else:
 		stateMachine.travel("Idle")
+
+
+func _on_npc_vision_area_entered(area):
+	print("hello")
+	
