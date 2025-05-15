@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://dnsn84ulbrw0y"]
 
-[ext_resource type="Script" path="res://scenes/ui/quest_visibility.gd" id="1_rwxds"]
+[ext_resource type="Script" uid="uid://c6k6xykkr1wvj" path="res://scripts/ui/quest_visibility.gd" id="1_rwxds"]
 [ext_resource type="Texture2D" uid="uid://b6gw85n7nla1i" path="res://scenes/ui/standing_menu_assets/edited_journal_pages.jpeg" id="2_uo60h"]
-[ext_resource type="Script" path="res://scenes/ui/scroll_visibility.gd" id="3_uo60h"]
+[ext_resource type="Script" uid="uid://ciacq7puujx2" path="res://scripts/ui/scroll_visibility.gd" id="3_uo60h"]
 [ext_resource type="Texture2D" uid="uid://q053v1v4d1vk" path="res://art/icon.svg" id="4_25tqd"]
-[ext_resource type="Script" path="res://scenes/ui/people_gui.gd" id="4_fko3c"]
+[ext_resource type="Script" uid="uid://b7e6bx3xmph36" path="res://scripts/ui/people_gui.gd" id="4_fko3c"]
 
 [node name="journal_gui" type="CanvasLayer"]
 
@@ -36,7 +36,7 @@ offset_right = 444.0
 offset_bottom = 462.0
 theme_override_constants/separation = 40
 
-[node name="quest_button" type="Button" parent="Control/Panel/VBoxContainer"]
+[node name="quest_journal_button" type="Button" parent="Control/Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Quests"
@@ -52,6 +52,7 @@ theme_override_font_sizes/font_size = 35
 text = "Credits"
 
 [node name="quest_gui" type="CanvasLayer" parent="Control"]
+layer = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="Control/quest_gui"]
 offset_left = 602.0
@@ -65,7 +66,7 @@ layout_mode = 2
 
 [node name="questLog" type="Label" parent="Control/quest_gui/PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "Quest Log"
+text = "   Quest Log"
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -131,7 +132,7 @@ text = "No Active Side Quests"
 
 [node name="compQuest" type="Label" parent="Control/quest_gui/PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "Completed Quests"
+text = "   Completed Quests"
 
 [node name="MarginContainer5" type="MarginContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -196,6 +197,7 @@ layout_mode = 2
 text = "No Completed Side Quests"
 
 [node name="people_gui" type="CanvasLayer" parent="Control"]
+layer = 2
 visible = false
 script = ExtResource("4_fko3c")
 
@@ -241,7 +243,7 @@ visible_ratio = 4.0
 [node name="close" type="Button" parent="Control/people_gui/PanelContainer/VBoxContainer/MenuButton/popup_person1/VBoxContainer"]
 layout_mode = 2
 
-[connection signal="pressed" from="Control/Panel/VBoxContainer/quest_button" to="Control" method="_on_quest_button_pressed"]
+[connection signal="pressed" from="Control/Panel/VBoxContainer/quest_journal_button" to="Control" method="_on_quest_journal_button_pressed"]
 [connection signal="pressed" from="Control/Panel/VBoxContainer/people_button" to="Control" method="_on_people_button_pressed"]
 [connection signal="toggled" from="Control/people_gui/PanelContainer/VBoxContainer/MenuButton" to="Control/people_gui" method="_on_menu_button_toggled"]
 [connection signal="pressed" from="Control/people_gui/PanelContainer/VBoxContainer/MenuButton/popup_person1/VBoxContainer/close" to="Control/people_gui" method="_on_close_pressed"]

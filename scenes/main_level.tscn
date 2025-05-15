@@ -1,9 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://oh2basiek65h"]
+[gd_scene load_steps=21 format=3 uid="uid://oh2basiek65h"]
 
 [ext_resource type="Texture2D" uid="uid://bkex41xayommr" path="res://tests/icon.svg" id="1_8ra5a"]
 [ext_resource type="Script" uid="uid://dcdk4ehpd3154" path="res://scripts/player/player.gd" id="1_qmak7"]
 [ext_resource type="Texture2D" uid="uid://bq0frcp06bnk1" path="res://art/sprites/PlayerWalk.png" id="2_8ra5a"]
-[ext_resource type="Script" uid="uid://4f8li4cg1hg5" path="res://scripts/mini_map_ui.gd" id="3_bq26l"]
 [ext_resource type="Script" uid="uid://ecuftyno8rkq" path="res://scripts/sub_viewport.gd" id="4_u2c82"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bq26l"]
@@ -183,10 +182,7 @@ parameters/Walk/blend_position = Vector2(0, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="MiniMapUI" type="CanvasLayer" parent="." node_paths=PackedStringArray("player", "sprite")]
-script = ExtResource("3_bq26l")
-player = NodePath("../CharacterBody2D")
-sprite = NodePath("../CharacterBody2D/Sprite2D")
+[node name="MiniMapUI" type="CanvasLayer" parent="."]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="MiniMapUI"]
 offset_left = 120.0
