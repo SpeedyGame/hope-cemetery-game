@@ -1,192 +1,95 @@
-[gd_scene load_steps=20 format=3 uid="uid://oh2basiek65h"]
+[gd_scene load_steps=7 format=4 uid="uid://oh2basiek65h"]
 
-[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_qmak7"]
-[ext_resource type="Texture2D" uid="uid://bq0frcp06bnk1" path="res://art/sprites/PlayerWalk.png" id="2_8ra5a"]
-[ext_resource type="Script" path="res://scripts/mini_map_ui.gd" id="3_bq26l"]
-[ext_resource type="Script" path="res://scripts/sub_viewport.gd" id="4_u2c82"]
+[ext_resource type="PackedScene" uid="uid://cb6q4s8g4n1qm" path="res://scenes/player/player_cat.tscn" id="1_6we3w"]
+[ext_resource type="PackedScene" uid="uid://b237f4qix8ncg" path="res://scenes/npcs/cow.tscn" id="2_qmak7"]
+[ext_resource type="PackedScene" uid="uid://dhnijtw7hrb0t" path="res://scenes/ui/mini_map.tscn" id="3_8ra5a"]
+[ext_resource type="Texture2D" uid="uid://1tt7sqk11qgu" path="res://scenes/npcs/icon.svg" id="4_qmak7"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_le112"]
-radius = 3.0
-height = 28.0
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ra5a"]
+texture = ExtResource("4_qmak7")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
 
-[sub_resource type="Animation" id="Animation_lxs3h"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_ijp6w"]
-resource_name = "idle"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [7, 8]
-}
-
-[sub_resource type="Animation" id="Animation_gtcwm"]
-resource_name = "walk_down"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [14, 15, 16, 17]
-}
-
-[sub_resource type="Animation" id="Animation_upmnq"]
-resource_name = "walk_right"
-length = 1.2
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
-}
-
-[sub_resource type="Animation" id="Animation_kgf47"]
-resource_name = "walk_up"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [9, 10, 11, 12]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_olfht"]
-_data = {
-&"RESET": SubResource("Animation_lxs3h"),
-&"idle": SubResource("Animation_ijp6w"),
-&"walk_down": SubResource("Animation_gtcwm"),
-&"walk_right": SubResource("Animation_upmnq"),
-&"walk_up": SubResource("Animation_kgf47")
-}
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_le112"]
-animation = &"idle"
-
-[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_upmnq"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_le112")
-blend_point_0/pos = 0.0
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_g24ij"]
-animation = &"walk_right"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4w6u2"]
-animation = &"walk_down"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_860aa"]
-animation = &"walk_up"
-
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_fdajn"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_g24ij")
-blend_point_0/pos = Vector2(1, 0)
-blend_point_1/node = SubResource("AnimationNodeAnimation_4w6u2")
-blend_point_1/pos = Vector2(0, -1.1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_860aa")
-blend_point_2/pos = Vector2(0, 1.1)
-min_space = Vector2(-1, -1.1)
-max_space = Vector2(1, 1.1)
-blend_mode = 1
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lxs3h"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_cqkjt"]
-states/Idle/node = SubResource("AnimationNodeBlendSpace1D_upmnq")
-states/Idle/position = Vector2(321, 116)
-states/Walk/node = SubResource("AnimationNodeBlendSpace2D_fdajn")
-states/Walk/position = Vector2(297, 39)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_lxs3h")]
+[sub_resource type="TileSet" id="TileSet_bq26l"]
+sources/0 = SubResource("TileSetAtlasSource_8ra5a")
 
 [node name="Game Level" type="Node2D"]
 position = Vector2(2, 0)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("1_qmak7")
+[node name="PlayerCat" parent="." instance=ExtResource("1_6we3w")]
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(35, 26)
-texture = ExtResource("2_8ra5a")
-hframes = 9
-vframes = 2
+[node name="Camera2D" type="Camera2D" parent="PlayerCat"]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(35, 26)
-shape = SubResource("CapsuleShape2D_le112")
+[node name="Cow" parent="." instance=ExtResource("2_qmak7")]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
-libraries = {
-&"": SubResource("AnimationLibrary_olfht")
-}
+[node name="MiniMap" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_8ra5a")]
+player = NodePath("../PlayerCat")
 
-[node name="AnimationTree" type="AnimationTree" parent="CharacterBody2D"]
-tree_root = SubResource("AnimationNodeStateMachine_cqkjt")
-anim_player = NodePath("../AnimationPlayer")
-parameters/Idle/blend_position = -0.00149256
-parameters/Walk/blend_position = Vector2(0, 0)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="MiniMapUI" type="CanvasLayer" parent="." node_paths=PackedStringArray("player", "sprite")]
-script = ExtResource("3_bq26l")
-player = NodePath("../CharacterBody2D")
-sprite = NodePath("../CharacterBody2D/Sprite2D")
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="MiniMapUI"]
-offset_left = 120.0
-offset_top = 39.0
-offset_right = 320.0
-offset_bottom = 239.0
-
-[node name="SubViewport" type="SubViewport" parent="MiniMapUI/SubViewportContainer" node_paths=PackedStringArray("camera_node", "player_node")]
-handle_input_locally = false
-size = Vector2i(200, 200)
-render_target_update_mode = 4
-script = ExtResource("4_u2c82")
-camera_node = NodePath("../../../Camera2D")
-player_node = NodePath("../../../CharacterBody2D")
-
-[node name="Sprite2D" type="Sprite2D" parent="MiniMapUI/SubViewportContainer/SubViewport"]
-
-[node name="Camera2D" type="Camera2D" parent="MiniMapUI/SubViewportContainer/SubViewport"]
-zoom = Vector2(0.1, 0.1)
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = -3
+tile_map_data = PackedByteArray("AAD4//z/AAAAAAAAAAD4//3/AAAAAAEAAAD4//7/AAAAAAIAAAD4////AAAAAAMAAAD4/wAAAAAAAAQAAAD5//z/AAABAAAAAAD5//3/AAABAAEAAAD5//7/AAABAAIAAAD5////AAABAAMAAAD5/wAAAAABAAQAAAD6//z/AAACAAAAAAD6//3/AAACAAEAAAD6//7/AAACAAIAAAD6////AAACAAMAAAD6/wAAAAACAAQAAAD7//z/AAADAAAAAAD7//3/AAADAAEAAAD7//7/AAADAAIAAAD7////AAADAAMAAAD7/wAAAAADAAQAAAD8//z/AAAAAAAAAAD8//3/AAAAAAEAAAD8//7/AAAAAAIAAAD8////AAAAAAMAAAD8/wAAAAAAAAQAAAD9//z/AAABAAAAAAD9//3/AAABAAEAAAD9//7/AAABAAIAAAD9////AAABAAMAAAD9/wAAAAABAAQAAAD+//z/AAACAAAAAAD+//3/AAACAAEAAAD+//7/AAACAAIAAAD+////AAACAAMAAAD+/wAAAAACAAQAAAD///z/AAADAAAAAAD///3/AAADAAEAAAD///7/AAADAAIAAAD/////AAADAAMAAAD//wAAAAADAAQAAAAAAPz/AAAAAAAAAAAAAP3/AAAAAAEAAAAAAP7/AAAAAAIAAAAAAP//AAAAAAMAAAAAAAAAAAAAAAQAAAABAPz/AAABAAAAAAABAP3/AAABAAEAAAABAP7/AAABAAIAAAABAP//AAABAAMAAAABAAAAAAABAAQAAAACAPz/AAACAAAAAAACAP3/AAACAAEAAAACAP7/AAACAAIAAAACAP//AAACAAMAAAACAAAAAAACAAQAAAADAPz/AAADAAAAAAADAP3/AAADAAEAAAADAP7/AAADAAIAAAADAP//AAADAAMAAAADAAAAAAADAAQAAAAEAPz/AAAAAAAAAAAEAP3/AAAAAAEAAAAEAP7/AAAAAAIAAAAEAP//AAAAAAMAAAAEAAAAAAAAAAQAAAAFAPz/AAABAAAAAAAFAP3/AAABAAEAAAAFAP7/AAABAAIAAAAFAP//AAABAAMAAAAFAAAAAAABAAQAAAAGAPz/AAACAAAAAAAGAP3/AAACAAEAAAAGAP7/AAACAAIAAAAGAP//AAACAAMAAAAGAAAAAAACAAQAAAAHAPz/AAADAAAAAAAHAP3/AAADAAEAAAAHAP7/AAADAAIAAAAHAP//AAADAAMAAAAHAAAAAAADAAQAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAEAAAAEAAMAAAAAAAIAAAAEAAQAAAAAAAMAAAAEAAUAAAAAAAQAAAAFAAEAAAABAAAAAAAFAAIAAAABAAEAAAAFAAMAAAABAAIAAAAFAAQAAAABAAMAAAAFAAUAAAABAAQAAAAGAAEAAAACAAAAAAAGAAIAAAACAAEAAAAGAAMAAAACAAIAAAAGAAQAAAACAAMAAAAGAAUAAAACAAQAAAAHAAEAAAADAAAAAAAHAAIAAAADAAEAAAAHAAMAAAADAAIAAAAHAAQAAAADAAMAAAAHAAUAAAADAAQAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAEAAAAAAAMAAAAAAAIAAAAAAAQAAAAAAAMAAAAAAAUAAAAAAAQAAAABAAEAAAABAAAAAAABAAIAAAABAAEAAAABAAMAAAABAAIAAAABAAQAAAABAAMAAAABAAUAAAABAAQAAAACAAEAAAACAAAAAAACAAIAAAACAAEAAAACAAMAAAACAAIAAAACAAQAAAACAAMAAAACAAUAAAACAAQAAAADAAEAAAADAAAAAAADAAIAAAADAAEAAAADAAMAAAADAAIAAAADAAQAAAADAAMAAAADAAUAAAADAAQAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAEAAAD8/wMAAAAAAAIAAAD8/wQAAAAAAAMAAAD8/wUAAAAAAAQAAAD9/wEAAAABAAAAAAD9/wIAAAABAAEAAAD9/wMAAAABAAIAAAD9/wQAAAABAAMAAAD9/wUAAAABAAQAAAD+/wEAAAACAAAAAAD+/wIAAAACAAEAAAD+/wMAAAACAAIAAAD+/wQAAAACAAMAAAD+/wUAAAACAAQAAAD//wEAAAADAAAAAAD//wIAAAADAAEAAAD//wMAAAADAAIAAAD//wQAAAADAAMAAAD//wUAAAADAAQAAAD4/wEAAAAAAAAAAAD4/wIAAAAAAAEAAAD4/wMAAAAAAAIAAAD4/wQAAAAAAAMAAAD4/wUAAAAAAAQAAAD5/wEAAAABAAAAAAD5/wIAAAABAAEAAAD5/wMAAAABAAIAAAD5/wQAAAABAAMAAAD5/wUAAAABAAQAAAD6/wEAAAACAAAAAAD6/wIAAAACAAEAAAD6/wMAAAACAAIAAAD6/wQAAAACAAMAAAD6/wUAAAACAAQAAAD7/wEAAAADAAAAAAD7/wIAAAADAAEAAAD7/wMAAAADAAIAAAD7/wQAAAADAAMAAAD7/wUAAAADAAQAAAAPAAEAAAAEAAIAAAAPAAIAAAAEAAIAAAAPAAMAAAAEAAIAAAAPAAQAAAAEAAIAAAAPAAUAAAAEAAIAAAAQAAMAAAAEAAIAAAARAAMAAAAEAAIAAAARAAIAAAAEAAIAAAARAAEAAAAEAAIAAAARAAQAAAAEAAIAAAARAAUAAAAEAAIAAAATAAMAAAAEAAIAAAATAAQAAAAEAAIAAAATAAUAAAAEAAIAAAATAAEAAAAEAAIAAAA=")
+tile_set = SubResource("TileSet_bq26l")

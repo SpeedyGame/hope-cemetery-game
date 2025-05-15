@@ -10,6 +10,7 @@ extends CharacterBody2D
 func _ready():
 	update_animation_parameters(startDir)
 
+
 func _physics_process(_delta):
 	var input_direction = Vector2(
 		Input.get_action_strength("right") - Input.get_action_strength("left"),
