@@ -1,22 +1,23 @@
 extends Control
 @onready var pause_canvas = $CanvasLayer
+@onready var blur = $ColorRect
 func _ready():
 	# Start with pause menu hidden
 	pause_canvas.visible = false
+	blur.visible = false
 
 func turnbutton():
+	blur.visible = !blur.visible
 	if pause_canvas.visible == false:
 		pause_canvas.visible = true
 	else:
 		pause_canvas.visible = false
 
 func pause():
-	get_tree().paused = true
-	self.visible = true
+	turnbutton()
 
 func resume():
-	get_tree().paused = false
-	pause_canvas.visible = false
+	turnbutton()
 
 # === BUTTON SIGNALS ===
 

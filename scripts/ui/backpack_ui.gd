@@ -3,7 +3,7 @@ extends CanvasLayer
 @onready var journal = $journal_gui
 @onready var inventory = $Inventory
 @onready var backpack_items = $backpack_buttons
-@onready var pause = $"../PauseMenu"
+@onready var pause = $PauseMenu
 @onready var pause_layer = pause.get_node("CanvasLayer")
 @onready var journal_control = journal.get_node("Control")
 @onready var inventory_control = inventory.get_node("Control")
