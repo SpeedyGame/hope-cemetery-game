@@ -50,7 +50,7 @@ position = Vector2(600, 250)
 scale = Vector2(0.25, 0.251)
 
 [node name="backpackUI" parent="." instance=ExtResource("5_tbgi4")]
-layer = 2
+layer = 5
 
 [connection signal="body_entered" from="CanvasLayer3/quest_vision_sample" to="CanvasLayer2/Player" method="_on_quest_vision_sample_body_entered"]
 [connection signal="body_exited" from="CanvasLayer3/quest_vision_sample" to="CanvasLayer2/Player" method="_on_quest_vision_sample_body_exited"]

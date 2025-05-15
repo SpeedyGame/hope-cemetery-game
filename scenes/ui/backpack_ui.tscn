@@ -15,14 +15,6 @@
 layer = 3
 script = ExtResource("1_sy68c")
 
-[node name="PauseMenu" parent="." instance=ExtResource("10_qt74l")]
-offset_left = 46.0
-offset_top = 4.0
-offset_right = 135.0
-offset_bottom = 4.0
-
-[node name="journal_gui" parent="." instance=ExtResource("7_r83im")]
-
 [node name="backpack" type="TextureButton" parent="."]
 offset_left = 1182.0
 offset_top = 593.0
@@ -66,14 +58,22 @@ icon = ExtResource("5_jakuk")
 
 [node name="quest_button" type="Button" parent="backpack_buttons/Control"]
 layout_mode = 0
-offset_left = 1152.0
-offset_top = 517.0
-offset_right = 1203.0
-offset_bottom = 581.0
+offset_left = 1132.0
+offset_top = 521.0
+offset_right = 1183.0
+offset_bottom = 585.0
 icon = ExtResource("6_ny1vg")
 
 [node name="Inventory" parent="." instance=ExtResource("9_n2kom")]
 position = Vector2(-80, -37)
+
+[node name="journal_gui" parent="." instance=ExtResource("7_r83im")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("10_qt74l")]
+offset_left = 55.0
+offset_top = 1.0
+offset_right = -4.0
+mouse_filter = 2
 
 [connection signal="pressed" from="backpack" to="." method="_on_backpack_pressed"]
 [connection signal="pressed" from="backpack_buttons/Control/inventory_button" to="." method="_on_inventory_button_pressed"]

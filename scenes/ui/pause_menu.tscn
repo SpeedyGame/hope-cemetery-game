@@ -35,6 +35,7 @@ offset_right = 46.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -45,7 +46,7 @@ offset_bottom = 153.0
 texture_normal = ExtResource("4_p81d2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 5
+layer = 6
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -114,7 +115,7 @@ text = "Go back to cemetery"
 [connection signal="pressed" from="CanvasLayer/Control/clickoff/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/clickoff/VBoxContainer/Go to main menu" to="." method="_on_go_to_main_menu_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/clickoff/VBoxContainer/Save" to="." method="_on_save_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/clickoff/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/clickoff/VBoxContainer/Settings" to="." method="_on_sound_control_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/clickoff/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/clickoff/VBoxContainer/Quest menu" to="." method="_on_quest_menu_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/clickoff/VBoxContainer/Go back to cemetery" to="." method="_on_go_back_to_cemetery_pressed"]

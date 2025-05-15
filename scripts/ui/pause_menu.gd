@@ -1,17 +1,22 @@
 extends Control
 @onready var pause_canvas = $CanvasLayer
 @onready var blur = $ColorRect
+
 func _ready():
 	# Start with pause menu hidden
 	pause_canvas.visible = false
 	blur.visible = false
+	blur.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
 
 func turnbutton():
 	blur.visible = !blur.visible
 	if pause_canvas.visible == false:
 		pause_canvas.visible = true
+		blur.mouse_filter = Control.MOUSE_FILTER_STOP
 	else:
 		pause_canvas.visible = false
+		blur.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 func pause():
 	turnbutton()
