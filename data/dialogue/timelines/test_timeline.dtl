@@ -1,7 +1,6 @@
 [style]
 Okaaaayyyy....
 [signal arg="AlexMove"]
-[wait time="1.0"]
 Awwwwwesome!
 This is a cool guy!
 [signal arg="AlexMove"]

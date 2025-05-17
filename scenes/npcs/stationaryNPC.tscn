@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://ckfnaej2pkxgh" path="res://scripts/npcs/stationary_npc.gd" id="1_u04us"]
 
-[node name="StationaryNPC" type="Area2D" node_paths=PackedStringArray("animation_player")]
+[node name="StationaryNPC" type="Area2D"]
 script = ExtResource("1_u04us")
-animation_player = NodePath("")
 default_animation = "idle"

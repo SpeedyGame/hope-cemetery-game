@@ -2,6 +2,7 @@ extends Node2D
 
 @export var stationary_npc : Node
 @export var speed : float = 100
+@export var lerp_rate = .01
 @export var idle_animation : String
 @export var walk_up_animation : String
 @export var walk_down_animation : String
@@ -28,6 +29,7 @@ func _ready():
 func _process(delta):
 	if(is_instance_valid(follower)):
 		var old_pos = follower.position
+		stationary_npc.position = lerp(stationary_npc.position, follower.position, 1 - pow(lerp_rate, delta))
 		if(is_progressing):
 			follower.progress += delta*speed
 			if(follower.progress_ratio == 1):
@@ -46,21 +48,13 @@ func set_npc_path(path, set_progress = true):
 	is_progressing = set_progress
 	if(path >= paths.size() || path < 0):
 		return
-	if(stationary_npc in get_children()):
-		remove_child(stationary_npc)
 	current_path = path
-	if(is_instance_valid(follower) and stationary_npc in follower.get_children()):
-		follower.remove_child(stationary_npc)
+	if(is_instance_valid(follower)):
 		follower.queue_free()
 	follower = PathFollow2D.new()
 	follower.rotates = false
 	follower.loop = false
-	follower.add_child(stationary_npc)
 	paths[current_path].add_child(follower)
-	
-func move_npc_to_follower():
-	remove_child(stationary_npc)
-	follower.add_child(stationary_npc)
 	
 func switch_npc_animation():
 	var angle = direction.normalized().angle()
