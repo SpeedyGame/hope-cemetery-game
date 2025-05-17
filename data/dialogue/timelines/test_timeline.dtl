@@ -1,10 +1,14 @@
 [style]
+Okaaaayyyy....
+[signal arg="AlexMove"]
+[wait time="1.0"]
 Awwwwwesome!
 This is a cool guy!
+[signal arg="AlexMove"]
+[wait time="3.0"]
+Ha, bet you didn't see that coming.
 - Stop!
 	No!
-	set {Test Variables.Test} = 1.0
 - What?
 	What what?
-	set {Test Variables.Test} = 1.0
 [save slot="Cool"]

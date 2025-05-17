@@ -9,3 +9,6 @@ func _ready():
 
 func switch_animation(new_animation):
 	animation_player.play(new_animation)
+
+func face_right(dir):
+	animation_player.flip_h = !dir

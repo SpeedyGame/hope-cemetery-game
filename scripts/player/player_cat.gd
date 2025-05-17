@@ -9,6 +9,8 @@ extends CharacterBody2D
 
 func _ready():
 	update_animation_parameters(startDir)
+	# REMOVE LATER. THIS IS FOR TESTING ONLY.
+	Dialogic.start("test_timeline")
 
 
 func _physics_process(_delta):
