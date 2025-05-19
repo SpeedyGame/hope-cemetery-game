@@ -23,6 +23,8 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "Charles": "res://data/dialogue/characters/Charles.dch",
+"Henry Henderson": "res://data/dialogue/characters/Henry Henderson.dch",
+"Old Woman": "res://data/dialogue/characters/Old Woman.dch",
 "Soldier": "res://data/dialogue/characters/Soldier.dch",
 "alex": "res://data/dialogue/characters/alex.dch",
 "internal_dialogue": "res://data/dialogue/characters/internal_dialogue.dch",
@@ -31,6 +33,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "Dream": "res://data/dialogue/timelines/Dream.dtl",
+"Hope Cemetary": "res://data/dialogue/timelines/Hope Cemetary.dtl",
 "dream-sequence": "res://data/dialogue/timelines/dream-sequence.dtl",
 "test_timeline": "res://data/dialogue/timelines/test_timeline.dtl"
 }

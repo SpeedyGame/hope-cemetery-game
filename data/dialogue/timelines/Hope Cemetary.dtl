@@ -1,0 +1,22 @@
+# *Player appoaches Old Woman*
+"Old Woman": Well, hello, child! Glad you got the message. They are waiting for you inside.
+- Who are you?
+	"Old Woman": My name is Mary West. I watch over the cemetery at night to make sure nobody gets in - or out - who isn’t supposed to.
+- How did you know I was coming?
+	"Old Woman": We sent out a message to you while you were sleeping. We could sense your spirit was on the way.
+	player: So you sent me a message through my dream?
+	"Old Woman": I didn’t, but Charles did. He’s just inside.
+- No way I’m going in there! (Leave)
+- (Enter Hope Cemetery)
+player: Brr...
+internal_dialogue: (I'm shivering, but not from the cold. Why though?)
+# *Player wanders arround cemetary*
+# *Player encounters Henry*
+"Henry Henderson": Hey! You’re not dead. What are you doing here?
+- <Lie> I was embalmed.
+	"Henry Henderson": Hey, you look spiffy! I didn’t expect that doggone science poppycock to work out. Come on in!
+- I’m expected.
+	"Henry Henderson": I didn’t hear about no living coming tonight. You run on now, you lily-livered mooch!
+- Get outta my way.
+	"Henry Henderson": Joke's on you, I'm incorporeal! 
+	internal_dialogue: (I need to find something for him to let me in…)
