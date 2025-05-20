@@ -87,13 +87,34 @@ theme_override_constants/margin_left = 100
 [node name="PanelContainer" type="PanelContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2"]
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/ScrollContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
 
-[node name="Control" type="Control" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="letter_quest" type="MenuButton" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Deliver the Love Letter"
+
+[node name="love_letter_desc" type="PopupMenu" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/letter_quest"]
+visible = true
+unfocusable = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/letter_quest/love_letter_desc"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="letter_description" type="Label" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/letter_quest/love_letter_desc/VBoxContainer"]
+layout_mode = 2
+
+[node name="close" type="Button" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/letter_quest/love_letter_desc/VBoxContainer"]
 layout_mode = 2
 
 [node name="noQuests" type="Label" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer"]
@@ -119,6 +140,7 @@ theme_override_constants/margin_left = 100
 layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer4/PanelContainer"]
+custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer4/PanelContainer/ScrollContainer"]
@@ -154,12 +176,10 @@ theme_override_constants/margin_left = 100
 layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer"]
+custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer"]
-layout_mode = 2
-
-[node name="Control" type="Control" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="noQuests" type="Label" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer"]
@@ -185,12 +205,10 @@ theme_override_constants/margin_left = 100
 layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer8/PanelContainer"]
+custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer8/PanelContainer/ScrollContainer"]
-layout_mode = 2
-
-[node name="Control" type="Control" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer8/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="noSideQuests" type="Label" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer8/PanelContainer"]
@@ -246,5 +264,6 @@ layout_mode = 2
 
 [connection signal="pressed" from="Control/Panel/VBoxContainer/quest_journal_button" to="Control" method="_on_quest_journal_button_pressed"]
 [connection signal="pressed" from="Control/Panel/VBoxContainer/people_button" to="Control" method="_on_people_button_pressed"]
+[connection signal="pressed" from="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/letter_quest" to="Control/quest_gui/PanelContainer" method="_on_letter_quest_pressed"]
 [connection signal="toggled" from="Control/people_gui/PanelContainer/VBoxContainer/MenuButton" to="Control/people_gui" method="_on_menu_button_toggled"]
 [connection signal="pressed" from="Control/people_gui/PanelContainer/VBoxContainer/MenuButton/popup_person1/VBoxContainer/close" to="Control/people_gui" method="_on_close_pressed"]

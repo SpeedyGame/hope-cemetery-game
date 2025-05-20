@@ -14,7 +14,8 @@ func _physics_process(delta):
 	get_input()
 	move_and_slide()
 	if player_in_range and Input.is_action_just_pressed("talk"):
-		print("space pressed")
+		glob_quest.love_letter_active = true
+		print(glob_quest.love_letter_active)
 
 
 

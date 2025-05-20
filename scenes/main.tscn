@@ -30,7 +30,6 @@ shape = SubResource("RectangleShape2D_tefeu")
 
 [node name="CanvasLayer4" type="CanvasLayer" parent="."]
 layer = 2
-visible = false
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer4"]
 offset_left = 531.0
