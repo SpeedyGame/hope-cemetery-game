@@ -1,5 +1,4 @@
 extends Node2D
 
 func _ready():
-	#Dialogic.start("room_scene")
-	pass
+	Dialogic.start("room_scene")
