@@ -1,13 +1,6 @@
-[style]
-Okaaaayyyy....
-[signal arg="AlexMove"]
-Awwwwwesome!
-This is a cool guy!
-[signal arg="AlexMove"]
-[wait time="3.0"]
-Ha, bet you didn't see that coming.
-- Stop!
-	No!
-- What?
-	What what?
-[save slot="Cool"]
+alex: Hey, {PlayerDescription.Name}, do you ever wonder if trees can, like, communicate with each other?
+player: Why are you asking me this?
+alex: There are a lot of trees here at Knox...
+alex: There are a lot of rumors too...
+alex: Imagine what would happen if we added trees to the rumor mill! I bet they would have a ton to say!
+player: ...

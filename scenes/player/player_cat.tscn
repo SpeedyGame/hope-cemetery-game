@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cb6q4s8g4n1qm"]
+[gd_scene load_steps=24 format=3 uid="uid://cb6q4s8g4n1qm"]
 
 [ext_resource type="Script" uid="uid://bnu6s3b7e2gl1" path="res://scripts/player/player_cat.gd" id="1_0geaf"]
 [ext_resource type="Texture2D" uid="uid://bq0frcp06bnk1" path="res://art/sprites/PlayerWalk.png" id="2_0geaf"]
@@ -191,6 +191,9 @@ states/Walk/position = Vector2(411.063, 106.093)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_i2qcl")]
 graph_offset = Vector2(105.063, -55.9068)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_esxlc"]
+size = Vector2(10, 26)
+
 [node name="PlayerCat" type="CharacterBody2D"]
 script = ExtResource("1_0geaf")
 
@@ -215,3 +218,12 @@ tree_root = SubResource("AnimationNodeStateMachine_q6eh2")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = 0
 parameters/Walk/blend_position = Vector2(0.992908, -0.021978)
+
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="InteractionCollision" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(5, 3)
+shape = SubResource("RectangleShape2D_esxlc")
+debug_color = Color(0.920586, 5.86233e-05, 0.69434, 0.42)
