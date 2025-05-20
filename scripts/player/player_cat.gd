@@ -9,8 +9,6 @@ extends CharacterBody2D
 
 func _ready():
 	update_animation_parameters(startDir)
-	# REMOVE LATER. THIS IS FOR TESTING ONLY.
-	Dialogic.start("dream-sequence")
 
 
 func _physics_process(_delta):

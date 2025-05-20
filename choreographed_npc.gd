@@ -58,18 +58,19 @@ func set_npc_path(path, set_progress = true):
 	
 func switch_npc_animation():
 	var angle = direction.normalized().angle()
+	var diff = PI/4
 	if(direction == Vector2.ZERO):
 		stationary_npc.switch_animation(idle_animation)
-	elif(is_angle_difference_greater(angle, -PI/2, PI/4)):
+	elif(angle > -3*PI/4 && angle < -PI/4):
 		stationary_npc.switch_animation(walk_up_animation)
-	elif(is_angle_difference_greater(angle, PI/2, PI/4)):
+	elif(angle > PI/4 && angle < 3*PI/4):
 		stationary_npc.switch_animation(walk_down_animation)
-	elif(is_angle_difference_greater(angle, -PI, PI/4)):
-		stationary_npc.switch_animation(walk_right_animation)
-		stationary_npc.face_right(false)
-	else:
+	elif(angle > -PI/4 && angle < PI/4):
 		stationary_npc.switch_animation(walk_right_animation)
 		stationary_npc.face_right(true)
+	elif(angle > 3*PI/4 || angle < -3*PI/4):
+		stationary_npc.switch_animation(walk_right_animation)
+		stationary_npc.face_right(false)
 
 func is_angle_difference_greater(angle1, angle2, diff):
 	return abs(angle1 - angle2) < diff
