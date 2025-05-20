@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 @export var stationary_npc : Node
 @export var speed : float = 100

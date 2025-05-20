@@ -78,9 +78,6 @@ texture = ExtResource("3_2joa2")
 [sub_resource type="TileSet" id="TileSet_bq26l"]
 sources/0 = SubResource("TileSetAtlasSource_8ra5a")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2c82"]
-size = Vector2(14, 27)
-
 [sub_resource type="Curve2D" id="Curve2D_bq26l"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -19, 52, 0, 0, 0, 0, -18, -18, 0, 0, 0, 0, 16, -18, 0, 0, 0, 0, 13, -62, 0, 0, 0, 0, -16, -3, 0, 0, 0, 0, -15, 31, 0, 0, 0, 0, 9, 29, 0, 0, 0, 0, -41, 29, 0, 0, 0, 0, -41, 37)
@@ -99,12 +96,16 @@ _data = {
 }
 point_count = 3
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2c82"]
+size = Vector2(14, 27)
+
 [node name="Room" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(2, 0)
 script = ExtResource("1_r8psk")
 
 [node name="PlayerCat" parent="." instance=ExtResource("1_w1efa")]
+z_as_relative = false
 position = Vector2(-43, 53)
 
 [node name="MiniMap" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_no7j0")]
@@ -116,9 +117,7 @@ tile_map_data = PackedByteArray("AAD8//z/AAABAAAAAAD9//z/AAACAAAAAAAAAPz/AAAFAAA
 tile_set = SubResource("TileSet_bq26l")
 
 [node name="ChoreographedNPC" parent="." node_paths=PackedStringArray("stationary_npc") instance=ExtResource("4_grnmm")]
-y_sort_enabled = true
-position = Vector2(1, 6)
-stationary_npc = NodePath("StationaryNPC")
+stationary_npc = NodePath("../StationaryNPC")
 speed = 70.0
 lerp_rate = 0.0
 idle_animation = "idle"
@@ -127,21 +126,6 @@ walk_down_animation = "walk_forward"
 walk_right_animation = "walk_side"
 is_progressing = false
 dialogic_signals_to_progress_to = Array[String](["AlexMove"])
-
-[node name="StationaryNPC" parent="ChoreographedNPC" node_paths=PackedStringArray("animation_player") instance=ExtResource("5_faceq")]
-position = Vector2(-20, 54)
-animation_player = NodePath("AnimatedSprite2D")
-metadata/_edit_group_ = true
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ChoreographedNPC/StationaryNPC"]
-sprite_frames = ExtResource("6_ir6st")
-animation = &"walk_side"
-frame_progress = 0.567999
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ChoreographedNPC/StationaryNPC"]
-position = Vector2(0, -2.5)
-shape = SubResource("RectangleShape2D_u2c82")
 
 [node name="Path2D" type="Path2D" parent="ChoreographedNPC"]
 curve = SubResource("Curve2D_bq26l")
@@ -156,3 +140,19 @@ curve = SubResource("Curve2D_k5pu3")
 position = Vector2(-1, 11)
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
+
+[node name="StationaryNPC" parent="." node_paths=PackedStringArray("animation_player") instance=ExtResource("5_faceq")]
+z_as_relative = false
+position = Vector2(-21, 56)
+animation_player = NodePath("AnimatedSprite2D")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StationaryNPC"]
+sprite_frames = ExtResource("6_ir6st")
+animation = &"walk_side"
+frame_progress = 0.567999
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StationaryNPC"]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_u2c82")
