@@ -49,7 +49,7 @@ position = Vector2(-123, 67)
 
 [node name="ChoreographedNPC" parent="." node_paths=PackedStringArray("stationary_npc") instance=ExtResource("4_grnmm")]
 stationary_npc = NodePath("../StationaryNPC")
-speed = 70.0
+speed = 50.0
 lerp_rate = 0.0
 idle_animation = "idle"
 walk_up_animation = "walk_back"
