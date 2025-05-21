@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnsn84ulbrw0y"]
+[gd_scene load_steps=7 format=3 uid="uid://dnsn84ulbrw0y"]
 
 [ext_resource type="Script" uid="uid://c6k6xykkr1wvj" path="res://scripts/ui/quest_visibility.gd" id="1_rwxds"]
 [ext_resource type="Texture2D" uid="uid://b6gw85n7nla1i" path="res://scenes/ui/standing_menu_assets/edited_journal_pages.jpeg" id="2_uo60h"]
 [ext_resource type="Script" uid="uid://ciacq7puujx2" path="res://scripts/ui/scroll_visibility.gd" id="3_uo60h"]
 [ext_resource type="Texture2D" uid="uid://q053v1v4d1vk" path="res://art/icon.svg" id="4_25tqd"]
 [ext_resource type="Script" uid="uid://b7e6bx3xmph36" path="res://scripts/ui/people_gui.gd" id="4_fko3c"]
+[ext_resource type="Script" uid="uid://d0os6q5aj8xa3" path="res://scenes/ui/main_act_quest_box.gd" id="4_rampt"]
 
 [node name="journal_gui" type="CanvasLayer"]
 layer = 4
@@ -94,27 +95,64 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer"]
-layout_mode = 2
-
-[node name="letter_quest" type="MenuButton" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="main_act_quest_box" type="VBoxContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer"]
 visible = false
+layout_mode = 2
+script = ExtResource("4_rampt")
+
+[node name="letter_quest" type="MenuButton" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box"]
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Deliver the Love Letter"
 
-[node name="love_letter_desc" type="PopupMenu" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/letter_quest"]
-visible = true
-unfocusable = true
+[node name="love_letter_desc" type="PopupMenu" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/letter_quest"]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/letter_quest/love_letter_desc"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/letter_quest/love_letter_desc"]
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="letter_description" type="Label" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/letter_quest/love_letter_desc/VBoxContainer"]
+[node name="letter_description" type="Label" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/letter_quest/love_letter_desc/VBoxContainer"]
 layout_mode = 2
 
-[node name="close" type="Button" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/letter_quest/love_letter_desc/VBoxContainer"]
+[node name="close_letter" type="Button" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/letter_quest/love_letter_desc/VBoxContainer"]
+layout_mode = 2
+
+[node name="investiage_quest" type="MenuButton" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Investigate Message"
+
+[node name="investigate_pop_up" type="PopupMenu" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/investiage_quest"]
+auto_translate_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/investiage_quest/investigate_pop_up"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="investigate_description" type="Label" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/investiage_quest/investigate_pop_up/VBoxContainer"]
+layout_mode = 2
+text = "Investigate the Message by leaving the room and going to the cemetary."
+
+[node name="close_investigate" type="Button" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/investiage_quest/investigate_pop_up/VBoxContainer"]
+layout_mode = 2
+
+[node name="masoleum" type="MenuButton" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Go to the Masoleum"
+
+[node name="masoleum_pop_up" type="PopupMenu" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/masoleum"]
+auto_translate_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/masoleum/masoleum_pop_up"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="masoleum_description" type="Label" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/masoleum/masoleum_pop_up/VBoxContainer"]
+layout_mode = 2
+text = "Investigate Inside the Masoleum. Follow the old woman's order to go into the cemetary."
+
+[node name="close_masoleum" type="Button" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/masoleum/masoleum_pop_up/VBoxContainer"]
 layout_mode = 2
 
 [node name="noQuests" type="Label" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer"]
@@ -247,7 +285,7 @@ custom_minimum_size = Vector2(600, 60)
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 604.0
-offset_bottom = 76.0
+offset_bottom = 64.0
 
 [node name="description" type="Label" parent="Control/people_gui/PanelContainer/VBoxContainer/MenuButton/popup_person1/VBoxContainer"]
 custom_minimum_size = Vector2(600, 60)
@@ -264,6 +302,11 @@ layout_mode = 2
 
 [connection signal="pressed" from="Control/Panel/VBoxContainer/quest_journal_button" to="Control" method="_on_quest_journal_button_pressed"]
 [connection signal="pressed" from="Control/Panel/VBoxContainer/people_button" to="Control" method="_on_people_button_pressed"]
-[connection signal="pressed" from="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/letter_quest" to="Control/quest_gui/PanelContainer" method="_on_letter_quest_pressed"]
+[connection signal="toggled" from="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/letter_quest" to="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box" method="_on_letter_quest_toggled"]
+[connection signal="pressed" from="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/letter_quest/love_letter_desc/VBoxContainer/close_letter" to="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box" method="_on_close_letter_pressed"]
+[connection signal="toggled" from="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/investiage_quest" to="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box" method="_on_investiage_quest_toggled"]
+[connection signal="pressed" from="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/investiage_quest/investigate_pop_up/VBoxContainer/close_investigate" to="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box" method="_on_close_investigate_pressed"]
+[connection signal="toggled" from="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/masoleum" to="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box" method="_on_masoleum_toggled"]
+[connection signal="pressed" from="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/masoleum/masoleum_pop_up/VBoxContainer/close_masoleum" to="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box" method="_on_close_masoleum_pressed"]
 [connection signal="toggled" from="Control/people_gui/PanelContainer/VBoxContainer/MenuButton" to="Control/people_gui" method="_on_menu_button_toggled"]
 [connection signal="pressed" from="Control/people_gui/PanelContainer/VBoxContainer/MenuButton/popup_person1/VBoxContainer/close" to="Control/people_gui" method="_on_close_pressed"]
