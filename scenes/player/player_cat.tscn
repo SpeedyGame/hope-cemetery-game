@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bq0frcp06bnk1" path="res://art/sprites/PlayerWalk.png" id="2_0geaf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0geaf"]
-radius = 6.0
-height = 32.0
+radius = 3.0
+height = 6.0
 
 [sub_resource type="Animation" id="Animation_6nhys"]
 length = 0.001
@@ -195,17 +195,17 @@ graph_offset = Vector2(105.063, -55.9068)
 size = Vector2(10, 26)
 
 [node name="PlayerCat" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_0geaf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(5, 3)
 texture = ExtResource("2_0geaf")
+offset = Vector2(0, -11)
 hframes = 9
 vframes = 2
 frame = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, 6)
 shape = SubResource("CapsuleShape2D_0geaf")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -224,6 +224,6 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="InteractionCollision" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(5, 3)
+position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_esxlc")
 debug_color = Color(0.920586, 5.86233e-05, 0.69434, 0.42)

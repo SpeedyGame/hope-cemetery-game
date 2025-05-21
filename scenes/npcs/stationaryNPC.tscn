@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ckfnaej2pkxgh" path="res://scripts/npcs/stationary_npc.gd" id="1_u04us"]
 
 [node name="StationaryNPC" type="Area2D"]
+y_sort_enabled = true
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_u04us")

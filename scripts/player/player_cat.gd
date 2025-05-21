@@ -23,6 +23,9 @@ func _physics_process(_delta):
 		
 	pick_new_state()
 	move_and_slide()
+	
+	# This snaps the sprite position into the pixel grid
+	sprite.global_position = global_position.round()
 
 func update_animation_parameters(move_input : Vector2):
 	if(move_input.x < 0):
