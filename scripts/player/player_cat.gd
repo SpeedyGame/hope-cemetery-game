@@ -20,6 +20,8 @@ func _physics_process(_delta):
 	
 	if(Dialogic.current_timeline == null):
 		velocity = input_direction * move_speed
+	else:
+		velocity = Vector2.ZERO
 		
 	pick_new_state()
 	move_and_slide()
