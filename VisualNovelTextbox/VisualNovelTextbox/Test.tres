@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogicStyle" load_steps=20 format=3 uid="uid://mbfsiqfqdf7p"]
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=20 format=3 uid="uid://c0ibiyoei30iy"]
 
 [ext_resource type="Script" uid="uid://dwfs3y72tvaut" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_1sfad"]
 [ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_glqaf"]

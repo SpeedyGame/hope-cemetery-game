@@ -11,8 +11,14 @@ Charles: If only I had…
 Soldier: Stay with me, Charles!
 # *Flash*
 # *On the ground, again*
+[wait time="0.3"]
+[background arg="res://art/beauty_shots/warflashback4.png" fade="0.0"]
 Charles: If only…
 # *Looks at letter*
+[wait time="0.3"]
+[background arg="res://art/beauty_shots/warflashback5.png" fade="0.0"]
 Charles: Given it to her…
 # *Looks back up at the sky*
+[wait time="0.3"]
+[background arg="res://art/beauty_shots/warflashback6.png" fade="0.0"]
 Soldier: Charles!
