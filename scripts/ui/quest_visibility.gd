@@ -26,7 +26,7 @@ func _on_people_button_pressed():
 
 
 func _on_quest_journal_button_pressed():
-	glob_quest.check_quests()
+	glob_quest.update_quests()
 	people_gui.visible = false
 	if quest_gui.visible == true:
 		quest_gui.visible = false
