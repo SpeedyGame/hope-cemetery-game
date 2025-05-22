@@ -2,6 +2,7 @@ extends Area2D
 
 @export var animation_player : Node
 @export var default_animation : String
+## Conversation that starts when the player interacts with this npc deliberately
 @export var timeline : String
 @export_category("Immediate Interaction")
 ## If true, this npc will start a timeline as soon as the player hits the interaction area
