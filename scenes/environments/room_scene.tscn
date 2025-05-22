@@ -211,7 +211,7 @@ region_rect = Rect2(120, 2, 48, 30)
 position = Vector2(-27, 53)
 animation_player = NodePath("Sprite2D")
 interact_immediately = true
-immediate_interaction_area = NodePath("Area2D")
+immediate_interaction_area = NodePath("InteractionArea")
 immediate_timeline = "test_timeline"
 metadata/_edit_group_ = true
 
@@ -226,10 +226,10 @@ position = Vector2(0.999999, 1)
 scale = Vector2(0.195313, 0.195313)
 texture = ExtResource("8_q8nly")
 
-[node name="Area2D" type="Area2D" parent="StationaryNPC2"]
+[node name="InteractionArea" type="Area2D" parent="StationaryNPC2"]
 collision_layer = 0
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StationaryNPC2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StationaryNPC2/InteractionArea"]
 shape = SubResource("CircleShape2D_k8xhb")
 debug_color = Color(0.856153, 0.366551, 0, 0.42)

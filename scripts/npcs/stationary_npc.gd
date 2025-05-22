@@ -6,7 +6,9 @@ extends Area2D
 @export_category("Immediate Interaction")
 ## If true, this npc will start a timeline as soon as the player hits the interaction area
 @export var interact_immediately : bool
+## If the player enters this area, the timeline specified will start
 @export var immediate_interaction_area : Area2D
+## Dialogue timeline to play when player enters area
 @export var immediate_timeline : String
 
 var is_touching_player = false
