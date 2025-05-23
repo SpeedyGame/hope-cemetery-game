@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://oh2basiek65h"]
 
-[ext_resource type="PackedScene" path="res://scenes/player/player_cat.tscn" id="1_6we3w"]
-[ext_resource type="PackedScene" path="res://scenes/ui/mini_map.tscn" id="3_8ra5a"]
+[ext_resource type="PackedScene" uid="uid://cb6q4s8g4n1qm" path="res://scenes/player/player_cat.tscn" id="1_6we3w"]
+[ext_resource type="PackedScene" uid="uid://dhnijtw7hrb0t" path="res://scenes/ui/mini_map.tscn" id="3_8ra5a"]
 [ext_resource type="Texture2D" uid="uid://duk48gsoior4q" path="res://art/sprites/oldnunfordebate.png" id="3_qmak7"]
-[ext_resource type="PackedScene" path="res://scenes/npcs/stationaryNPC.tscn" id="5_k5pu3"]
+[ext_resource type="PackedScene" uid="uid://bus0mj0a28s62" path="res://scenes/npcs/stationaryNPC.tscn" id="5_k5pu3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qmak7"]
 size = Vector2(7, 12)
@@ -30,6 +30,6 @@ texture = ExtResource("3_qmak7")
 
 [node name="StationaryNPC" parent="OldNun" instance=ExtResource("5_k5pu3")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OldNun"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OldNun/StationaryNPC"]
 position = Vector2(-3, 8)
 shape = SubResource("RectangleShape2D_qmak7")
