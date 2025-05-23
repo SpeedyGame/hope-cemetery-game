@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://oh2basiek65h"]
+[gd_scene load_steps=21 format=3 uid="uid://oh2basiek65h"]
 
-[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_qmak7"]
+[ext_resource type="Script" uid="uid://dcdk4ehpd3154" path="res://scripts/player/player.gd" id="1_qmak7"]
 [ext_resource type="Texture2D" uid="uid://bq0frcp06bnk1" path="res://art/sprites/PlayerWalk.png" id="2_8ra5a"]
 [ext_resource type="Script" path="res://scripts/mini_map_ui.gd" id="3_bq26l"]
 [ext_resource type="Script" path="res://scripts/sub_viewport.gd" id="4_u2c82"]
+[ext_resource type="Script" uid="uid://4m2aivpuegm2" path="res://scenes/minimapicon.gd" id="5_8ra5a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_le112"]
 radius = 3.0
@@ -190,3 +191,17 @@ player_node = NodePath("../../../CharacterBody2D")
 
 [node name="Camera2D" type="Camera2D" parent="MiniMapUI/SubViewportContainer/SubViewport"]
 zoom = Vector2(0.1, 0.1)
+
+[node name="MiniMapIcon" type="Panel" parent="MiniMapUI" node_paths=PackedStringArray("target")]
+z_index = -1
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_8ra5a")
+target = NodePath("../../CharacterBody2D")
+
+[node name="ColorRect" type="ColorRect" parent="MiniMapUI/MiniMapIcon"]
+z_index = 1
+offset_left = 2.0
+offset_right = 15.0
+offset_bottom = 13.0
+color = Color(0.808953, 0.000555814, 0.817476, 1)
