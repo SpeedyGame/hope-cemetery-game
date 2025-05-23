@@ -5,6 +5,7 @@ Charles: Lorraine…
 [background arg="res://art/beauty_shots/warflashback2.png" fade="0.6" transition="Simple Fade"]
 # *Looks at leg*
 Charles: If only I had…
+set {NPC.SamuelDisplayName} = "Soldier"
 # Soldier: *Tries to help Charles get up*
 [wait time="0.3"]
 [background arg="res://art/beauty_shots/warflashback3.png" fade="0.6"]
