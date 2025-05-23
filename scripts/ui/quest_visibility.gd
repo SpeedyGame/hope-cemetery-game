@@ -10,11 +10,14 @@ func _ready():
 	
 
 func hide_canvas():
+	print("here")
+	print(get_parent(), get_parent().visible)
 	if not get_parent().visible:
 		recurse_turn_off(self)
 
 func recurse_turn_off(node: Node):
 	if node is CanvasLayer:
+		print(node, node.visible)
 		node.visible = false
 	for child in node.get_children():
 		recurse_turn_off(child)
