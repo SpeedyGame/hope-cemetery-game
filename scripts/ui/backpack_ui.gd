@@ -9,7 +9,7 @@ extends CanvasLayer
 @onready var inventory_control = inventory.get_node("TextureRect")
 @onready var quest = journal_control.get_node("quest_gui")
 @onready var pause_rect = pause.get_node("ColorRect")
-
+@onready var qbutanim = $backpack_buttons/Control/quest_button/quest_button_animation
 
 
 
@@ -19,6 +19,7 @@ func _ready():
 	inventory.visible = false
 	pause_layer.visible = false
 	quest.visible = false 
+	
 
 func _process(delta):
 	if pause_layer.visible == true:
@@ -44,24 +45,34 @@ func _on_backpack_pressed():
 
 
 func _on_quest_button_pressed():
-	if pause_layer.visible == false:
-		if journal.visible == false:
-			journal.visible = true
-			quest.visible = true
-			
-		else:
-			journal.visible = false
-			journal_control.hide_canvas()
+	if journal.visible == false:
+		inventory.visible = false
+		play_book_animation()
+		journal.visible = true
+		quest.visible = true
+	else:
+		reverse_book_animation()
+		journal.visible = false
+		journal_control.hide_canvas()
+	
 
 
 func _on_inventory_button_pressed():
-		if inventory.visible == true:
-			inventory.visible = false
-		if inventory.visible == false:
-			journal_control.hide_canvas()
-			inventory.visible = true
-			journal.visible = false
-		#if backpack_items.visible == false:
-			#backpack_items.visible = true
-		#else:
-			#backpack_items.visible = false
+	quest.visible = false
+	journal_control.hide_canvas()
+	journal.visible = false
+	if journal.visible:
+		reverse_book_animation()
+	
+	if inventory.visible == true:
+		inventory.visible = false
+	else:
+		inventory.visible = true
+
+func play_book_animation():
+	qbutanim.play("open")
+	qbutanim.play("finishopen")
+
+func reverse_book_animation():
+	qbutanim.play("close")
+	qbutanim.play("finishclose")
