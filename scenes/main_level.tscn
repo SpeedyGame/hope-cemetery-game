@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bq0frcp06bnk1" path="res://art/sprites/PlayerWalk.png" id="2_8ra5a"]
 [ext_resource type="Script" uid="uid://4f8li4cg1hg5" path="res://scripts/mini_map_ui.gd" id="3_bq26l"]
 [ext_resource type="Script" uid="uid://ecuftyno8rkq" path="res://scripts/sub_viewport.gd" id="4_u2c82"]
-[ext_resource type="PackedScene" uid="uid://ckeabtmbl0nnj" path="res://scenes/environments/hopeCemetery.tscn" id="5_8ra5a"]
+[ext_resource type="PackedScene" uid="uid://pc6ujaccnolj" path="res://scenes/TestTileMap.tscn" id="5_8ra5a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_le112"]
 radius = 3.0
@@ -142,8 +142,7 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 [node name="Game Level" type="Node2D"]
 position = Vector2(2, 0)
 
-[node name="hopeCemetery" parent="." instance=ExtResource("5_8ra5a")]
-position = Vector2(89, -292)
+[node name="TestTileMap" parent="." instance=ExtResource("5_8ra5a")]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_qmak7")
@@ -170,25 +169,29 @@ parameters/Idle/blend_position = -0.00149256
 parameters/Walk/blend_position = Vector2(0, 0)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(1, 0)
+zoom = Vector2(2, 2)
 
-[node name="MiniMapUI" type="CanvasLayer" parent="CharacterBody2D" node_paths=PackedStringArray("player", "sprite")]
+[node name="MiniMapUI" type="CanvasLayer" parent="." node_paths=PackedStringArray("player", "sprite")]
 script = ExtResource("3_bq26l")
-player = NodePath("..")
-sprite = NodePath("../Sprite2D")
+player = NodePath("../CharacterBody2D")
+sprite = NodePath("../CharacterBody2D/Sprite2D")
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="CharacterBody2D/MiniMapUI"]
-offset_right = 200.0
-offset_bottom = 200.0
+[node name="SubViewportContainer" type="SubViewportContainer" parent="MiniMapUI"]
+offset_left = 120.0
+offset_top = 39.0
+offset_right = 320.0
+offset_bottom = 239.0
 
-[node name="SubViewport" type="SubViewport" parent="CharacterBody2D/MiniMapUI/SubViewportContainer" node_paths=PackedStringArray("camera_node", "player_node")]
+[node name="SubViewport" type="SubViewport" parent="MiniMapUI/SubViewportContainer" node_paths=PackedStringArray("camera_node", "player_node")]
 handle_input_locally = false
 size = Vector2i(200, 200)
 render_target_update_mode = 4
 script = ExtResource("4_u2c82")
-camera_node = NodePath("../../../Camera2D")
-player_node = NodePath("../../..")
+camera_node = NodePath("../../../CharacterBody2D/Camera2D")
+player_node = NodePath("../../../CharacterBody2D")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/MiniMapUI/SubViewportContainer/SubViewport"]
+[node name="Sprite2D" type="Sprite2D" parent="MiniMapUI/SubViewportContainer/SubViewport"]
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D/MiniMapUI/SubViewportContainer/SubViewport"]
+[node name="Camera2D" type="Camera2D" parent="MiniMapUI/SubViewportContainer/SubViewport"]
 zoom = Vector2(0.1, 0.1)
