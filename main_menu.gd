@@ -4,6 +4,8 @@ extends Control
 @onready var stats = $stats
 @onready var main_menu = $VBoxContainer
 @onready var time_label = $"stats/Control/stats popup/time_label"
+@onready var music = $"main menu music"
+@onready var music_slider = $"settings/Control/settings outline/music slider"
 var playtime_s: float = 0.0
 
 func _ready():
@@ -11,9 +13,13 @@ func _ready():
 	credits.visible = false
 	stats.visible = false
 	main_menu.visible = true
+	var current_linear = db_to_linear(music.volume_db)
+	music_slider.value = current_linear * 100.0
+
+	
 func _on_newgame_button_pressed() -> void:
-	#pass
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	
+	get_tree().change_scene_to_file("res://character_setup.tscn")
 
 #func _on_settings_popup_pressed() -> void:
 	#var settings = load("").instance()
@@ -60,8 +66,15 @@ func _process(delta: float) -> void:
 
 func _on_time_spent_pressed() -> void:
 	var hours = playtime_s / 3600.0
-	var msg = " %.2f hours" % hours
+	var msg = "time spent: %.2f hours" % hours
 	time_label.text = msg
 
 func _on_days_pressed() -> void:
 	pass # Replace with function body.
+
+
+func _on_music_slider_value_changed(value: float) -> void:
+	#value 0-1
+	var linear = clamp(value/0.5, 0.001, 1.0)
+	var decibels = linear_to_db(linear)
+	music.volume_db = decibels

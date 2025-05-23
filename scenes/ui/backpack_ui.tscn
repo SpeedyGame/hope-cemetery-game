@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bp8w2bscq4slm" path="res://scenes/ui/standing_menu_assets/small_porto.jpg" id="5_jakuk"]
 [ext_resource type="Texture2D" uid="uid://b5yws2tiftsrw" path="res://scenes/ui/standing_menu_assets/small_full_journal.jpg" id="6_ny1vg"]
 [ext_resource type="PackedScene" uid="uid://dnsn84ulbrw0y" path="res://scenes/ui/journal_gui.tscn" id="7_r83im"]
-[ext_resource type="PackedScene" uid="uid://ck37kvs6oh6wg" path="res://scenes/ui/inventory.tscn" id="9_n2kom"]
+[ext_resource type="PackedScene" path="res://scenes/ui/inventory.tscn" id="9_n2kom"]
 
 [node name="backpackUI" type="CanvasLayer"]
 script = ExtResource("1_sy68c")
