@@ -2,6 +2,7 @@ extends Control
 @onready var quest_gui = $quest_gui
 @onready var people_gui = $people_gui
 
+signal quest_button_pressed
 
 func _ready():
 	quest_gui.visible = false
@@ -27,6 +28,7 @@ func _on_people_button_pressed():
 
 
 func _on_quest_journal_button_pressed():
+	emit_signal("quest_button_pressed")
 	glob_quest.update_quests()
 	people_gui.visible = false
 	if quest_gui.visible:

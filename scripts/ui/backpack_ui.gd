@@ -19,6 +19,7 @@ func _ready():
 	inventory.visible = false
 	pause_layer.visible = false
 	quest.visible = false 
+	journal_control.connect("quest_button_pressed", Callable(self, "_on_quest_journal_button_triggered"))
 	
 
 func _process(delta):
@@ -32,6 +33,9 @@ func _process(delta):
 		for child in $backpack_buttons/Control.get_children():
 			if child is BaseButton:
 				child.disabled = false
+	
+	if journal_control:
+		pass
 	
 
 func _on_backpack_pressed():
@@ -49,7 +53,6 @@ func _on_quest_button_pressed():
 		inventory.visible = false
 		play_book_animation()
 		journal.visible = true
-		quest.visible = true
 	else:
 		reverse_book_animation()
 		journal.visible = false
@@ -76,3 +79,5 @@ func play_book_animation():
 func reverse_book_animation():
 	qbutanim.play("close")
 	qbutanim.play("finishclose")
+func _on_quest_journal_button_triggered():
+	qbutanim.play("turnright")
