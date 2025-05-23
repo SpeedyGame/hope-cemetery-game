@@ -17,10 +17,17 @@ func _physics_process(_delta):
 		Input.get_action_strength("down") - Input.get_action_strength("up")
 	)
 	update_animation_parameters(input_direction)
+	
+	if(Dialogic.current_timeline == null):
+		velocity = input_direction * move_speed
+	else:
+		velocity = Vector2.ZERO
 		
-	velocity = input_direction * move_speed
 	pick_new_state()
 	move_and_slide()
+	
+	# This snaps the sprite position into the pixel grid
+	sprite.global_position = global_position.round()
 
 func update_animation_parameters(move_input : Vector2):
 	if(move_input.x < 0):

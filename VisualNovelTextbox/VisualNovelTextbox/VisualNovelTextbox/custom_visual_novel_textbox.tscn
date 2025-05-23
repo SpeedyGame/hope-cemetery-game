@@ -124,6 +124,22 @@ tracks/1/keys = {
 "values": [Vector2(-245, 36), Vector2(-204, -55), Vector2(34, 5.99997), Vector2(108, -58), Vector2(-64, -52), Vector2(50, -62), Vector2(38, -28), Vector2(-75, 9.00002), Vector2(-11, -119)]
 }
 
+[sub_resource type="Animation" id="Animation_bj8eb"]
+resource_name = "shake"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.66667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(100, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_g6k55"]
 resource_name = "textbox_fade_up"
 length = 0.7
@@ -228,22 +244,6 @@ tracks/3/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_bj8eb"]
-resource_name = "shake"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.66667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(100, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c14kh"]
 _data = {
 &"RESET": SubResource("Animation_au0a2"),
@@ -320,10 +320,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -11.0
-offset_top = -119.0
-offset_right = -11.0
-offset_bottom = -116.0
+offset_left = -63.0
+offset_top = -36.0
+offset_right = -63.0
+offset_bottom = -33.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
