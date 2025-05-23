@@ -1,0 +1,201 @@
+[gd_scene load_steps=15 format=3 uid="uid://b4j08i851omb2"]
+
+[ext_resource type="Script" uid="uid://cs645mbjrml0" path="res://scripts/managers/room_scene.gd" id="1_r8psk"]
+[ext_resource type="PackedScene" uid="uid://cb6q4s8g4n1qm" path="res://scenes/player/player_cat.tscn" id="1_w1efa"]
+[ext_resource type="PackedScene" uid="uid://bff41rboqsk07" path="res://scenes/npcs/choreographed_npc.tscn" id="4_grnmm"]
+[ext_resource type="PackedScene" uid="uid://bus0mj0a28s62" path="res://scenes/npcs/stationaryNPC.tscn" id="5_faceq"]
+[ext_resource type="SpriteFrames" uid="uid://jb7mo0l7yycw" path="res://art/sprites/sprite_frames/alex_frames.tres" id="6_ir6st"]
+[ext_resource type="Texture2D" uid="uid://dkif71if1xibt" path="res://art/environment/dorm/dormbackground.png" id="7_r8psk"]
+[ext_resource type="Texture2D" uid="uid://bben8aev0a50k" path="res://art/environment/dorm/dormspritesheet.png" id="8_k8xhb"]
+
+[sub_resource type="Curve2D" id="Curve2D_r8psk"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -100, 102, 0, 0, 0, 0, -197, 105, 0, 0, 0, 0, -200, 52, 0, 0, 0, 0, -132, 97, 0, 0, 0, 0, -47, 94, 0, 0, 0, 0, -49, 86, 0, 0, 0, 0, -77, 85, 0, 0, 0, 0, -83, 62, 0, 0, 0, 0, -101, 62)
+}
+point_count = 9
+
+[sub_resource type="Curve2D" id="Curve2D_q8nly"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -101, 63, 0, 0, 0, 0, -245, 56)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_e12k6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -245, 57, 0, 0, 0, 0, -184, 58)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2c82"]
+size = Vector2(14, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8psk"]
+size = Vector2(40, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q8nly"]
+size = Vector2(20, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e12k6"]
+size = Vector2(15, 7)
+
+[node name="Room" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(2, 0)
+script = ExtResource("1_r8psk")
+
+[node name="PlayerCat" parent="." instance=ExtResource("1_w1efa")]
+z_as_relative = false
+position = Vector2(-123, 67)
+
+[node name="ChoreographedNPC" parent="." node_paths=PackedStringArray("stationary_npc") instance=ExtResource("4_grnmm")]
+stationary_npc = NodePath("../StationaryNPC")
+speed = 50.0
+lerp_rate = 0.0
+idle_animation = "idle"
+walk_up_animation = "walk_back"
+walk_down_animation = "walk_forward"
+walk_right_animation = "walk_side"
+is_progressing = false
+dialogic_signals_to_progress_to = Array[String](["AlexMove"])
+
+[node name="Path2D" type="Path2D" parent="ChoreographedNPC"]
+curve = SubResource("Curve2D_r8psk")
+
+[node name="Path2D3" type="Path2D" parent="ChoreographedNPC"]
+curve = SubResource("Curve2D_q8nly")
+
+[node name="Path2D4" type="Path2D" parent="ChoreographedNPC"]
+curve = SubResource("Curve2D_e12k6")
+
+[node name="StationaryNPC" parent="." node_paths=PackedStringArray("animation_player") instance=ExtResource("5_faceq")]
+z_as_relative = false
+position = Vector2(-103, 102)
+animation_player = NodePath("AnimatedSprite2D")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StationaryNPC"]
+sprite_frames = ExtResource("6_ir6st")
+animation = &"walk_side"
+frame_progress = 0.567999
+offset = Vector2(-1, -11)
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StationaryNPC"]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_u2c82")
+debug_color = Color(0.933632, 0.123661, 0.562017, 0.42)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-107, 59)
+zoom = Vector2(6, 6)
+position_smoothing_enabled = true
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(-5, 137)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("7_r8psk")
+
+[node name="Bed" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-117, 78)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed"]
+shape = SubResource("RectangleShape2D_r8psk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bed"]
+position = Vector2(0, -1)
+texture = ExtResource("8_k8xhb")
+offset = Vector2(1, -5)
+region_enabled = true
+region_rect = Rect2(120, 2, 48, 30)
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+polygon = PackedVector2Array(-214, 50, 0, 50, 0, 119, -214, 119, -214, 65, -222, 65, -222, 126, 7, 125, 7, 44, -214, 43)
+
+[node name="Desk" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-11, 62)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Desk"]
+position = Vector2(-39, 14)
+shape = SubResource("RectangleShape2D_q8nly")
+
+[node name="Sprite2D" type="Sprite2D" parent="Desk"]
+position = Vector2(-39, 14)
+texture = ExtResource("8_k8xhb")
+offset = Vector2(0, -3)
+region_enabled = true
+region_rect = Rect2(41, 4, 34, 28)
+
+[node name="TrashBin" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-10, 41)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrashBin"]
+position = Vector2(-62, 68.5)
+shape = SubResource("RectangleShape2D_e12k6")
+
+[node name="Sprite2D" type="Sprite2D" parent="TrashBin"]
+position = Vector2(-62, 69)
+texture = ExtResource("8_k8xhb")
+offset = Vector2(-1, -7)
+region_enabled = true
+region_rect = Rect2(236, 3, 30, 32)
+
+[node name="Poster" type="Sprite2D" parent="."]
+position = Vector2(-186, 27)
+texture = ExtResource("8_k8xhb")
+region_enabled = true
+region_rect = Rect2(3, 1, 30, 32)
+
+[node name="Poster2" type="Sprite2D" parent="."]
+position = Vector2(-47, 20)
+texture = ExtResource("8_k8xhb")
+region_enabled = true
+region_rect = Rect2(79, 1, 32, 32)
+
+[node name="Window1" type="Sprite2D" parent="."]
+position = Vector2(-80, 27)
+texture = ExtResource("8_k8xhb")
+region_enabled = true
+region_rect = Rect2(207, 2, 30, 32)
+
+[node name="Window2" type="Sprite2D" parent="."]
+position = Vector2(-160, 27)
+texture = ExtResource("8_k8xhb")
+region_enabled = true
+region_rect = Rect2(207, 2, 30, 32)
+
+[node name="Celebrate" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-120, 22)
+texture = ExtResource("8_k8xhb")
+region_enabled = true
+region_rect = Rect2(72, 33, 68, 20)
+
+[node name="Clothes" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-165, 65)
+texture = ExtResource("8_k8xhb")
+region_enabled = true
+region_rect = Rect2(172, 8, 36, 24)
+
+[node name="Bed2" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-26, 109)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed2"]
+shape = SubResource("RectangleShape2D_r8psk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bed2"]
+position = Vector2(0, -1)
+texture = ExtResource("8_k8xhb")
+offset = Vector2(1, -5)
+flip_h = true
+region_enabled = true
+region_rect = Rect2(120, 2, 48, 30)

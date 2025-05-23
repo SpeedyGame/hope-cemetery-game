@@ -1,0 +1,77 @@
+[gd_scene load_steps=10 format=3 uid="uid://bus0mj0a28s62"]
+
+[ext_resource type="Script" uid="uid://ckfnaej2pkxgh" path="res://scripts/npcs/stationary_npc.gd" id="1_u04us"]
+[ext_resource type="Texture2D" uid="uid://dq6afmv5rcsuk" path="res://art/sprites/NPCNoticeAnimation.png" id="2_u04us"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibvnb"]
+atlas = ExtResource("2_u04us")
+region = Rect2(0, 0, 7, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5fb8"]
+atlas = ExtResource("2_u04us")
+region = Rect2(9, 0, 7, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6odhv"]
+atlas = ExtResource("2_u04us")
+region = Rect2(18, 0, 7, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isdsa"]
+atlas = ExtResource("2_u04us")
+region = Rect2(27, 0, 7, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5ise"]
+atlas = ExtResource("2_u04us")
+region = Rect2(36, 0, 7, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkg0p"]
+atlas = ExtResource("2_u04us")
+region = Rect2(45, 0, 7, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_13fr5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibvnb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5fb8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6odhv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isdsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5ise")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkg0p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="StationaryNPC" type="Area2D"]
+y_sort_enabled = true
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_u04us")
+default_animation = "idle"
+timeline = "test_timeline"
+
+[node name="CoolDownTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="InteractPrompt" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = 5
+scale = Vector2(1.4, 1.4)
+sprite_frames = SubResource("SpriteFrames_13fr5")
+autoplay = "default"
+frame_progress = 0.157029
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="timeout" from="CoolDownTimer" to="." method="_on_cool_down_timer_timeout"]
