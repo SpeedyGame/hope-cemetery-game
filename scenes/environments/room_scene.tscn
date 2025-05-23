@@ -81,6 +81,7 @@ curve = SubResource("Curve2D_e12k6")
 z_as_relative = false
 position = Vector2(-28, 69)
 animation_player = NodePath("AnimatedSprite2D")
+prompt_height = -30.0
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Alex"]
@@ -215,12 +216,12 @@ region_enabled = true
 region_rect = Rect2(120, 3, 49, 30)
 
 [node name="StationaryNPC2" parent="." node_paths=PackedStringArray("animation_player", "immediate_interaction_area") instance=ExtResource("5_faceq")]
-position = Vector2(-199, 103)
+position = Vector2(-198, 103)
 animation_player = NodePath("Sprite2D")
+prompt_height = -10.0
 interact_immediately = true
 immediate_interaction_area = NodePath("InteractionArea")
 immediate_timeline = "test_timeline"
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StationaryNPC2"]
 z_index = 5
@@ -229,8 +230,8 @@ shape = SubResource("RectangleShape2D_kg3ul")
 debug_color = Color(0.961248, 0, 0.511433, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="StationaryNPC2"]
-position = Vector2(0.999999, 1)
-scale = Vector2(0.195313, 0.195313)
+position = Vector2(1, 1.5)
+scale = Vector2(0.15625, 0.148438)
 texture = ExtResource("8_q8nly")
 
 [node name="InteractionArea" type="Area2D" parent="StationaryNPC2"]
