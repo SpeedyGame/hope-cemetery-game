@@ -45,7 +45,7 @@ func face_right(dir):
 	animation_player.flip_h = !dir
 
 func _on_area_entered(area):
-	if(show_prompt):
+	if(show_prompt && !has_just_been_talked_to):
 		interact_prompt.show()
 	is_touching_player = true
 

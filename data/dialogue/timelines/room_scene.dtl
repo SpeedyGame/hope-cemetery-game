@@ -13,7 +13,7 @@ alex: Dude, are you okay?
 [clear time="1.0"]
 [style]
 # Alex gets out of bed and switches on the light, before walking over to the player.
-[wait time="5.0"]
+[wait time="1.0"]
 alex: Here, take this just in case.
 # They hand the player a glass of water and a small pill bottle.
 player: Thanks.
