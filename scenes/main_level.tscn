@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://oh2basiek65h"]
+[gd_scene load_steps=21 format=3 uid="uid://oh2basiek65h"]
 
-[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_qmak7"]
+[ext_resource type="Script" uid="uid://dcdk4ehpd3154" path="res://scripts/player/player.gd" id="1_qmak7"]
 [ext_resource type="Texture2D" uid="uid://bq0frcp06bnk1" path="res://art/sprites/PlayerWalk.png" id="2_8ra5a"]
-[ext_resource type="Script" path="res://scripts/mini_map_ui.gd" id="3_bq26l"]
-[ext_resource type="Script" path="res://scripts/sub_viewport.gd" id="4_u2c82"]
+[ext_resource type="Script" uid="uid://4f8li4cg1hg5" path="res://scripts/mini_map_ui.gd" id="3_bq26l"]
+[ext_resource type="Script" uid="uid://ecuftyno8rkq" path="res://scripts/sub_viewport.gd" id="4_u2c82"]
+[ext_resource type="PackedScene" uid="uid://pc6ujaccnolj" path="res://scenes/TestTileMap.tscn" id="5_8ra5a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_le112"]
 radius = 3.0
@@ -141,6 +142,8 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 [node name="Game Level" type="Node2D"]
 position = Vector2(2, 0)
 
+[node name="TestTileMap" parent="." instance=ExtResource("5_8ra5a")]
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_qmak7")
 
@@ -165,7 +168,9 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = -0.00149256
 parameters/Walk/blend_position = Vector2(0, 0)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(1, 0)
+zoom = Vector2(2, 2)
 
 [node name="MiniMapUI" type="CanvasLayer" parent="." node_paths=PackedStringArray("player", "sprite")]
 script = ExtResource("3_bq26l")
@@ -183,7 +188,7 @@ handle_input_locally = false
 size = Vector2i(200, 200)
 render_target_update_mode = 4
 script = ExtResource("4_u2c82")
-camera_node = NodePath("../../../Camera2D")
+camera_node = NodePath("../../../CharacterBody2D/Camera2D")
 player_node = NodePath("../../../CharacterBody2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="MiniMapUI/SubViewportContainer/SubViewport"]
