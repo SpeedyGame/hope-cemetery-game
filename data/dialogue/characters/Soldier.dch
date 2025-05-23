@@ -10,7 +10,7 @@
 },
 &"default_portrait": "",
 &"description": "A friend of Charles",
-&"display_name": "Soldier",
+&"display_name": "{NPC.SamuelDisplayName}",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
