@@ -1,3 +1,4 @@
+[style]
 # The player character awakens after falling from their bed. Their clock reads 3:37 AM
 player: Ow, my head.
 alex: Dude, are you okay?
@@ -6,7 +7,10 @@ alex: Dude, are you okay?
 - Yeah.
 	alex: Are you sure? That sounded pretty intense.
 - Who are you?
+	[style name="thinking_style"]
 	alex: C'mon, stop messing with me.
+[clear time="1.0"]
+[style]
 # Alex gets out of bed and switches on the light, before walking over to the player.
 alex: Here, take this just in case.
 # They hand the player a glass of water and a small pill bottle.
