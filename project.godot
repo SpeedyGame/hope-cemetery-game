@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="hope-cemetery-game"
-run/main_scene="uid://oh2basiek65h"
+run/main_scene="uid://cdhk6ncedxu4i"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+JsonData="*res://JSONData.gd"
 
 [input]
 

@@ -1,9 +1,12 @@
-extends Panel
+extends Control
 
-var ItemClass = preload("res://scenes/ui/item.tscn")
+#var ItemClass = preload("res://scenes/ui/branch.tscn")
 var item = null
 
-func _ready():
-	if randi() % 2 == 0:
-		item = ItemClass.instantiate()
-		add_child(item)
+#func _ready():
+	
+	
+	#item = ItemClass.instantiate()
+	#add_child(item)
+	#item.position = Vector2(0, 0) 
+ 
