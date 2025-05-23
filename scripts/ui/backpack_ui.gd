@@ -27,6 +27,11 @@ func _process(delta):
 		for child in $backpack_buttons/Control.get_children():
 			if child is BaseButton:
 				child.disabled = false
+		
+		if Input.is_action_just_pressed("interact"):
+			if inventory:
+				inventory.add_item() 
+		
 
 func _on_backpack_pressed():
 	if journal.visible == true:

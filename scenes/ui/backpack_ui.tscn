@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bp8w2bscq4slm" path="res://scenes/ui/standing_menu_assets/small_porto.jpg" id="5_jakuk"]
 [ext_resource type="Texture2D" uid="uid://b5yws2tiftsrw" path="res://scenes/ui/standing_menu_assets/small_full_journal.jpg" id="6_ny1vg"]
 [ext_resource type="PackedScene" uid="uid://dnsn84ulbrw0y" path="res://scenes/ui/journal_gui.tscn" id="7_r83im"]
-[ext_resource type="PackedScene" uid="uid://ck37kvs6oh6wg" path="res://scenes/ui/inventory.tscn" id="9_n2kom"]
+[ext_resource type="PackedScene" uid="uid://cdhk6ncedxu4i" path="res://scenes/ui/inventory.tscn" id="9_n2kom"]
 
 [node name="backpackUI" type="CanvasLayer"]
 script = ExtResource("1_sy68c")
@@ -65,7 +65,10 @@ icon = ExtResource("6_ny1vg")
 [node name="journal_gui" parent="." instance=ExtResource("7_r83im")]
 
 [node name="Inventory" parent="." instance=ExtResource("9_n2kom")]
-position = Vector2(-80, -37)
+offset_left = -80.0
+offset_top = -37.0
+offset_right = -80.0
+offset_bottom = -37.0
 
 [connection signal="pressed" from="backpack" to="." method="_on_backpack_pressed"]
 [connection signal="pressed" from="backpack_buttons/Control/inventory_button" to="." method="_on_inventory_button_pressed"]
