@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bff41rboqsk07"]
-
-[ext_resource type="Script" uid="uid://b0kxcf0si7sye" path="res://scripts/npcs/choreographed_npc.gd" id="1_xwpty"]
-
-[node name="ChoreographedNPC" type="Node"]
-script = ExtResource("1_xwpty")
