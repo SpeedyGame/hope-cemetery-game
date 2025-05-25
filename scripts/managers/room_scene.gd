@@ -1,5 +1,5 @@
 extends Node2D
 
 func _ready():
-	Dialogic.start("room_scene")
+	Dialogic.start("Dream")
 	pass

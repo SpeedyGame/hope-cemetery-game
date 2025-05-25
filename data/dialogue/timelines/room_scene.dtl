@@ -1,4 +1,5 @@
 [style]
+[background fade="0.0" transition="Swipe Left To Right"]
 # The player character awakens after falling from their bed. Their clock reads 3:37 AM
 player: Ow, my head.
 alex: Dude, are you okay?
