@@ -23,6 +23,9 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "Charles": "res://data/dialogue/characters/Charles.dch",
+"George": "res://data/dialogue/characters/George.dch",
+"Henry Henderson": "res://data/dialogue/characters/Henry Henderson.dch",
+"Old Woman": "res://data/dialogue/characters/Old Woman.dch",
 "Soldier": "res://data/dialogue/characters/Soldier.dch",
 "alex": "res://data/dialogue/characters/alex.dch",
 "internal_dialogue": "res://data/dialogue/characters/internal_dialogue.dch",
@@ -31,6 +34,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "Dream": "res://data/dialogue/timelines/Dream.dtl",
+"Hope Cemetary": "res://data/dialogue/timelines/Hope Cemetary.dtl",
 "room_scene": "res://data/dialogue/timelines/room_scene.dtl",
 "test_timeline": "res://data/dialogue/timelines/test_timeline.dtl"
 }
@@ -55,6 +59,9 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 variables={
+"NPC": {
+"SamuelDisplayName": "Samuel"
+},
 "PlayerDescription": {
 "Major": "",
 "Name": "PLAYER"
