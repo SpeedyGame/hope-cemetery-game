@@ -15,9 +15,13 @@ run/main_scene="uid://cdhk6ncedxu4i"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://audio/music/default_bus_layout.tres"
+
 [autoload]
 
-JsonData="*res://JSONData.gd"
+JsonData="*res://scripts/ui/JSONData.gd"
 
 [input]
 
