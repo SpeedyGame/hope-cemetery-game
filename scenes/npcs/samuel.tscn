@@ -1,0 +1,119 @@
+[gd_scene load_steps=15 format=3 uid="uid://d2us2ce2r2aa1"]
+
+[ext_resource type="Script" uid="uid://defg31gc4nanv" path="res://scenes/samuel.gd" id="1_hj7ay"]
+[ext_resource type="Texture2D" uid="uid://cau48b1lhvjha" path="res://art/sprites/samuelghost.png" id="2_n5krh"]
+[ext_resource type="PackedScene" uid="uid://bus0mj0a28s62" path="res://scenes/npcs/stationaryNPC.tscn" id="3_wb8rs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ra5a"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iqu8w"]
+animation = &"samuel_idle_left"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_5fr2l"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_iqu8w")
+blend_point_0/pos = 0.0
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2sb77"]
+animation = &"samuel_drift_left"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_fkrx8"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_2sb77")
+blend_point_0/pos = 0.0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mwgft"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_adxub"]
+states/Idle/node = SubResource("AnimationNodeBlendSpace1D_5fr2l")
+states/Idle/position = Vector2(299, 151)
+states/Walk/node = SubResource("AnimationNodeBlendSpace1D_fkrx8")
+states/Walk/position = Vector2(286, 57)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_mwgft")]
+
+[sub_resource type="Animation" id="Animation_uk2yf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ondrs"]
+resource_name = "samuel_drift_left"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_ff0s2"]
+resource_name = "samuel_idle_left"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0e4v7"]
+_data = {
+&"RESET": SubResource("Animation_uk2yf"),
+&"samuel_drift_left": SubResource("Animation_ondrs"),
+&"samuel_idle_left": SubResource("Animation_ff0s2")
+}
+
+[node name="Samuel" type="CharacterBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_hj7ay")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 13)
+texture = ExtResource("2_n5krh")
+offset = Vector2(0, -13)
+hframes = 2
+
+[node name="StationaryNPC" parent="." instance=ExtResource("3_wb8rs")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StationaryNPC"]
+shape = SubResource("RectangleShape2D_8ra5a")
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_adxub")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Idle/blend_position = -0.00298506
+parameters/Walk/blend_position = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0e4v7")
+}
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

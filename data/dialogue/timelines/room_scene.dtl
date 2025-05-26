@@ -1,4 +1,5 @@
-[style name="ghost"]
+[style]
+[background fade="0.0" transition="Swipe Left To Right"]
 # The player character awakens after falling from their bed. Their clock reads 3:37 AM
 player: Ow, my head.
 alex: Dude, are you okay?
@@ -9,9 +10,11 @@ alex: Dude, are you okay?
 - Who are you?
 	[style name="thinking_style"]
 	alex: C'mon, stop messing with me.
+[signal arg="AlexMove"]
 [clear time="1.0"]
 [style]
 # Alex gets out of bed and switches on the light, before walking over to the player.
+[wait time="1.0"]
 alex: Here, take this just in case.
 # They hand the player a glass of water and a small pill bottle.
 player: Thanks.
@@ -38,6 +41,7 @@ alex: Oh! By the way, have you seen our blaze plushie? It was right up on top of
 	alex: See I told you, it’s not there. Whatever, maybe you’ll find it on your walk. *wink*
 alex: Well, be careful out there. I’m gonna take a tinkle.
 player: Did you have to say it like that?
+[signal arg="AlexMove"]
 # Roommate laughs and leaves. Player character takes a long sigh.
 [wait time="2.0"]
 internal_dialogue: What (the hell) kind of dream was that?
@@ -45,7 +49,8 @@ plushie: {PlayerDescription.Name}...
 player: What the..?
 plushie: {PlayerDescription.Name} …I need your help…come to Hope Cemetery… You’ll find what you’re looking for…
 player: I really gotta get out of here.
-[wait time="1.0"]
+[signal arg="AlexMove"]
+[wait time="4.0"]
 # Alex returns from tinkle town
 alex: Dude, who are you talking to?
 player: Uhhh nobody, I- I think I’m gonna go now.

@@ -2,17 +2,17 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 &"_translation_id": "",
-&"color": Color(0.180813, 0.19408, 0.666016, 1),
+&"color": Color(0.307567, 0.320313, 0.298416, 1),
 &"custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
 "style": ""
 },
 &"default_portrait": "",
-&"description": "A friend of Charles",
-&"display_name": "{NPC.SamuelDisplayName}",
+&"description": "She watches over the cemetary at night. First baby born in Galesburg.",
+&"display_name": "Old Woman",
 &"mirror": false,
-&"nicknames": [""],
+&"nicknames": ["Mary West(Full Name)"],
 &"offset": Vector2(0, 0),
 &"portraits": {},
 &"scale": 1.0
