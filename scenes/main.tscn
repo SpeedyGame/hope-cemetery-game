@@ -53,3 +53,6 @@ layer = 5
 
 [connection signal="body_entered" from="CanvasLayer3/quest_vision_sample" to="CanvasLayer2/Player" method="_on_quest_vision_sample_body_entered"]
 [connection signal="body_exited" from="CanvasLayer3/quest_vision_sample" to="CanvasLayer2/Player" method="_on_quest_vision_sample_body_exited"]
+[gd_scene format=3 uid="uid://bcg1i5hkigqhf"]
+
+[node name="Main" type="Node2D"]

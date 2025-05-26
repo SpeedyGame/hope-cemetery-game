@@ -1,12 +1,41 @@
 extends Node
 
+"""
+HOW TO USE
+
+*** For an example of how to use this node, see room_scene.tscn ***
+
+This node is used for moving npcs in specific ways during dialogue
+scenes. Here are the stepts you should follow in order to use this node:
+- First, add a new stationaryNPC object as a child to the world scene you are
+  working on. Make sure that you do not add it as a child to this node, as
+  that can create problems with y sort. Add a reference to the stationary npc
+  that you want to animate inside the stationary_npc export variable.
+  Make sure that you add an AnimatedSprite2D object a child of the stationaryNPC
+  and that this is linked to the stationaryNPC through its corrisponding export
+  variable.
+- Next, add Path2D objects as children of this node. The npc will follow one path
+  at a time as they are signaled to do so. The order that the npc follows the paths
+  in is determined by the order of the Path2D children.
+- Finally, to make the npc follow the next path in the sequence, call 
+  move_npc_to_next_path(). You can also hook this function up to specific
+  Dialogic signals by adding signal names to the dialogic_signals_to_progress_to
+  list. 
+"""
+
 @export var stationary_npc : Node
+@export_category("Animation information")
+## Should match the corrisponding animation name in the child AnimatedSprite2D node of the stationaryNPC
+@export var idle_animation : String
+## Should match the corrisponding animation name in the child AnimatedSprite2D node of the stationaryNPC
+@export var walk_up_animation : String
+## Should match the corrisponding animation name in the child AnimatedSprite2D node of the stationaryNPC
+@export var walk_down_animation : String
+## Should match the corrisponding animation name in the child AnimatedSprite2D node of the stationaryNPC
+@export var walk_right_animation : String
+@export_category("Progress")
 @export var speed : float = 100
 @export var lerp_rate = .01
-@export var idle_animation : String
-@export var walk_up_animation : String
-@export var walk_down_animation : String
-@export var walk_right_animation : String
 @export var is_progressing : bool = true
 @export var is_ignoring_break_points : bool
 @export var dialogic_signals_to_progress_to : Array[String]

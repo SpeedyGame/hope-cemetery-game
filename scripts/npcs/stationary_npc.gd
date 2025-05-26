@@ -1,11 +1,23 @@
 extends Area2D
 
+"""
+Basic NPC character that doesn't move but can be talked to. Requires an
+AnimatedSprite2D or Sprite2D to be added as a child and referenced in the
+animation_player export variable. Also remember to add a collision shape
+as a child of this node, or else it won't be able to sense the player!
+To move and animate this character in a pre-scripted fashion, 
+see choreographed_npc.tscn.
+"""
+
+## Sprite2D or AnimatedSprite2D that is being used to visualize this character.
 @export var animation_player : Node2D
 @export var default_animation : String
 ## Conversation that starts when the player interacts with this npc deliberately
 @export var timeline : String
 @export var show_prompt : bool = true
 @export var prompt_height : float
+## If true, the character will not be able to interact with this npc.
+@export var disabled : bool
 @export_category("Immediate Interaction")
 ## If true, this npc will start a timeline as soon as the player hits the interaction area
 @export var interact_immediately : bool
@@ -33,7 +45,7 @@ func _ready():
 	interact_prompt.global_position.y += prompt_height
 	
 func _process(delta):
-	if(Dialogic.current_timeline == null && is_touching_player && Input.is_action_just_pressed("interact") && !has_just_been_talked_to):
+	if(Dialogic.current_timeline == null && is_touching_player && Input.is_action_just_pressed("interact") && !has_just_been_talked_to && !disabled):
 		interact_prompt.hide()
 		Dialogic.start(timeline)
 		has_just_been_talked_to = true
@@ -45,7 +57,7 @@ func face_right(dir):
 	animation_player.flip_h = !dir
 
 func _on_area_entered(area):
-	if(show_prompt && !has_just_been_talked_to):
+	if(show_prompt && !has_just_been_talked_to && !disabled):
 		interact_prompt.show()
 	is_touching_player = true
 
@@ -61,6 +73,6 @@ func _on_cool_down_timer_timeout():
 	has_just_been_talked_to = false
 
 func play_dialogue(area):
-	if(!already_had_immediate_encounter):
+	if(!already_had_immediate_encounter && !disabled):
 		already_had_immediate_encounter = true
 		Dialogic.start(immediate_timeline)
