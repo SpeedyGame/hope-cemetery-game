@@ -61,12 +61,12 @@ position = Vector2(-25, 100)
 
 [node name="AlexChoreography" parent="." node_paths=PackedStringArray("stationary_npc") instance=ExtResource("4_grnmm")]
 stationary_npc = NodePath("../Alex")
-speed = 50.0
-lerp_rate = 0.0
 idle_animation = "idle"
 walk_up_animation = "walk_back"
 walk_down_animation = "walk_forward"
 walk_right_animation = "walk_side"
+speed = 50.0
+lerp_rate = 0.0
 is_progressing = false
 dialogic_signals_to_progress_to = Array[String](["AlexMove"])
 

@@ -671,6 +671,7 @@ position = Vector2(-574, 282)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerCat"]
 zoom = Vector2(4, 4)
+process_callback = 0
 position_smoothing_enabled = true
 
 [node name="OldNun" parent="." instance=ExtResource("5_7wp45")]
