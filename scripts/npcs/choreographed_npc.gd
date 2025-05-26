@@ -18,7 +18,7 @@ scenes. Here are the stepts you should follow in order to use this node:
   at a time as they are signaled to do so. The order that the npc follows the paths
   in is determined by the order of the Path2D children.
 - Finally, to make the npc follow the next path in the sequence, call 
-  move_npc_to_next_path(). You can also hook this function up to specfic
+  move_npc_to_next_path(). You can also hook this function up to specific
   Dialogic signals by adding signal names to the dialogic_signals_to_progress_to
   list. 
 """
