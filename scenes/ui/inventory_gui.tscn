@@ -1,6 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpw57bcx1wof1"]
-
-[ext_resource type="Script" path="res://scenes/ui/control.gd" id="1_0mx8g"]
+[gd_scene format=3 uid="uid://bpw57bcx1wof1"]
 
 [node name="inventory_gui" type="CanvasLayer"]
 
@@ -9,4 +7,3 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_0mx8g")
