@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://oh2basiek65h"]
+[gd_scene load_steps=20 format=3 uid="uid://oh2basiek65h"]
 
 [ext_resource type="PackedScene" uid="uid://cb6q4s8g4n1qm" path="res://scenes/player/player_cat.tscn" id="1_6we3w"]
 [ext_resource type="PackedScene" uid="uid://dhnijtw7hrb0t" path="res://scenes/ui/mini_map.tscn" id="3_8ra5a"]
 [ext_resource type="Script" uid="uid://defg31gc4nanv" path="res://scenes/samuel.gd" id="3_bq26l"]
 [ext_resource type="Texture2D" uid="uid://duk48gsoior4q" path="res://art/sprites/oldnunfordebate.png" id="3_qmak7"]
 [ext_resource type="Texture2D" uid="uid://cau48b1lhvjha" path="res://art/sprites/samuelghost.png" id="4_u2c82"]
+[ext_resource type="PackedScene" uid="uid://pc6ujaccnolj" path="res://scenes/TestTileMap.tscn" id="5_8ra5a"]
 [ext_resource type="PackedScene" uid="uid://bus0mj0a28s62" path="res://scenes/npcs/stationaryNPC.tscn" id="5_k5pu3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qmak7"]
@@ -98,19 +99,25 @@ y_sort_enabled = true
 position = Vector2(2, 0)
 
 [node name="PlayerCat" parent="." instance=ExtResource("1_6we3w")]
-position = Vector2(-43, 53)
+z_index = 1
+position = Vector2(19, 11)
+
+[node name="Camera2D" type="Camera2D" parent="PlayerCat"]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+
+[node name="TestTileMap" parent="." instance=ExtResource("5_8ra5a")]
+y_sort_enabled = true
 
 [node name="MiniMap" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_8ra5a")]
 player = NodePath("../PlayerCat")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-1, 11)
-zoom = Vector2(3, 3)
-position_smoothing_enabled = true
-
 [node name="OldNun" type="CharacterBody2D" parent="."]
+position = Vector2(56, 47)
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="OldNun"]
+z_index = 1
 texture = ExtResource("3_qmak7")
 
 [node name="StationaryNPC" parent="OldNun" instance=ExtResource("5_k5pu3")]
@@ -120,9 +127,12 @@ position = Vector2(-3, 8)
 shape = SubResource("RectangleShape2D_qmak7")
 
 [node name="Samuel" type="CharacterBody2D" parent="."]
+position = Vector2(90, -62)
 script = ExtResource("3_bq26l")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Samuel"]
+z_index = 1
 texture = ExtResource("4_u2c82")
 hframes = 2
 
