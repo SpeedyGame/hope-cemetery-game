@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b4j08i851omb2"]
+[gd_scene load_steps=21 format=3 uid="uid://b4j08i851omb2"]
 
 [ext_resource type="Script" uid="uid://cs645mbjrml0" path="res://scripts/managers/room_scene.gd" id="1_r8psk"]
 [ext_resource type="PackedScene" uid="uid://cb6q4s8g4n1qm" path="res://scenes/player/player_cat.tscn" id="1_w1efa"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dkif71if1xibt" path="res://art/environment/dorm/dormbackground.png" id="7_r8psk"]
 [ext_resource type="Texture2D" uid="uid://bben8aev0a50k" path="res://art/environment/dorm/dormspritesheet.png" id="8_k8xhb"]
 [ext_resource type="Texture2D" uid="uid://b5uftsehvwdtn" path="res://art/sprites/icon.svg" id="8_q8nly"]
+[ext_resource type="PackedScene" uid="uid://ca6wc8pbh1o8m" path="res://scenes/player/portal_area.tscn" id="9_q8nly"]
 
 [sub_resource type="Curve2D" id="Curve2D_k8xhb"]
 _data = {
@@ -46,7 +47,9 @@ size = Vector2(35, 11)
 size = Vector2(22, 21)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k8xhb"]
-radius = 48.0937
+radius = 20.3961
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tjllj"]
 
 [node name="Room" type="Node2D"]
 y_sort_enabled = true
@@ -54,7 +57,6 @@ position = Vector2(2, 0)
 script = ExtResource("1_r8psk")
 
 [node name="PlayerCat" parent="." instance=ExtResource("1_w1efa")]
-z_as_relative = false
 position = Vector2(-25, 100)
 
 [node name="AlexChoreography" parent="." node_paths=PackedStringArray("stationary_npc") instance=ExtResource("4_grnmm")]
@@ -258,3 +260,11 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("8_k8xhb")
 region_enabled = true
 region_rect = Rect2(172, 8, 36, 24)
+
+[node name="PortalArea" parent="." instance=ExtResource("9_q8nly")]
+file_path = "res://scenes/environments/hopeCemetery.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PortalArea"]
+position = Vector2(-229, 51)
+shape = SubResource("RectangleShape2D_tjllj")
+debug_color = Color(0.37668, 0.00141023, 0.873411, 0.42)

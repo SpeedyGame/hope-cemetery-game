@@ -1,98 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://oh2basiek65h"]
+[gd_scene load_steps=6 format=3 uid="uid://oh2basiek65h"]
 
 [ext_resource type="PackedScene" uid="uid://cb6q4s8g4n1qm" path="res://scenes/player/player_cat.tscn" id="1_6we3w"]
 [ext_resource type="PackedScene" uid="uid://dhnijtw7hrb0t" path="res://scenes/ui/mini_map.tscn" id="3_8ra5a"]
-[ext_resource type="Script" uid="uid://defg31gc4nanv" path="res://scenes/samuel.gd" id="3_bq26l"]
-[ext_resource type="Texture2D" uid="uid://duk48gsoior4q" path="res://art/sprites/oldnunfordebate.png" id="3_qmak7"]
-[ext_resource type="Texture2D" uid="uid://cau48b1lhvjha" path="res://art/sprites/samuelghost.png" id="4_u2c82"]
+[ext_resource type="PackedScene" uid="uid://dq5se8m6btwbd" path="res://scenes/npcs/old_nun.tscn" id="4_8ra5a"]
 [ext_resource type="PackedScene" uid="uid://pc6ujaccnolj" path="res://scenes/TestTileMap.tscn" id="5_8ra5a"]
-[ext_resource type="PackedScene" uid="uid://bus0mj0a28s62" path="res://scenes/npcs/stationaryNPC.tscn" id="5_k5pu3"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmak7"]
-size = Vector2(7, 12)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ra5a"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iqu8w"]
-animation = &"samuel_idle_left"
-
-[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_5fr2l"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_iqu8w")
-blend_point_0/pos = 0.0
-blend_mode = 1
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2sb77"]
-animation = &"samuel_drift_left"
-
-[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_fkrx8"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_2sb77")
-blend_point_0/pos = 0.0
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mwgft"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_adxub"]
-states/Idle/node = SubResource("AnimationNodeBlendSpace1D_5fr2l")
-states/Idle/position = Vector2(299, 151)
-states/Walk/node = SubResource("AnimationNodeBlendSpace1D_fkrx8")
-states/Walk/position = Vector2(286, 57)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_mwgft")]
-
-[sub_resource type="Animation" id="Animation_uk2yf"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_ondrs"]
-resource_name = "samuel_drift_left"
-length = 0.2
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
-[sub_resource type="Animation" id="Animation_ff0s2"]
-resource_name = "samuel_idle_left"
-length = 0.2
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_0e4v7"]
-_data = {
-&"RESET": SubResource("Animation_uk2yf"),
-&"samuel_drift_left": SubResource("Animation_ondrs"),
-&"samuel_idle_left": SubResource("Animation_ff0s2")
-}
+[ext_resource type="PackedScene" uid="uid://d2us2ce2r2aa1" path="res://scenes/npcs/samuel.tscn" id="5_bq26l"]
 
 [node name="Game Level" type="Node2D"]
 y_sort_enabled = true
@@ -112,46 +24,8 @@ y_sort_enabled = true
 [node name="MiniMap" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_8ra5a")]
 player = NodePath("../PlayerCat")
 
-[node name="OldNun" type="CharacterBody2D" parent="."]
+[node name="OldNun" parent="." instance=ExtResource("4_8ra5a")]
 position = Vector2(56, 47)
-metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="OldNun"]
-z_index = 1
-texture = ExtResource("3_qmak7")
-
-[node name="StationaryNPC" parent="OldNun" instance=ExtResource("5_k5pu3")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OldNun/StationaryNPC"]
-position = Vector2(-3, 8)
-shape = SubResource("RectangleShape2D_qmak7")
-
-[node name="Samuel" type="CharacterBody2D" parent="."]
+[node name="Samuel" parent="." instance=ExtResource("5_bq26l")]
 position = Vector2(90, -62)
-script = ExtResource("3_bq26l")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Samuel"]
-z_index = 1
-texture = ExtResource("4_u2c82")
-hframes = 2
-
-[node name="StationaryNPC" parent="Samuel" instance=ExtResource("5_k5pu3")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Samuel/StationaryNPC"]
-shape = SubResource("RectangleShape2D_8ra5a")
-
-[node name="AnimationTree" type="AnimationTree" parent="Samuel"]
-tree_root = SubResource("AnimationNodeStateMachine_adxub")
-anim_player = NodePath("../AnimationPlayer")
-parameters/Idle/blend_position = -0.00298506
-parameters/Walk/blend_position = 0
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Samuel"]
-libraries = {
-&"": SubResource("AnimationLibrary_0e4v7")
-}
-
-[node name="Timer" type="Timer" parent="Samuel"]
-
-[connection signal="timeout" from="Samuel/Timer" to="Samuel" method="_on_timer_timeout"]
