@@ -429,6 +429,7 @@ animations = [{
 "name": &"turnright",
 "speed": 8.0
 }]
+[ext_resource type="PackedScene" uid="uid://cdhk6ncedxu4i" path="res://scenes/ui/inventory.tscn" id="9_n2kom"]
 
 [node name="backpackUI" type="CanvasLayer"]
 layer = 3
@@ -492,7 +493,10 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="Inventory" parent="." instance=ExtResource("9_n2kom")]
-position = Vector2(-80, -37)
+offset_left = -80.0
+offset_top = -37.0
+offset_right = -80.0
+offset_bottom = -37.0
 
 [node name="journal_gui" parent="." instance=ExtResource("7_r83im")]
 

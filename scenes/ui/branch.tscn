@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnix3kjh7tr7k"]
+
+[ext_resource type="Script" uid="uid://cu73cpyrhpan" path="res://scripts/ui/branch.gd" id="1_rkij2"]
+[ext_resource type="Texture2D" uid="uid://ciw3u1t3cduxk" path="res://item_icons/Tree Branch.png" id="2_8vqe7"]
+
+[node name="Item" type="Control"]
+z_index = 1
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1134.0
+offset_bottom = -630.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_rkij2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8vqe7")
+stretch_mode = 5

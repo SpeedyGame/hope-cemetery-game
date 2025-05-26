@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdhk6ncedxu4i"]
+[gd_scene load_steps=5 format=3 uid="uid://cdhk6ncedxu4i"]
 
-[ext_resource type="Script" uid="uid://d4ch7xu500gab" path="res://scenes/ui/inventory.gd" id="1_5yy05"]
 [ext_resource type="Texture2D" uid="uid://cclqu11k27f0r" path="res://backgrounds/default_inventory_background.png" id="1_psafj"]
 [ext_resource type="Texture2D" uid="uid://4nt0y4fmwcu5" path="res://backgrounds/item_slot_default_background.png" id="2_5tt2m"]
 [ext_resource type="Script" uid="uid://dw5qdroduq83r" path="res://scripts/ui/slot.gd" id="3_5tt2m"]
@@ -11,11 +10,9 @@ texture = ExtResource("2_5tt2m")
 [node name="Inventory" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_5yy05")
 
-[node name="InventoryPanel" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(18, 18)
-layout_mode = 0
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(18, 64)
 offset_left = -1.0
 offset_top = -1.0
 offset_right = 268.0
@@ -23,7 +20,7 @@ offset_bottom = 126.0
 texture = ExtResource("1_psafj")
 stretch_mode = 5
 
-[node name="InventorySlots" type="GridContainer" parent="InventoryPanel"]
+[node name="GridContainer" type="GridContainer" parent="TextureRect"]
 layout_mode = 0
 offset_left = 136.0
 offset_top = 25.0
@@ -31,125 +28,122 @@ offset_right = 245.0
 offset_bottom = 121.0
 columns = 5
 
-[node name="Slot1" type="Panel" parent="InventoryPanel/InventorySlots"]
+[node name="Slot1" type="Panel" parent="TextureRect/GridContainer"]
 custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
 script = ExtResource("3_5tt2m")
 
-[node name="Slot2" type="Panel" parent="InventoryPanel/InventorySlots"]
+[node name="Slot2" type="Panel" parent="TextureRect/GridContainer"]
 custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
 script = ExtResource("3_5tt2m")
 
-[node name="Slot3" type="Panel" parent="InventoryPanel/InventorySlots"]
+[node name="Slot3" type="Panel" parent="TextureRect/GridContainer"]
 custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
 script = ExtResource("3_5tt2m")
 
-[node name="Slot4" type="Panel" parent="InventoryPanel/InventorySlots"]
+[node name="Slot4" type="Panel" parent="TextureRect/GridContainer"]
 custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
 script = ExtResource("3_5tt2m")
 
-[node name="Slot5" type="Panel" parent="InventoryPanel/InventorySlots"]
+[node name="Slot5" type="Panel" parent="TextureRect/GridContainer"]
 custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
 script = ExtResource("3_5tt2m")
 
-[node name="Slot6" type="Panel" parent="InventoryPanel/InventorySlots"]
+[node name="Slot6" type="Panel" parent="TextureRect/GridContainer"]
 custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
 script = ExtResource("3_5tt2m")
 
-[node name="Slot7" type="Panel" parent="InventoryPanel/InventorySlots"]
+[node name="Slot7" type="Panel" parent="TextureRect/GridContainer"]
 custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
 script = ExtResource("3_5tt2m")
 
-[node name="Slot8" type="Panel" parent="InventoryPanel/InventorySlots"]
+[node name="Slot8" type="Panel" parent="TextureRect/GridContainer"]
 custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
 script = ExtResource("3_5tt2m")
 
-[node name="Slot9" type="Panel" parent="InventoryPanel/InventorySlots"]
+[node name="Slot9" type="Panel" parent="TextureRect/GridContainer"]
 custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
 script = ExtResource("3_5tt2m")
 
-[node name="Slot10" type="Panel" parent="InventoryPanel/InventorySlots"]
+[node name="Slot10" type="Panel" parent="TextureRect/GridContainer"]
 custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
 script = ExtResource("3_5tt2m")
 
-[node name="Slot11" type="Panel" parent="InventoryPanel/InventorySlots"]
+[node name="Slot11" type="Panel" parent="TextureRect/GridContainer"]
 custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
 script = ExtResource("3_5tt2m")
 
-[node name="Slot12" type="Panel" parent="InventoryPanel/InventorySlots"]
+[node name="Slot12" type="Panel" parent="TextureRect/GridContainer"]
 custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
 script = ExtResource("3_5tt2m")
 
-[node name="Slot13" type="Panel" parent="InventoryPanel/InventorySlots"]
+[node name="Slot13" type="Panel" parent="TextureRect/GridContainer"]
 custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
 script = ExtResource("3_5tt2m")
 
-[node name="Slot14" type="Panel" parent="InventoryPanel/InventorySlots"]
+[node name="Slot14" type="Panel" parent="TextureRect/GridContainer"]
 custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
 script = ExtResource("3_5tt2m")
 
-[node name="Slot15" type="Panel" parent="InventoryPanel/InventorySlots"]
+[node name="Slot15" type="Panel" parent="TextureRect/GridContainer"]
 custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
 script = ExtResource("3_5tt2m")
 
-[node name="Slot16" type="Panel" parent="InventoryPanel/InventorySlots"]
+[node name="Slot16" type="Panel" parent="TextureRect/GridContainer"]
 custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
 script = ExtResource("3_5tt2m")
 
-[node name="Slot17" type="Panel" parent="InventoryPanel/InventorySlots"]
+[node name="Slot17" type="Panel" parent="TextureRect/GridContainer"]
 custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
 script = ExtResource("3_5tt2m")
 
-[node name="Slot18" type="Panel" parent="InventoryPanel/InventorySlots"]
+[node name="Slot18" type="Panel" parent="TextureRect/GridContainer"]
 custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
 script = ExtResource("3_5tt2m")
 
-[node name="Slot19" type="Panel" parent="InventoryPanel/InventorySlots"]
+[node name="Slot19" type="Panel" parent="TextureRect/GridContainer"]
 custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
 script = ExtResource("3_5tt2m")
 
-[node name="Slot20" type="Panel" parent="InventoryPanel/InventorySlots"]
+[node name="Slot20" type="Panel" parent="TextureRect/GridContainer"]
 custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
 script = ExtResource("3_5tt2m")
-
-[node name="AddBtton" type="Button" parent="InventoryPanel/InventorySlots"]
-layout_mode = 2
