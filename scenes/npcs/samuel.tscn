@@ -88,11 +88,14 @@ _data = {
 }
 
 [node name="Samuel" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_hj7ay")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 13)
 texture = ExtResource("2_n5krh")
+offset = Vector2(0, -13)
 hframes = 2
 
 [node name="StationaryNPC" parent="." instance=ExtResource("3_wb8rs")]
