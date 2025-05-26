@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://cb6q4s8g4n1qm"]
 
-[ext_resource type="Script" uid="uid://bnu6s3b7e2gl1" path="res://scripts/player/player_cat.gd" id="1_0geaf"]
+[ext_resource type="Script" uid="uid://l6kbkfoo3k8t" path="res://scripts/player/player_cat.gd" id="1_0geaf"]
 [ext_resource type="Texture2D" uid="uid://bq0frcp06bnk1" path="res://art/sprites/PlayerWalk.png" id="2_0geaf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0geaf"]
