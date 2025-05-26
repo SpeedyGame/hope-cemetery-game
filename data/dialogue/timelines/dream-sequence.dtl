@@ -1,4 +1,4 @@
-[style]
+[style name="ghost"]
 # The player character awakens after falling from their bed. Their clock reads 3:37 AM
 player: Ow, my head.
 alex: Dude, are you okay?

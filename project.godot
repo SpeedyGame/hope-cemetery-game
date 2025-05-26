@@ -63,7 +63,7 @@ variables={
 "Test": ""
 }
 }
-layout/style_list=["res://data/dialogue/styles/textbubble.tres", "res://data/dialogue/styles/thinking_style.tres", "res://VisualNovelTextbox/VisualNovelTextbox/Test.tres"]
+layout/style_list=["res://data/dialogue/styles/textbubble.tres", "res://data/dialogue/styles/thinking_style.tres", "res://VisualNovelTextbox/VisualNovelTextbox/Test.tres", "res://VisualNovelTextbox/GhostTextBox/ghost.tres"]
 layout/default_style="res://data/dialogue/textbubble.tres"
 glossary/default_case_sensitive=true
 
