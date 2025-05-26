@@ -1,10 +1,98 @@
-[gd_scene load_steps=6 format=3 uid="uid://oh2basiek65h"]
+[gd_scene load_steps=20 format=3 uid="uid://oh2basiek65h"]
 
-[ext_resource type="PackedScene" uid="uid://cb6q4s8g4n1qm" path="res://scenes/player/player_cat.tscn" id="1_6we3w"]
-[ext_resource type="PackedScene" uid="uid://dhnijtw7hrb0t" path="res://scenes/ui/mini_map.tscn" id="3_8ra5a"]
-[ext_resource type="PackedScene" uid="uid://dq5se8m6btwbd" path="res://scenes/npcs/old_nun.tscn" id="4_8ra5a"]
+[ext_resource type="PackedScene" path="res://scenes/player/player_cat.tscn" id="1_6we3w"]
+[ext_resource type="PackedScene" path="res://scenes/ui/mini_map.tscn" id="3_8ra5a"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/old_nun.tscn" id="4_8ra5a"]
 [ext_resource type="PackedScene" uid="uid://pc6ujaccnolj" path="res://scenes/TestTileMap.tscn" id="5_8ra5a"]
-[ext_resource type="PackedScene" uid="uid://d2us2ce2r2aa1" path="res://scenes/npcs/samuel.tscn" id="5_bq26l"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/samuel.tscn" id="5_bq26l"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/stationaryNPC.tscn" id="5_k5pu3"]
+[ext_resource type="Script" uid="uid://dnrsj5dwo4sfg" path="res://scenes/Charles.gd" id="6_k5pu3"]
+[ext_resource type="Texture2D" uid="uid://ct7bfn4g7hvuf" path="res://art/sprites/Charles.png" id="8_iqu8w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k5pu3"]
+size = Vector2(9, 20)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5fr2l"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_2sb77"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_5fr2l")
+blend_point_0/pos = 0.0
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fkrx8"]
+animation = &"Walk"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_mwgft"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_fkrx8")
+blend_point_0/pos = 0.0
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_adxub"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ff0s2"]
+states/Idle/node = SubResource("AnimationNodeBlendSpace1D_2sb77")
+states/Idle/position = Vector2(320, 56)
+states/Walk/node = SubResource("AnimationNodeBlendSpace1D_mwgft")
+states/Walk/position = Vector2(310, 143)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_adxub")]
+
+[sub_resource type="Animation" id="Animation_uk2yf"]
+resource_name = "Walk"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_ondrs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_0e4v7"]
+resource_name = "Idle"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6nivd"]
+_data = {
+&"Idle": SubResource("Animation_0e4v7"),
+&"RESET": SubResource("Animation_ondrs"),
+&"Walk": SubResource("Animation_uk2yf")
+}
 
 [node name="Game Level" type="Node2D"]
 y_sort_enabled = true
@@ -29,3 +117,31 @@ position = Vector2(56, 47)
 
 [node name="Samuel" parent="." instance=ExtResource("5_bq26l")]
 position = Vector2(90, -62)
+
+[node name="Charles" type="CharacterBody2D" parent="."]
+script = ExtResource("6_k5pu3")
+
+[node name="StationaryNPC" parent="Charles" instance=ExtResource("5_k5pu3")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Charles/StationaryNPC"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_k5pu3")
+
+[node name="Timer" type="Timer" parent="Charles"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Charles"]
+texture = ExtResource("8_iqu8w")
+hframes = 8
+
+[node name="AnimationTree" type="AnimationTree" parent="Charles"]
+tree_root = SubResource("AnimationNodeStateMachine_ff0s2")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Idle/blend_position = 0
+parameters/Walk/blend_position = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Charles"]
+libraries = {
+&"": SubResource("AnimationLibrary_6nivd")
+}
+
+[connection signal="timeout" from="Charles/Timer" to="Charles" method="_on_timer_timeout"]
