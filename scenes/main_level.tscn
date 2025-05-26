@@ -1,11 +1,11 @@
 [gd_scene load_steps=19 format=3 uid="uid://oh2basiek65h"]
 
-[ext_resource type="PackedScene" uid="uid://cb6q4s8g4n1qm" path="res://scenes/player/player_cat.tscn" id="1_6we3w"]
-[ext_resource type="PackedScene" uid="uid://dhnijtw7hrb0t" path="res://scenes/ui/mini_map.tscn" id="3_8ra5a"]
-[ext_resource type="Script" uid="uid://defg31gc4nanv" path="res://scenes/samuel.gd" id="3_bq26l"]
-[ext_resource type="Texture2D" uid="uid://duk48gsoior4q" path="res://art/sprites/oldnunfordebate.png" id="3_qmak7"]
+[ext_resource type="PackedScene" path="res://scenes/player/player_cat.tscn" id="1_6we3w"]
+[ext_resource type="PackedScene" path="res://scenes/ui/mini_map.tscn" id="3_8ra5a"]
+[ext_resource type="Script" path="res://scenes/samuel.gd" id="3_bq26l"]
+[ext_resource type="Texture2D" uid="uid://7aswvnmu3yui" path="res://art/sprites/maryallen.png" id="3_u2c82"]
 [ext_resource type="Texture2D" uid="uid://cau48b1lhvjha" path="res://art/sprites/samuelghost.png" id="4_u2c82"]
-[ext_resource type="PackedScene" uid="uid://bus0mj0a28s62" path="res://scenes/npcs/stationaryNPC.tscn" id="5_k5pu3"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/stationaryNPC.tscn" id="5_k5pu3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qmak7"]
 size = Vector2(7, 12)
@@ -111,7 +111,7 @@ position_smoothing_enabled = true
 [node name="OldNun" type="CharacterBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="OldNun"]
-texture = ExtResource("3_qmak7")
+texture = ExtResource("3_u2c82")
 
 [node name="StationaryNPC" parent="OldNun" instance=ExtResource("5_k5pu3")]
 
