@@ -1,7 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://rdnttdj8i601"]
+[gd_scene load_steps=2 format=3 uid="uid://rdnttdj8i601"]
 
-[ext_resource type="Script" path="res://main_menu.gd" id="1_06t4h"]
-[ext_resource type="AudioStream" path="res://audio/music/8bit-KnoxHymn - Introduction_Character Creation Music.mp3" id="2_7vrkn"]
 [ext_resource type="Texture2D" uid="uid://ch8akaxcbrt8t" path="res://art/beauty_shots/warflashback1.png" id="2_fu7sn"]
 
 [node name="main menu" type="Control"]
@@ -13,7 +11,6 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_06t4h")
 
 [node name="Warflashback1" type="Sprite2D" parent="."]
 position = Vector2(8, 15.5)
@@ -356,6 +353,7 @@ grow_vertical = 0
 text = "< back"
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 z_index = -100
 layout_mode = 0
 offset_left = -566.0
@@ -366,7 +364,6 @@ mouse_filter = 2
 color = Color(0.827836, 0.388822, 0.529754, 1)
 
 [node name="main menu music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_7vrkn")
 volume_db = -30.0
 autoplay = true
 
