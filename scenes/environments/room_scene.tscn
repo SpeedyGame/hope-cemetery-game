@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://b4j08i851omb2"]
 
-[ext_resource type="Script" uid="uid://cs645mbjrml0" path="res://scripts/managers/room_scene.gd" id="1_r8psk"]
+[ext_resource type="Script" uid="uid://k2c35nwviccb" path="res://scripts/managers/room_scene.gd" id="1_r8psk"]
 [ext_resource type="PackedScene" uid="uid://cb6q4s8g4n1qm" path="res://scenes/player/player_cat.tscn" id="1_w1efa"]
 [ext_resource type="PackedScene" uid="uid://bff41rboqsk07" path="res://scenes/npcs/choreographed_npc.tscn" id="4_grnmm"]
 [ext_resource type="PackedScene" uid="uid://bus0mj0a28s62" path="res://scenes/npcs/stationaryNPC.tscn" id="5_faceq"]

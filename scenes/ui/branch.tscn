@@ -1,21 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dnix3kjh7tr7k"]
 
+[ext_resource type="Script" uid="uid://cnhtgi7osaafg" path="res://scripts/ui/branch.gd" id="1_rkij2"]
 [ext_resource type="Texture2D" uid="uid://ciw3u1t3cduxk" path="res://item_icons/Tree Branch.png" id="2_8vqe7"]
-
-[sub_resource type="GDScript" id="GDScript_50rvm"]
-script/source = "extends Control
-
-signal item_clicked(control_node: Control)
-
-func _ready():
-	$TextureRect.texture = load(\"res://item_icons/Tree Branch.png\")
-	$TextureRect.mouse_filter = MOUSE_FILTER_STOP
-	$TextureRect.gui_input.connect(on_gui_input)
-
-func on_gui_input(event):
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		item_clicked.emit(self)
-"
 
 [node name="Item" type="Control"]
 z_index = 1
@@ -29,7 +15,7 @@ offset_bottom = -630.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = SubResource("GDScript_50rvm")
+script = ExtResource("1_rkij2")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(18, 18)

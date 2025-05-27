@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=4 uid="uid://ckeabtmbl0nnj"]
+[gd_scene load_steps=13 format=4 uid="uid://ckeabtmbl0nnj"]
 
 [ext_resource type="Texture2D" uid="uid://bsdk62rxk1s1e" path="res://art/tilesets/tileset1.png" id="1_ts3do"]
+[ext_resource type="PackedScene" uid="uid://cdhk6ncedxu4i" path="res://scenes/ui/inventory.tscn" id="1_wnvit"]
 [ext_resource type="Texture2D" uid="uid://btel4j8sjdxx3" path="res://art/tilesets/pixil-frame-0 (2).png" id="2_dppqu"]
 [ext_resource type="Texture2D" uid="uid://b5orhbsxwpxxk" path="res://art/tilesets/pixil-frame-0 (3).png" id="3_k73wi"]
 [ext_resource type="PackedScene" uid="uid://cb6q4s8g4n1qm" path="res://scenes/player/player_cat.tscn" id="4_lj8tu"]
@@ -659,6 +660,13 @@ sources/2 = SubResource("TileSetAtlasSource_ixh0i")
 y_sort_enabled = true
 position = Vector2(713, 4)
 metadata/_edit_vertical_guides_ = [-945.0]
+
+[node name="Inventory" parent="." instance=ExtResource("1_wnvit")]
+visibility_layer = 512
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 100.0
+offset_bottom = 100.0
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 rotation = 1.5708

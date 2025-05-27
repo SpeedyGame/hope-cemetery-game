@@ -150,6 +150,3 @@ custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mrqgh")
 script = ExtResource("3_5tt2m")
-
-[node name="AddBtton" type="Button" parent="InventoryPanel/InventorySlots"]
-layout_mode = 2
