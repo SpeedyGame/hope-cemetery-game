@@ -54,3 +54,4 @@ player: I really gotta get out of here.
 alex: Dude, who are you talking to?
 player: Uhhh nobody, I- I think I’m gonna go now.
 alex: Okay, just be quiet when you come back.
+[signal arg="DormMusic"]

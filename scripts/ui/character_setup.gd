@@ -48,10 +48,12 @@ func _on_next_pressed() -> void:
 	player_name = name_input.text
 	selected_major = major_pick.get_item_text(major_pick.get_selected_id())
 	category = major_categories.get(selected_major)
+	Dialogic.VAR.PlayerDescription.Name = name_input.text
+	Dialogic.VAR.PlayerDescription.Major = major_pick.text
 	print("Player Name:", player_name)
 	print("Selected Major:", selected_major)
 	print("Category: ", category)
 	
-	get_tree().change_scene_to_file("res://scenes/main.tscn") 
+	get_tree().change_scene_to_file("res://scenes/environments/room_scene.tscn") 
 	#for now next button is linked to the main scene
 	#later to be linked to the another scene? 

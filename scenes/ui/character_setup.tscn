@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://cdmgk0gyqkf5l"]
+[gd_scene load_steps=2 format=3 uid="uid://tpgw0xc460ys"]
+
+[ext_resource type="Script" uid="uid://b2daub8f5jphd" path="res://scripts/ui/character_setup.gd" id="1_0n5el"]
 
 [node name="character setup" type="Node2D"]
+script = ExtResource("1_0n5el")
 
 [node name="name" type="Label" parent="."]
 anchors_preset = 8

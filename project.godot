@@ -11,15 +11,15 @@ config_version=5
 [application]
 
 config/name="hope-cemetery-game"
-run/main_scene="uid://b4j08i851omb2"
+run/main_scene="uid://cubs2bko4tdk"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 glob_quest="*res://scripts/globals/glob_quest.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 glob_people="*res://scripts/globals/glob_people.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
@@ -80,6 +80,10 @@ glossary/default_case_sensitive=true
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 [input]
 
