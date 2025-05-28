@@ -667,10 +667,10 @@ tile_set = SubResource("TileSet_pnyb2")
 
 [node name="PlayerCat" parent="." instance=ExtResource("4_lj8tu")]
 y_sort_enabled = true
-position = Vector2(394, 277)
+position = Vector2(-582, 291)
+metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="PlayerCat"]
-position = Vector2(-941, -14)
 zoom = Vector2(4, 4)
 process_callback = 0
 position_smoothing_enabled = true
