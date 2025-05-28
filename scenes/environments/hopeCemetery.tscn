@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://ckeabtmbl0nnj"]
+[gd_scene load_steps=13 format=4 uid="uid://ckeabtmbl0nnj"]
 
 [ext_resource type="Texture2D" uid="uid://bsdk62rxk1s1e" path="res://art/tilesets/tileset1.png" id="1_ts3do"]
 [ext_resource type="Texture2D" uid="uid://btel4j8sjdxx3" path="res://art/tilesets/pixil-frame-0 (2).png" id="2_dppqu"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cb6q4s8g4n1qm" path="res://scenes/player/player_cat.tscn" id="4_lj8tu"]
 [ext_resource type="PackedScene" uid="uid://dq5se8m6btwbd" path="res://scenes/npcs/old_nun.tscn" id="5_7wp45"]
 [ext_resource type="PackedScene" uid="uid://d2us2ce2r2aa1" path="res://scenes/npcs/samuel.tscn" id="6_7p4nx"]
+[ext_resource type="AudioStream" uid="uid://c1g80en158rtm" path="res://audio/music/Cemetery Music.wav" id="7_7wp45"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ts3do"]
 texture = ExtResource("1_ts3do")
@@ -680,4 +681,9 @@ z_as_relative = false
 position = Vector2(-518, 290)
 
 [node name="Samuel" parent="." instance=ExtResource("6_7p4nx")]
-position = Vector2(434, 248)
+position = Vector2(432, 248)
+
+[node name="cemetary_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_7wp45")
+volume_db = -5.0
+autoplay = true

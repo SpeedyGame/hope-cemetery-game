@@ -1,4 +1,16 @@
+[gd_scene load_steps=21 format=3 uid="uid://oh2basiek65h"]
+
+[ext_resource type="Texture2D" uid="uid://bkex41xayommr" path="res://tests/icon.svg" id="1_8ra5a"]
+[ext_resource type="Script" uid="uid://dcdk4ehpd3154" path="res://scripts/player/player.gd" id="1_qmak7"]
+[ext_resource type="Texture2D" uid="uid://bq0frcp06bnk1" path="res://art/sprites/PlayerWalk.png" id="2_8ra5a"]
+[ext_resource type="Script" uid="uid://ecuftyno8rkq" path="res://scripts/sub_viewport.gd" id="4_u2c82"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bq26l"]
+size = Vector2(100.952, 5.11995)
+[gd_scene load_steps=7 format=4 uid="uid://oh2basiek65h"]
+[gd_scene load_steps=3 format=3 uid="uid://oh2basiek65h"]
 [gd_scene load_steps=6 format=3 uid="uid://oh2basiek65h"]
+[gd_scene load_steps=6 format=3 uid="uid://cbiw3yspn035m"]
 
 [ext_resource type="PackedScene" uid="uid://cb6q4s8g4n1qm" path="res://scenes/player/player_cat.tscn" id="1_6we3w"]
 [ext_resource type="PackedScene" uid="uid://dhnijtw7hrb0t" path="res://scenes/ui/mini_map.tscn" id="3_8ra5a"]
@@ -7,6 +19,19 @@
 [ext_resource type="PackedScene" uid="uid://d2us2ce2r2aa1" path="res://scenes/npcs/samuel.tscn" id="5_bq26l"]
 
 [node name="Game Level" type="Node2D"]
+
+[node name="npc_vision" type="Area2D" parent="."]
+scale = Vector2(1.129, 1.27988)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc_vision"]
+position = Vector2(136.846, -124.231)
+scale = Vector2(1.06163, -19.8385)
+shape = SubResource("RectangleShape2D_bq26l")
+
+[node name="Icon" type="Sprite2D" parent="npc_vision"]
+position = Vector2(134.632, -125.012)
+scale = Vector2(0.48616, 0.46948)
+texture = ExtResource("1_8ra5a")
 y_sort_enabled = true
 position = Vector2(2, 0)
 
@@ -24,6 +49,44 @@ y_sort_enabled = true
 [node name="MiniMap" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_8ra5a")]
 player = NodePath("../PlayerCat")
 
+[node name="AnimationTree" type="AnimationTree" parent="CharacterBody2D"]
+tree_root = SubResource("AnimationNodeStateMachine_cqkjt")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Idle/blend_position = -0.00149256
+parameters/Walk/blend_position = Vector2(0, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="MiniMapUI" type="CanvasLayer" parent="."]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="MiniMapUI"]
+offset_left = 120.0
+offset_top = 39.0
+offset_right = 320.0
+offset_bottom = 239.0
+
+[node name="SubViewport" type="SubViewport" parent="MiniMapUI/SubViewportContainer" node_paths=PackedStringArray("camera_node", "player_node")]
+handle_input_locally = false
+size = Vector2i(200, 200)
+render_target_update_mode = 4
+script = ExtResource("4_u2c82")
+camera_node = NodePath("../../../Camera2D")
+player_node = NodePath("../../../CharacterBody2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="MiniMapUI/SubViewportContainer/SubViewport"]
+
+[node name="Camera2D" type="Camera2D" parent="MiniMapUI/SubViewportContainer/SubViewport"]
+zoom = Vector2(0.1, 0.1)
+
+[connection signal="area_entered" from="npc_vision" to="CharacterBody2D" method="_on_npc_vision_area_entered"]
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = -3
+tile_map_data = PackedByteArray("AAD4//z/AAAAAAAAAAD4//3/AAAAAAEAAAD4//7/AAAAAAIAAAD4////AAAAAAMAAAD4/wAAAAAAAAQAAAD5//z/AAABAAAAAAD5//3/AAABAAEAAAD5//7/AAABAAIAAAD5////AAABAAMAAAD5/wAAAAABAAQAAAD6//z/AAACAAAAAAD6//3/AAACAAEAAAD6//7/AAACAAIAAAD6////AAACAAMAAAD6/wAAAAACAAQAAAD7//z/AAADAAAAAAD7//3/AAADAAEAAAD7//7/AAADAAIAAAD7////AAADAAMAAAD7/wAAAAADAAQAAAD8//z/AAAAAAAAAAD8//3/AAAAAAEAAAD8//7/AAAAAAIAAAD8////AAAAAAMAAAD8/wAAAAAAAAQAAAD9//z/AAABAAAAAAD9//3/AAABAAEAAAD9//7/AAABAAIAAAD9////AAABAAMAAAD9/wAAAAABAAQAAAD+//z/AAACAAAAAAD+//3/AAACAAEAAAD+//7/AAACAAIAAAD+////AAACAAMAAAD+/wAAAAACAAQAAAD///z/AAADAAAAAAD///3/AAADAAEAAAD///7/AAADAAIAAAD/////AAADAAMAAAD//wAAAAADAAQAAAAAAPz/AAAAAAAAAAAAAP3/AAAAAAEAAAAAAP7/AAAAAAIAAAAAAP//AAAAAAMAAAAAAAAAAAAAAAQAAAABAPz/AAABAAAAAAABAP3/AAABAAEAAAABAP7/AAABAAIAAAABAP//AAABAAMAAAABAAAAAAABAAQAAAACAPz/AAACAAAAAAACAP3/AAACAAEAAAACAP7/AAACAAIAAAACAP//AAACAAMAAAACAAAAAAACAAQAAAADAPz/AAADAAAAAAADAP3/AAADAAEAAAADAP7/AAADAAIAAAADAP//AAADAAMAAAADAAAAAAADAAQAAAAEAPz/AAAAAAAAAAAEAP3/AAAAAAEAAAAEAP7/AAAAAAIAAAAEAP//AAAAAAMAAAAEAAAAAAAAAAQAAAAFAPz/AAABAAAAAAAFAP3/AAABAAEAAAAFAP7/AAABAAIAAAAFAP//AAABAAMAAAAFAAAAAAABAAQAAAAGAPz/AAACAAAAAAAGAP3/AAACAAEAAAAGAP7/AAACAAIAAAAGAP//AAACAAMAAAAGAAAAAAACAAQAAAAHAPz/AAADAAAAAAAHAP3/AAADAAEAAAAHAP7/AAADAAIAAAAHAP//AAADAAMAAAAHAAAAAAADAAQAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAEAAAAEAAMAAAAAAAIAAAAEAAQAAAAAAAMAAAAEAAUAAAAAAAQAAAAFAAEAAAABAAAAAAAFAAIAAAABAAEAAAAFAAMAAAABAAIAAAAFAAQAAAABAAMAAAAFAAUAAAABAAQAAAAGAAEAAAACAAAAAAAGAAIAAAACAAEAAAAGAAMAAAACAAIAAAAGAAQAAAACAAMAAAAGAAUAAAACAAQAAAAHAAEAAAADAAAAAAAHAAIAAAADAAEAAAAHAAMAAAADAAIAAAAHAAQAAAADAAMAAAAHAAUAAAADAAQAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAEAAAAAAAMAAAAAAAIAAAAAAAQAAAAAAAMAAAAAAAUAAAAAAAQAAAABAAEAAAABAAAAAAABAAIAAAABAAEAAAABAAMAAAABAAIAAAABAAQAAAABAAMAAAABAAUAAAABAAQAAAACAAEAAAACAAAAAAACAAIAAAACAAEAAAACAAMAAAACAAIAAAACAAQAAAACAAMAAAACAAUAAAACAAQAAAADAAEAAAADAAAAAAADAAIAAAADAAEAAAADAAMAAAADAAIAAAADAAQAAAADAAMAAAADAAUAAAADAAQAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAEAAAD8/wMAAAAAAAIAAAD8/wQAAAAAAAMAAAD8/wUAAAAAAAQAAAD9/wEAAAABAAAAAAD9/wIAAAABAAEAAAD9/wMAAAABAAIAAAD9/wQAAAABAAMAAAD9/wUAAAABAAQAAAD+/wEAAAACAAAAAAD+/wIAAAACAAEAAAD+/wMAAAACAAIAAAD+/wQAAAACAAMAAAD+/wUAAAACAAQAAAD//wEAAAADAAAAAAD//wIAAAADAAEAAAD//wMAAAADAAIAAAD//wQAAAADAAMAAAD//wUAAAADAAQAAAD4/wEAAAAAAAAAAAD4/wIAAAAAAAEAAAD4/wMAAAAAAAIAAAD4/wQAAAAAAAMAAAD4/wUAAAAAAAQAAAD5/wEAAAABAAAAAAD5/wIAAAABAAEAAAD5/wMAAAABAAIAAAD5/wQAAAABAAMAAAD5/wUAAAABAAQAAAD6/wEAAAACAAAAAAD6/wIAAAACAAEAAAD6/wMAAAACAAIAAAD6/wQAAAACAAMAAAD6/wUAAAACAAQAAAD7/wEAAAADAAAAAAD7/wIAAAADAAEAAAD7/wMAAAADAAIAAAD7/wQAAAADAAMAAAD7/wUAAAADAAQAAAAPAAEAAAAEAAIAAAAPAAIAAAAEAAIAAAAPAAMAAAAEAAIAAAAPAAQAAAAEAAIAAAAPAAUAAAAEAAIAAAAQAAMAAAAEAAIAAAARAAMAAAAEAAIAAAARAAIAAAAEAAIAAAARAAEAAAAEAAIAAAARAAQAAAAEAAIAAAARAAUAAAAEAAIAAAATAAMAAAAEAAIAAAATAAQAAAAEAAIAAAATAAUAAAAEAAIAAAATAAEAAAAEAAIAAAA=")
+tile_set = SubResource("TileSet_bq26l")
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-1, 11)
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
 [node name="OldNun" parent="." instance=ExtResource("4_8ra5a")]
 position = Vector2(56, 47)
 
