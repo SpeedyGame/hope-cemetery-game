@@ -23,6 +23,7 @@ func recurse_turn_off(node: Node):
 		recurse_turn_off(child)
 
 func _on_people_button_pressed():
+	$people_gui.update_people()
 	quest_gui.visible = false
 	if people_gui.visible == true:
 		people_gui.visible = false

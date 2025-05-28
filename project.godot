@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 glob_quest="*res://scripts/globals/glob_quest.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+glob_people="*res://scripts/globals/glob_people.gd"
 
 [dialogic]
 

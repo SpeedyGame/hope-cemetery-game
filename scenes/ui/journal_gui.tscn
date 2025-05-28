@@ -55,6 +55,7 @@ text = "Credits"
 
 [node name="quest_gui" type="CanvasLayer" parent="Control"]
 layer = 5
+visible = false
 
 [node name="PanelContainer" type="PanelContainer" parent="Control/quest_gui"]
 offset_left = 602.0
@@ -317,7 +318,6 @@ text = "No Completed Side Quests"
 
 [node name="people_gui" type="CanvasLayer" parent="Control"]
 layer = 5
-visible = false
 script = ExtResource("4_fko3c")
 
 [node name="PanelContainer" type="PanelContainer" parent="Control/people_gui"]
@@ -329,27 +329,27 @@ offset_bottom = 588.0
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/people_gui/PanelContainer"]
 layout_mode = 2
 
-[node name="MenuButton" type="MenuButton" parent="Control/people_gui/PanelContainer/VBoxContainer"]
+[node name="alex" type="MenuButton" parent="Control/people_gui/PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(20, 10)
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Abraham Lincoln"
 icon = ExtResource("4_25tqd")
 
-[node name="popup_person1" type="PopupPanel" parent="Control/people_gui/PanelContainer/VBoxContainer/MenuButton"]
+[node name="alex_popup" type="PopupPanel" parent="Control/people_gui/PanelContainer/VBoxContainer/alex"]
 position = Vector2i(0, 132)
 size = Vector2i(608, 60)
 borderless = false
 max_size = Vector2i(1000, 60)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/people_gui/PanelContainer/VBoxContainer/MenuButton/popup_person1"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/people_gui/PanelContainer/VBoxContainer/alex/alex_popup"]
 custom_minimum_size = Vector2(600, 60)
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 604.0
 offset_bottom = 76.0
 
-[node name="description" type="Label" parent="Control/people_gui/PanelContainer/VBoxContainer/MenuButton/popup_person1/VBoxContainer"]
+[node name="description" type="Label" parent="Control/people_gui/PanelContainer/VBoxContainer/alex/alex_popup/VBoxContainer"]
 custom_minimum_size = Vector2(600, 60)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -359,7 +359,77 @@ max_lines_visible = 5
 visible_characters = 500
 visible_ratio = 4.0
 
-[node name="close" type="Button" parent="Control/people_gui/PanelContainer/VBoxContainer/MenuButton/popup_person1/VBoxContainer"]
+[node name="alex_close" type="Button" parent="Control/people_gui/PanelContainer/VBoxContainer/alex/alex_popup/VBoxContainer"]
+layout_mode = 2
+
+[node name="woman" type="MenuButton" parent="Control/people_gui/PanelContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(20, 10)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Abraham Lincoln"
+icon = ExtResource("4_25tqd")
+
+[node name="woman_popup" type="PopupPanel" parent="Control/people_gui/PanelContainer/VBoxContainer/woman"]
+auto_translate_mode = 1
+position = Vector2i(0, 132)
+size = Vector2i(608, 60)
+borderless = false
+max_size = Vector2i(1000, 60)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/people_gui/PanelContainer/VBoxContainer/woman/woman_popup"]
+custom_minimum_size = Vector2(600, 60)
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 604.0
+offset_bottom = 76.0
+
+[node name="description" type="Label" parent="Control/people_gui/PanelContainer/VBoxContainer/woman/woman_popup/VBoxContainer"]
+custom_minimum_size = Vector2(600, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "He was the 16th president of the united states during the Civil War. He held a debate at Knox college againt Stephen Douglas."
+autowrap_mode = 3
+max_lines_visible = 5
+visible_characters = 500
+visible_ratio = 4.0
+
+[node name="woman_close" type="Button" parent="Control/people_gui/PanelContainer/VBoxContainer/woman/woman_popup/VBoxContainer"]
+layout_mode = 2
+
+[node name="henry" type="MenuButton" parent="Control/people_gui/PanelContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(20, 10)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Abraham Lincoln"
+icon = ExtResource("4_25tqd")
+
+[node name="henry_popup" type="PopupPanel" parent="Control/people_gui/PanelContainer/VBoxContainer/henry"]
+auto_translate_mode = 1
+position = Vector2i(0, 132)
+size = Vector2i(608, 60)
+borderless = false
+max_size = Vector2i(1000, 60)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/people_gui/PanelContainer/VBoxContainer/henry/henry_popup"]
+custom_minimum_size = Vector2(600, 60)
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 604.0
+offset_bottom = 56.0
+
+[node name="description" type="Label" parent="Control/people_gui/PanelContainer/VBoxContainer/henry/henry_popup/VBoxContainer"]
+custom_minimum_size = Vector2(600, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "He was the 16th president of the united states during the Civil War. He held a debate at Knox college againt Stephen Douglas."
+autowrap_mode = 3
+max_lines_visible = 5
+visible_characters = 500
+visible_ratio = 4.0
+
+[node name="henry_close" type="Button" parent="Control/people_gui/PanelContainer/VBoxContainer/henry/henry_popup/VBoxContainer"]
 layout_mode = 2
 
 [connection signal="pressed" from="Control/Panel/VBoxContainer/quest_journal_button" to="Control" method="_on_quest_journal_button_pressed"]
@@ -376,5 +446,9 @@ layout_mode = 2
 [connection signal="pressed" from="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/main_comp_quest_box/comp_investiage_quest/investigate_pop_up/VBoxContainer/close_investigate" to="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/main_comp_quest_box" method="_on_close_investigate_pressed"]
 [connection signal="toggled" from="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/main_comp_quest_box/comp_masoleum" to="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/main_comp_quest_box" method="_on_masoleum_toggled"]
 [connection signal="pressed" from="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/main_comp_quest_box/comp_masoleum/masoleum_pop_up/VBoxContainer/close_masoleum" to="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/main_comp_quest_box" method="_on_close_masoleum_pressed"]
-[connection signal="toggled" from="Control/people_gui/PanelContainer/VBoxContainer/MenuButton" to="Control/people_gui" method="_on_menu_button_toggled"]
-[connection signal="pressed" from="Control/people_gui/PanelContainer/VBoxContainer/MenuButton/popup_person1/VBoxContainer/close" to="Control/people_gui" method="_on_close_pressed"]
+[connection signal="toggled" from="Control/people_gui/PanelContainer/VBoxContainer/alex" to="Control/people_gui" method="_on_alex_toggled"]
+[connection signal="pressed" from="Control/people_gui/PanelContainer/VBoxContainer/alex/alex_popup/VBoxContainer/alex_close" to="Control/people_gui" method="_on_alex_close_pressed"]
+[connection signal="toggled" from="Control/people_gui/PanelContainer/VBoxContainer/woman" to="Control/people_gui" method="_on_woman_toggled"]
+[connection signal="pressed" from="Control/people_gui/PanelContainer/VBoxContainer/woman/woman_popup/VBoxContainer/woman_close" to="Control/people_gui" method="_on_woman_close_pressed"]
+[connection signal="toggled" from="Control/people_gui/PanelContainer/VBoxContainer/henry" to="Control/people_gui" method="_on_henry_toggled"]
+[connection signal="pressed" from="Control/people_gui/PanelContainer/VBoxContainer/henry/henry_popup/VBoxContainer/henry_close" to="Control/people_gui" method="_on_henry_close_pressed"]
