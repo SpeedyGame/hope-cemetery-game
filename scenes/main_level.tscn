@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://oh2basiek65h"]
+[gd_scene load_steps=7 format=3 uid="uid://oh2basiek65h"]
 
-[ext_resource type="PackedScene" path="res://scenes/player/player_cat.tscn" id="1_6we3w"]
-[ext_resource type="PackedScene" path="res://scenes/ui/mini_map.tscn" id="3_8ra5a"]
-[ext_resource type="PackedScene" path="res://scenes/npcs/old_nun.tscn" id="4_8ra5a"]
+[ext_resource type="PackedScene" uid="uid://cb6q4s8g4n1qm" path="res://scenes/player/player_cat.tscn" id="1_6we3w"]
+[ext_resource type="PackedScene" uid="uid://dhnijtw7hrb0t" path="res://scenes/ui/mini_map.tscn" id="3_8ra5a"]
+[ext_resource type="Script" uid="uid://c8ys2mi3foboo" path="res://scenes/panel.gd" id="3_bq26l"]
+[ext_resource type="PackedScene" uid="uid://dq5se8m6btwbd" path="res://scenes/npcs/old_nun.tscn" id="4_8ra5a"]
 [ext_resource type="PackedScene" path="res://scenes/hopeCemetery.tscn" id="5_8ra5a"]
-[ext_resource type="PackedScene" path="res://scenes/npcs/samuel.tscn" id="5_bq26l"]
+[ext_resource type="PackedScene" uid="uid://d2us2ce2r2aa1" path="res://scenes/npcs/samuel.tscn" id="5_bq26l"]
 
 [node name="Game Level" type="Node2D"]
 y_sort_enabled = true
@@ -23,6 +24,20 @@ player = NodePath("../PlayerCat")
 
 [node name="Camera2D" parent="MiniMap/SubViewportContainer/SubViewport" index="1"]
 zoom = Vector2(0.2, 0.2)
+
+[node name="Panel" type="Panel" parent="MiniMap" node_paths=PackedStringArray("target")]
+z_index = -1
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_bq26l")
+target = NodePath("../../PlayerCat")
+
+[node name="ColorRect" type="ColorRect" parent="MiniMap/Panel"]
+z_index = 2
+layout_mode = 0
+offset_right = 10.0
+offset_bottom = 12.0
+color = Color(1, 0.372549, 1, 1)
 
 [node name="OldNun" parent="." instance=ExtResource("4_8ra5a")]
 position = Vector2(56, 47)
