@@ -8,6 +8,8 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tefeu"]
 size = Vector2(87, 94)
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" path="res://scenes/environments/map.tscn" id="2_0wfyh"]
 
 [node name="Main" type="Node2D"]
 

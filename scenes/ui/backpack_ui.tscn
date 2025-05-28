@@ -429,6 +429,7 @@ animations = [{
 "name": &"turnright",
 "speed": 8.0
 }]
+[ext_resource type="PackedScene" path="res://scenes/ui/inventory.tscn" id="9_n2kom"]
 
 [node name="backpackUI" type="CanvasLayer"]
 layer = 3

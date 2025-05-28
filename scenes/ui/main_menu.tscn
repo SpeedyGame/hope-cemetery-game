@@ -299,7 +299,15 @@ offset_right = -1.0
 offset_bottom = 42.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "time spent"
+text = "time spent:                     "
+
+[node name="time_label" type="Label" parent="stats/Control/stats popup"]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 151.0
+offset_right = 287.0
+offset_bottom = 174.0
+text = "        hrs"
 
 [node name="days" type="Button" parent="stats/Control/stats popup"]
 layout_mode = 1
@@ -331,6 +339,7 @@ grow_vertical = 0
 text = "< back"
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 z_index = -100
 layout_mode = 0
 offset_left = -566.0
