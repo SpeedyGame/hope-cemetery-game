@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://oh2basiek65h"]
+[gd_scene load_steps=9 format=3 uid="uid://oh2basiek65h"]
 
 [ext_resource type="PackedScene" uid="uid://cb6q4s8g4n1qm" path="res://scenes/player/player_cat.tscn" id="1_6we3w"]
 [ext_resource type="PackedScene" uid="uid://dhnijtw7hrb0t" path="res://scenes/ui/mini_map.tscn" id="3_8ra5a"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" path="res://scenes/hopeCemetery.tscn" id="5_8ra5a"]
 [ext_resource type="PackedScene" uid="uid://d2us2ce2r2aa1" path="res://scenes/npcs/samuel.tscn" id="5_bq26l"]
 [ext_resource type="PackedScene" path="res://scenes/npcs/gw_gale.tscn" id="7_u2c82"]
+[ext_resource type="PackedScene" uid="uid://bknka6w4s8st3" path="res://scenes/npcs/charles.tscn" id="8_k5pu3"]
 
 [node name="Game Level" type="Node2D"]
 y_sort_enabled = true
@@ -44,11 +45,20 @@ color = Color(1, 0.372549, 1, 1)
 position = Vector2(56, 47)
 
 [node name="Samuel" parent="." instance=ExtResource("5_bq26l")]
-position = Vector2(403, -86)
+position = Vector2(322, -94)
 
 [node name="hopeCemetery" parent="." instance=ExtResource("5_8ra5a")]
+position = Vector2(-84, 0)
 
 [node name="GWGale" parent="." instance=ExtResource("7_u2c82")]
 position = Vector2(188, 77)
 
+[node name="Charles" parent="." instance=ExtResource("8_k5pu3")]
+position = Vector2(569, -127)
+
+[node name="Sprite2D" parent="Charles" index="2"]
+frame = 0
+
 [editable path="MiniMap"]
+[editable path="Samuel"]
+[editable path="Charles"]
