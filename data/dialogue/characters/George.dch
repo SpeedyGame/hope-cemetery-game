@@ -1,0 +1,19 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(0.120884, 0.386749, 0.982422, 1),
+&"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+&"default_portrait": "",
+&"description": "",
+&"display_name": "George",
+&"mirror": false,
+&"nicknames": ["George Washington Gale (Full Name)"],
+&"offset": Vector2(0, 0),
+&"portraits": {},
+&"scale": 1.0
+}
