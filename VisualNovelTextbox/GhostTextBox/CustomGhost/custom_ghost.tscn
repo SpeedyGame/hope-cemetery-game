@@ -1,0 +1,115 @@
+[gd_scene load_steps=19 format=3 uid="uid://df3d6lg8kn6ge"]
+
+[ext_resource type="Script" uid="uid://tjxubqrdkrvl" path="res://VisualNovelTextbox/GhostTextBox/CustomGhost/default_layout_base.gd" id="1_ifsho"]
+[ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_nkbe1"]
+[ext_resource type="Script" uid="uid://cmgg11ip8spk0" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.gd" id="3_ma5pq"]
+[ext_resource type="PackedScene" uid="uid://cy1y14inwkplb" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.tscn" id="4_7klsu"]
+[ext_resource type="Script" uid="uid://0f2chwedwrjk" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.gd" id="5_3a65i"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="6_84yqp"]
+[ext_resource type="Script" uid="uid://dnpomjwe8s0d" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.gd" id="7_oxipb"]
+[ext_resource type="PackedScene" uid="uid://bquja8jyk8kbr" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn" id="8_bvkwk"]
+[ext_resource type="Script" uid="uid://34i72mro5rya" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.gd" id="9_ofgeq"]
+[ext_resource type="PackedScene" uid="uid://dsbwnp5hegnu3" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn" id="10_jmqbm"]
+[ext_resource type="Script" uid="uid://d313yemhowlcj" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.gd" id="11_eoj0p"]
+[ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="12_jli8n"]
+[ext_resource type="Script" uid="uid://52pdc4kattdj" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.gd" id="13_pvbcn"]
+[ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="14_j3lpp"]
+[ext_resource type="Script" uid="uid://46t52bmrw8dx" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.gd" id="15_x3lpu"]
+[ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="16_6bs4b"]
+[ext_resource type="Script" uid="uid://pibwh81tfd8d" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.gd" id="17_7si5k"]
+[ext_resource type="PackedScene" uid="uid://cuoywrmvda1yg" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/example_history_item.tscn" id="18_10nkd"]
+
+[node name="Custom" type="CanvasLayer"]
+script = ExtResource("1_ifsho")
+
+[node name="BackgroundLayer" type="Control" parent="." instance=ExtResource("2_nkbe1")]
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_ma5pq")
+apply_overrides_on_ready = true
+
+[node name="VN_PortraitLayer" type="Control" parent="." instance=ExtResource("4_7klsu")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("5_3a65i")
+apply_overrides_on_ready = true
+
+[node name="FullAdvanceInputLayer" type="Control" parent="." instance=ExtResource("6_84yqp")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("7_oxipb")
+apply_overrides_on_ready = true
+
+[node name="VN_TextboxLayer" type="Control" parent="." instance=ExtResource("8_bvkwk")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("9_ofgeq")
+box_panel = "res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_default_panel.tres"
+box_size = Vector2(550, 150)
+name_label_box_panel = "res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_name_label_panel.tres"
+name_label_box_modulate = Color(0, 0, 0, 1)
+apply_overrides_on_ready = true
+
+[node name="Glossary" type="Control" parent="." instance=ExtResource("10_jmqbm")]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("11_eoj0p")
+apply_overrides_on_ready = true
+
+[node name="VN_ChoiceLayer" type="Control" parent="." instance=ExtResource("12_jli8n")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("13_pvbcn")
+apply_overrides_on_ready = true
+
+[node name="TextInputLayer" type="Control" parent="." instance=ExtResource("14_j3lpp")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("15_x3lpu")
+apply_overrides_on_ready = true
+
+[node name="ExampleHistoryScene" type="Control" parent="." instance=ExtResource("16_6bs4b")]
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+script = ExtResource("17_7si5k")
+HistoryItem = ExtResource("18_10nkd")
+apply_overrides_on_ready = true
