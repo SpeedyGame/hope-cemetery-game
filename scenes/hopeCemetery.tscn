@@ -75,6 +75,7 @@ margins = Vector2i(3, 2)
 7:3/0 = 0
 8:3/0 = 0
 9:3/0 = 0
+9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 10:3/0 = 0
 11:3/0 = 0
 12:3/0 = 0
@@ -211,6 +212,7 @@ margins = Vector2i(0, 8)
 4:9/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_e0mkt"]
+physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_vuwnr")
 sources/3 = SubResource("TileSetAtlasSource_m3mva")
 sources/0 = SubResource("TileSetAtlasSource_pd8lo")
@@ -406,6 +408,7 @@ margins = Vector2i(6, 10)
 14:8/0 = 0
 23:1/size_in_atlas = Vector2i(1, 2)
 23:1/0 = 0
+23:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 7.91378, 16.1873, -8.09364, 16.3671)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0vkk"]
 texture = ExtResource("1_m3mva")
@@ -460,7 +463,6 @@ margins = Vector2i(3, 2)
 18:2/0 = 0
 19:2/0 = 0
 21:2/0 = 0
-23:2/0 = 0
 24:2/0 = 0
 25:2/0 = 0
 26:2/0 = 0
@@ -543,6 +545,7 @@ margins = Vector2i(3, 2)
 17:5/0 = 0
 18:5/0 = 0
 19:5/0 = 0
+19:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.39576, 8, -5.57562, 8, 8, -8, 8)
 20:5/0 = 0
 21:5/0 = 0
 22:5/0 = 0
@@ -599,8 +602,10 @@ margins = Vector2i(3, 2)
 4:10/0 = 0
 6:10/0 = 0
 7:10/0 = 0
+23:2/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_k0vkk"]
+physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_0pluy")
 sources/2 = SubResource("TileSetAtlasSource_k0vkk")
 
@@ -612,7 +617,6 @@ tile_map_data = PackedByteArray("AAABAAAAAAABAAEAAAACAAAAAAABAAEAAAADAAAAAAABAAE
 tile_set = SubResource("TileSet_e0mkt")
 
 [node name="grave layer" type="TileMapLayer" parent="."]
-z_index = 1
 scale = Vector2(2.5, 2.5)
 tile_map_data = PackedByteArray("AAAzAP3/AQAXAAEAAAAiAP7/AgATAAUAAAAnAPb/AgATAAUAAAAZAPf/AgATAAUAAAAbAAQAAgATAAUAAAAfAPL/AgATAAUAAAAgAPr/AgATAAUAAAAvAPX/AgATAAUAAAAOAAsAAgATAAUAAAAIAPX/AgATAAUAAAAPAPj/AgATAAUAAAAPAPb/AgATAAUAAAAQAP3/AgATAAUAAAAYAP3/AgATAAUAAAAUAPX/AgATAAUAAAADAAkAAgATAAUAAAAIAAcAAgATAAUAAAAIAA0AAgATAAUAAAAQAAUAAgATAAUAAAAVAAoAAgATAAUAAAAfAAkAAgATAAUAAAAiAAsAAgATAAUAAAAoAAgAAgATAAUAAAA1AAsAAgATAAUAAAA/AAoAAgATAAUAAAAzAAUAAgATAAUAAAA7AAYAAgATAAUAAAAwAPv/AgATAAUAAAAIAPr/AgATAAUAAAAEAAIAAgATAAUAAAAKAP7/AgATAAUAAAA=")
 tile_set = SubResource("TileSet_k0vkk")
