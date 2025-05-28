@@ -45,15 +45,17 @@ color = Color(1, 0.372549, 1, 1)
 position = Vector2(56, 47)
 
 [node name="Samuel" parent="." instance=ExtResource("5_bq26l")]
+z_index = 1
 position = Vector2(322, -94)
 
 [node name="hopeCemetery" parent="." instance=ExtResource("5_8ra5a")]
 position = Vector2(-84, 0)
 
 [node name="GWGale" parent="." instance=ExtResource("7_u2c82")]
-position = Vector2(188, 77)
+position = Vector2(103, 80)
 
 [node name="Charles" parent="." instance=ExtResource("8_k5pu3")]
+z_index = 1
 position = Vector2(569, -127)
 
 [node name="Sprite2D" parent="Charles" index="2"]
