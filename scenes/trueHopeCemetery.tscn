@@ -604,7 +604,7 @@ margins = Vector2i(3, 2)
 sources/1 = SubResource("TileSetAtlasSource_0pluy")
 sources/2 = SubResource("TileSetAtlasSource_k0vkk")
 
-[node name="hopeCemetery" type="Node2D"]
+[node name="trueHopeCemetery" type="Node2D"]
 position = Vector2(0, -4)
 
 [node name="baseLayer" type="TileMapLayer" parent="."]

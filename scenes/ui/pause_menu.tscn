@@ -39,9 +39,9 @@ mouse_filter = 2
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 1050.0
+offset_left = 950.0
 offset_top = 25.0
-offset_right = 1178.0
+offset_right = 1078.0
 offset_bottom = 153.0
 texture_normal = ExtResource("4_p81d2")
 

@@ -385,8 +385,6 @@ size_flags_horizontal = 0
 text = "The messiest roommate ever! But loves mischief and is always willing to help you out."
 autowrap_mode = 3
 max_lines_visible = 5
-visible_characters = 500
-visible_ratio = 4.0
 
 [node name="alex_close" type="Button" parent="Control/people_gui/PanelContainer/VBoxContainer/alex/alex_popup/VBoxContainer"]
 layout_mode = 2
@@ -420,8 +418,6 @@ size_flags_horizontal = 0
 text = "She is a mysterious woman."
 autowrap_mode = 3
 max_lines_visible = 5
-visible_characters = 500
-visible_ratio = 4.0
 
 [node name="woman_close" type="Button" parent="Control/people_gui/PanelContainer/VBoxContainer/woman/woman_popup/VBoxContainer"]
 layout_mode = 2
@@ -456,8 +452,6 @@ text = "The spirit of a railroad worker. Now volunteers as the spirits’ guard 
 "
 autowrap_mode = 3
 max_lines_visible = 5
-visible_characters = 500
-visible_ratio = 4.0
 
 [node name="henry_close" type="Button" parent="Control/people_gui/PanelContainer/VBoxContainer/henry/henry_popup/VBoxContainer"]
 layout_mode = 2

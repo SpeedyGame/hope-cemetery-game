@@ -263,7 +263,7 @@ region_enabled = true
 region_rect = Rect2(172, 8, 36, 24)
 
 [node name="PortalArea" parent="." instance=ExtResource("9_q8nly")]
-file_path = "res://scenes/environments/hopeCemetery.tscn"
+file_path = "res://scenes/main_level.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PortalArea"]
 position = Vector2(-229, 51)
