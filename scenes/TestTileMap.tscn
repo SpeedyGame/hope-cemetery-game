@@ -75,6 +75,7 @@ margins = Vector2i(3, 2)
 7:3/0 = 0
 8:3/0 = 0
 9:3/0 = 0
+9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.75548, -5.57562, 5.57562, -5.75548, 5.57562, 5.93534, -5.75548, 5.93534)
 10:3/0 = 0
 11:3/0 = 0
 12:3/0 = 0
@@ -131,9 +132,11 @@ margins = Vector2i(3, 2)
 5:5/0 = 0
 5:5/1 = 1
 5:5/1/transpose = true
+5:5/1/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.51802, -8, -2.33816)
 6:5/0 = 0
 7:5/next_alternative_id = 2
 7:5/0 = 0
+7:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(2.87774, -8, 8, -8, 8, 8, 2.69788, 8)
 7:5/1 = 1
 7:5/1/transpose = true
 8:5/0 = 0
@@ -212,6 +215,7 @@ texture = ExtResource("2_vuwnr")
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_e0mkt"]
+physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_vuwnr")
 sources/3 = SubResource("TileSetAtlasSource_m3mva")
 sources/0 = SubResource("TileSetAtlasSource_pd8lo")
