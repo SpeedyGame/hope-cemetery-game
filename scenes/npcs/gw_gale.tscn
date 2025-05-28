@@ -1,0 +1,119 @@
+[gd_scene load_steps=15 format=3 uid="uid://nwf6o6fsy0fl"]
+
+[ext_resource type="Script" uid="uid://s3aext8ehflx" path="res://scenes/GWGale.gd" id="1_y8qyd"]
+[ext_resource type="PackedScene" uid="uid://bus0mj0a28s62" path="res://scenes/npcs/stationaryNPC.tscn" id="2_8nacv"]
+[ext_resource type="Texture2D" uid="uid://b8xlsri6ndk5g" path="res://art/sprites/GWGaleghost.png" id="3_8upyn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fr2l"]
+size = Vector2(9, 20)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2sb77"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_fkrx8"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_2sb77")
+blend_point_0/pos = 0.0
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mwgft"]
+animation = &"Walk"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_adxub"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_mwgft")
+blend_point_0/pos = 0.0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ff0s2"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_uk2yf"]
+states/Idle/node = SubResource("AnimationNodeBlendSpace1D_fkrx8")
+states/Idle/position = Vector2(305, 64)
+states/Start/position = Vector2(174, 100)
+states/Walk/node = SubResource("AnimationNodeBlendSpace1D_adxub")
+states/Walk/position = Vector2(270, 172)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_ff0s2")]
+
+[sub_resource type="Animation" id="Animation_6nivd"]
+resource_name = "Idle"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_0e4v7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ondrs"]
+resource_name = "Walk"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_al56o"]
+_data = {
+&"Idle": SubResource("Animation_6nivd"),
+&"RESET": SubResource("Animation_0e4v7"),
+&"Walk": SubResource("Animation_ondrs")
+}
+
+[node name="GWGale" type="CharacterBody2D"]
+script = ExtResource("1_y8qyd")
+
+[node name="StationaryNPC" parent="." instance=ExtResource("2_8nacv")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StationaryNPC"]
+position = Vector2(5.5, 0)
+shape = SubResource("RectangleShape2D_5fr2l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_8upyn")
+hframes = 2
+frame = 1
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_uk2yf")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Idle/blend_position = 0
+parameters/Walk/blend_position = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_al56o")
+}
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
