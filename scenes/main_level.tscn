@@ -1,11 +1,98 @@
-[gd_scene load_steps=7 format=3 uid="uid://oh2basiek65h"]
+[gd_scene load_steps=20 format=3 uid="uid://oh2basiek65h"]
 
-[ext_resource type="PackedScene" uid="uid://cb6q4s8g4n1qm" path="res://scenes/player/player_cat.tscn" id="1_6we3w"]
-[ext_resource type="PackedScene" uid="uid://dhnijtw7hrb0t" path="res://scenes/ui/mini_map.tscn" id="3_8ra5a"]
-[ext_resource type="Script" uid="uid://c8ys2mi3foboo" path="res://scenes/panel.gd" id="3_bq26l"]
-[ext_resource type="PackedScene" uid="uid://dq5se8m6btwbd" path="res://scenes/npcs/old_nun.tscn" id="4_8ra5a"]
-[ext_resource type="PackedScene" path="res://scenes/hopeCemetery.tscn" id="5_8ra5a"]
-[ext_resource type="PackedScene" uid="uid://d2us2ce2r2aa1" path="res://scenes/npcs/samuel.tscn" id="5_bq26l"]
+[ext_resource type="PackedScene" path="res://scenes/player/player_cat.tscn" id="1_6we3w"]
+[ext_resource type="PackedScene" path="res://scenes/ui/mini_map.tscn" id="3_8ra5a"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/old_nun.tscn" id="4_8ra5a"]
+[ext_resource type="PackedScene" uid="uid://pc6ujaccnolj" path="res://scenes/TestTileMap.tscn" id="5_8ra5a"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/samuel.tscn" id="5_bq26l"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/stationaryNPC.tscn" id="5_k5pu3"]
+[ext_resource type="Script" uid="uid://s3aext8ehflx" path="res://scenes/GWGale.gd" id="6_k5pu3"]
+[ext_resource type="Texture2D" uid="uid://b8xlsri6ndk5g" path="res://art/sprites/GWGaleghost.png" id="8_iqu8w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fr2l"]
+size = Vector2(9, 20)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2sb77"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_fkrx8"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_2sb77")
+blend_point_0/pos = 0.0
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mwgft"]
+animation = &"Walk"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_adxub"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_mwgft")
+blend_point_0/pos = 0.0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ff0s2"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_uk2yf"]
+states/Idle/node = SubResource("AnimationNodeBlendSpace1D_fkrx8")
+states/Idle/position = Vector2(305, 64)
+states/Start/position = Vector2(174, 100)
+states/Walk/node = SubResource("AnimationNodeBlendSpace1D_adxub")
+states/Walk/position = Vector2(270, 172)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_ff0s2")]
+
+[sub_resource type="Animation" id="Animation_ondrs"]
+resource_name = "Walk"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_0e4v7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_6nivd"]
+resource_name = "Idle"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_al56o"]
+_data = {
+&"Idle": SubResource("Animation_6nivd"),
+&"RESET": SubResource("Animation_0e4v7"),
+&"Walk": SubResource("Animation_ondrs")
+}
 
 [node name="Game Level" type="Node2D"]
 y_sort_enabled = true
@@ -19,25 +106,11 @@ position = Vector2(19, 11)
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 
+[node name="TestTileMap" parent="." instance=ExtResource("5_8ra5a")]
+y_sort_enabled = true
+
 [node name="MiniMap" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_8ra5a")]
 player = NodePath("../PlayerCat")
-
-[node name="Camera2D" parent="MiniMap/SubViewportContainer/SubViewport" index="1"]
-zoom = Vector2(0.2, 0.2)
-
-[node name="Panel" type="Panel" parent="MiniMap" node_paths=PackedStringArray("target")]
-z_index = -1
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("3_bq26l")
-target = NodePath("../../PlayerCat")
-
-[node name="ColorRect" type="ColorRect" parent="MiniMap/Panel"]
-z_index = 2
-layout_mode = 0
-offset_right = 10.0
-offset_bottom = 12.0
-color = Color(1, 0.372549, 1, 1)
 
 [node name="OldNun" parent="." instance=ExtResource("4_8ra5a")]
 position = Vector2(56, 47)
@@ -45,6 +118,32 @@ position = Vector2(56, 47)
 [node name="Samuel" parent="." instance=ExtResource("5_bq26l")]
 position = Vector2(90, -62)
 
-[node name="hopeCemetery" parent="." instance=ExtResource("5_8ra5a")]
+[node name="GWGale" type="CharacterBody2D" parent="."]
+script = ExtResource("6_k5pu3")
 
-[editable path="MiniMap"]
+[node name="StationaryNPC" parent="GWGale" instance=ExtResource("5_k5pu3")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GWGale/StationaryNPC"]
+position = Vector2(5.5, 0)
+shape = SubResource("RectangleShape2D_5fr2l")
+
+[node name="Sprite2D" type="Sprite2D" parent="GWGale"]
+texture = ExtResource("8_iqu8w")
+hframes = 2
+
+[node name="Timer" type="Timer" parent="GWGale"]
+
+[node name="AnimationTree" type="AnimationTree" parent="GWGale"]
+tree_root = SubResource("AnimationNodeStateMachine_uk2yf")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Idle/blend_position = 0
+parameters/Walk/blend_position = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GWGale"]
+libraries = {
+&"": SubResource("AnimationLibrary_al56o")
+}
+
+[connection signal="timeout" from="GWGale/Timer" to="GWGale" method="_on_timer_timeout"]
+
+[editable path="Samuel"]
