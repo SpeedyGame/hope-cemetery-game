@@ -39,10 +39,9 @@ mouse_filter = 2
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 950.0
-offset_top = 25.0
-offset_right = 1078.0
-offset_bottom = 153.0
+offset_left = 900.0
+offset_right = 1028.0
+offset_bottom = 128.0
 texture_normal = ExtResource("4_p81d2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -104,7 +103,7 @@ text = "Quit"
 [connection signal="pressed" from="CanvasLayer/Control/clickoff/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/clickoff/VBoxContainer/Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/clickoff/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/clickoff/VBoxContainer/Settings" to="." method="_on_sound_control_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/clickoff/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/clickoff/VBoxContainer/Settings" to="." method="_on_sound_control_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/clickoff/VBoxContainer/Go to main menu" to="." method="_on_go_to_main_menu_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/clickoff/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

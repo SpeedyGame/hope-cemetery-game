@@ -10,8 +10,7 @@ func _ready():
 	
 
 func hide_canvas():
-	print("here")
-	print(get_parent(), get_parent().visible)
+
 	if not get_parent().visible:
 		recurse_turn_off(self)
 
