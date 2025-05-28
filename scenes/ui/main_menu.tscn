@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cubs2bko4tdk"]
+[gd_scene load_steps=3 format=3 uid="uid://busb7wt6vs227"]
 
 [ext_resource type="Script" uid="uid://cngnyu2ry681y" path="res://scripts/ui/main_menu.gd" id="1_sl1te"]
 [ext_resource type="AudioStream" uid="uid://cebio8xfhlxnv" path="res://audio/music/8bit-KnoxHymn - Introduction_Character Creation Music.mp3" id="2_fe2o3"]
