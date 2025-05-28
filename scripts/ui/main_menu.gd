@@ -10,7 +10,7 @@ func _ready():
 	stats.visible = false
 	main_menu.visible = true
 func _on_newgame_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	get_tree().change_scene_to_file("res://scenes/ui/character_setup.tscn")
 
 #func _on_settings_popup_pressed() -> void:
 	#var settings = load("").instance()
