@@ -55,7 +55,6 @@ text = "Credits"
 
 [node name="quest_gui" type="CanvasLayer" parent="Control"]
 layer = 5
-visible = false
 
 [node name="PanelContainer" type="PanelContainer" parent="Control/quest_gui"]
 offset_left = 602.0
@@ -119,23 +118,34 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="investiage_quest" type="MenuButton" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 0
-text = "Investigate Message"
+text = "A New Hope"
 
-[node name="investigate_pop_up" type="PopupMenu" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/investiage_quest"]
+[node name="new_hope_pop" type="PopupPanel" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/investiage_quest"]
 auto_translate_mode = 1
+position = Vector2i(0, 132)
+size = Vector2i(508, 60)
+visible = true
+borderless = false
+max_size = Vector2i(1000, 60)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/investiage_quest/investigate_pop_up"]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/investiage_quest/new_hope_pop"]
+custom_minimum_size = Vector2(500, 60)
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 504.0
+offset_bottom = 76.0
 
-[node name="investigate_description" type="Label" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/investiage_quest/investigate_pop_up/VBoxContainer"]
+[node name="description" type="Label" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/investiage_quest/new_hope_pop/VBoxContainer"]
+custom_minimum_size = Vector2(500, 60)
 layout_mode = 2
-text = "Investigate the Message by leaving the room and going to the cemetary."
+size_flags_horizontal = 0
+text = "Go to hope cemetary"
+autowrap_mode = 3
+max_lines_visible = 5
 
-[node name="close_investigate" type="Button" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/investiage_quest/investigate_pop_up/VBoxContainer"]
+[node name="woman_close" type="Button" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/investiage_quest/new_hope_pop/VBoxContainer"]
 layout_mode = 2
 
 [node name="masoleum" type="MenuButton" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box"]
@@ -159,6 +169,7 @@ text = "Investigate Inside the Masoleum. Follow the old woman's order to go into
 layout_mode = 2
 
 [node name="noQuests" type="Label" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer"]
+visible = false
 layout_mode = 2
 text = "No Active Main Quests"
 
@@ -253,18 +264,35 @@ layout_mode = 2
 size_flags_horizontal = 0
 text = "Investigate Message"
 
-[node name="investigate_pop_up" type="PopupMenu" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/main_comp_quest_box/comp_investiage_quest"]
+[node name="comp_new_hope_pop" type="PopupPanel" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/main_comp_quest_box/comp_investiage_quest"]
 auto_translate_mode = 1
+position = Vector2i(0, 132)
+size = Vector2i(608, 60)
+borderless = false
+max_size = Vector2i(1000, 60)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/main_comp_quest_box/comp_investiage_quest/investigate_pop_up"]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/main_comp_quest_box/comp_investiage_quest/comp_new_hope_pop"]
+custom_minimum_size = Vector2(600, 60)
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 604.0
+offset_bottom = 143.0
 
-[node name="investigate_description" type="Label" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/main_comp_quest_box/comp_investiage_quest/investigate_pop_up/VBoxContainer"]
+[node name="description" type="Label" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/main_comp_quest_box/comp_investiage_quest/comp_new_hope_pop/VBoxContainer"]
+custom_minimum_size = Vector2(600, 60)
 layout_mode = 2
-text = "Investigate the Message by leaving the room and going to the cemetary."
+size_flags_horizontal = 0
+text = "Go to Hope Cemetery
+Talk to the old woman.
+Explore the cemetery.
+Find a way to get past Henry.
+Talk to the ghosts in the cemetery.
+Go find charles outside of the mausoleum. 
+Prepare to depart to the past."
+autowrap_mode = 3
+max_lines_visible = 5
 
-[node name="close_investigate" type="Button" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/main_comp_quest_box/comp_investiage_quest/investigate_pop_up/VBoxContainer"]
+[node name="woman_close" type="Button" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/main_comp_quest_box/comp_investiage_quest/comp_new_hope_pop/VBoxContainer"]
 layout_mode = 2
 
 [node name="comp_masoleum" type="MenuButton" parent="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/main_comp_quest_box"]
@@ -318,6 +346,7 @@ text = "No Completed Side Quests"
 
 [node name="people_gui" type="CanvasLayer" parent="Control"]
 layer = 5
+visible = false
 script = ExtResource("4_fko3c")
 
 [node name="PanelContainer" type="PanelContainer" parent="Control/people_gui"]
@@ -333,7 +362,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(20, 10)
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = "Abraham Lincoln"
+text = "Alex Roomie"
 icon = ExtResource("4_25tqd")
 
 [node name="alex_popup" type="PopupPanel" parent="Control/people_gui/PanelContainer/VBoxContainer/alex"]
@@ -353,7 +382,7 @@ offset_bottom = 76.0
 custom_minimum_size = Vector2(600, 60)
 layout_mode = 2
 size_flags_horizontal = 0
-text = "He was the 16th president of the united states during the Civil War. He held a debate at Knox college againt Stephen Douglas."
+text = "The messiest roommate ever! But loves mischief and is always willing to help you out."
 autowrap_mode = 3
 max_lines_visible = 5
 visible_characters = 500
@@ -367,7 +396,7 @@ visible = false
 custom_minimum_size = Vector2(20, 10)
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = "Abraham Lincoln"
+text = "Mysterious Woman"
 icon = ExtResource("4_25tqd")
 
 [node name="woman_popup" type="PopupPanel" parent="Control/people_gui/PanelContainer/VBoxContainer/woman"]
@@ -388,7 +417,7 @@ offset_bottom = 76.0
 custom_minimum_size = Vector2(600, 60)
 layout_mode = 2
 size_flags_horizontal = 0
-text = "He was the 16th president of the united states during the Civil War. He held a debate at Knox college againt Stephen Douglas."
+text = "She is a mysterious woman."
 autowrap_mode = 3
 max_lines_visible = 5
 visible_characters = 500
@@ -402,7 +431,7 @@ visible = false
 custom_minimum_size = Vector2(20, 10)
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = "Abraham Lincoln"
+text = "Henry Harris"
 icon = ExtResource("4_25tqd")
 
 [node name="henry_popup" type="PopupPanel" parent="Control/people_gui/PanelContainer/VBoxContainer/henry"]
@@ -417,13 +446,14 @@ custom_minimum_size = Vector2(600, 60)
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 604.0
-offset_bottom = 56.0
+offset_bottom = 91.0
 
 [node name="description" type="Label" parent="Control/people_gui/PanelContainer/VBoxContainer/henry/henry_popup/VBoxContainer"]
 custom_minimum_size = Vector2(600, 60)
 layout_mode = 2
 size_flags_horizontal = 0
-text = "He was the 16th president of the united states during the Civil War. He held a debate at Knox college againt Stephen Douglas."
+text = "The spirit of a railroad worker. Now volunteers as the spirits’ guard making sure no living gets past… you managed to wear him down though.
+"
 autowrap_mode = 3
 max_lines_visible = 5
 visible_characters = 500
@@ -437,13 +467,13 @@ layout_mode = 2
 [connection signal="toggled" from="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/letter_quest" to="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box" method="_on_letter_quest_toggled"]
 [connection signal="pressed" from="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/letter_quest/love_letter_desc/VBoxContainer/close_letter" to="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box" method="_on_close_letter_pressed"]
 [connection signal="toggled" from="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/investiage_quest" to="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box" method="_on_investiage_quest_toggled"]
-[connection signal="pressed" from="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/investiage_quest/investigate_pop_up/VBoxContainer/close_investigate" to="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box" method="_on_close_investigate_pressed"]
+[connection signal="pressed" from="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/investiage_quest/new_hope_pop/VBoxContainer/woman_close" to="Control/people_gui" method="_on_woman_close_pressed"]
 [connection signal="toggled" from="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/masoleum" to="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box" method="_on_masoleum_toggled"]
 [connection signal="pressed" from="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box/masoleum/masoleum_pop_up/VBoxContainer/close_masoleum" to="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/VBoxContainer/ScrollContainer/main_act_quest_box" method="_on_close_masoleum_pressed"]
 [connection signal="toggled" from="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/main_comp_quest_box/comp_letter_quest" to="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/main_comp_quest_box" method="_on_letter_quest_toggled"]
 [connection signal="pressed" from="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/main_comp_quest_box/comp_letter_quest/love_letter_desc/VBoxContainer/close_letter" to="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/main_comp_quest_box" method="_on_close_letter_pressed"]
 [connection signal="toggled" from="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/main_comp_quest_box/comp_investiage_quest" to="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/main_comp_quest_box" method="_on_investiage_quest_toggled"]
-[connection signal="pressed" from="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/main_comp_quest_box/comp_investiage_quest/investigate_pop_up/VBoxContainer/close_investigate" to="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/main_comp_quest_box" method="_on_close_investigate_pressed"]
+[connection signal="pressed" from="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/main_comp_quest_box/comp_investiage_quest/comp_new_hope_pop/VBoxContainer/woman_close" to="Control/people_gui" method="_on_woman_close_pressed"]
 [connection signal="toggled" from="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/main_comp_quest_box/comp_masoleum" to="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/main_comp_quest_box" method="_on_masoleum_toggled"]
 [connection signal="pressed" from="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/main_comp_quest_box/comp_masoleum/masoleum_pop_up/VBoxContainer/close_masoleum" to="Control/quest_gui/PanelContainer/VBoxContainer/MarginContainer6/PanelContainer/ScrollContainer/main_comp_quest_box" method="_on_close_masoleum_pressed"]
 [connection signal="toggled" from="Control/people_gui/PanelContainer/VBoxContainer/alex" to="Control/people_gui" method="_on_alex_toggled"]

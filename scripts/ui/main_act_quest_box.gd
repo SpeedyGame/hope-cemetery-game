@@ -2,7 +2,7 @@ extends VBoxContainer
 @onready var letter_desc = $letter_quest
 @onready var letter_pop = $letter_quest/love_letter_desc
 @onready var investigate_desc = $investiage_quest
-@onready var investigate_pop = $investiage_quest/investigate_pop_up
+@onready var investigate_pop = $investiage_quest/new_hope_pop
 @onready var masoleum_desc = $masoleum
 @onready var masoleum_pop = $masoleum/masoleum_pop_up
 
@@ -32,4 +32,4 @@ func _on_masoleum_toggled(toggled_on):
 
 
 func _on_close_masoleum_pressed():
-	pass # Replace with function body.
+	masoleum_pop.hide()
