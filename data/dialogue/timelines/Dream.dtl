@@ -5,14 +5,22 @@ Charles: Lorraine…
 [background arg="res://art/beauty_shots/warflashback2.png" fade="0.6" transition="Simple Fade"]
 # *Looks at leg*
 Charles: If only I had…
+set {NPC.SamuelDisplayName} = "Soldier"
 # Soldier: *Tries to help Charles get up*
 [wait time="0.3"]
 [background arg="res://art/beauty_shots/warflashback3.png" fade="0.6"]
 Soldier: Stay with me, Charles!
 # *Flash*
 # *On the ground, again*
+[wait time="0.3"]
+[background arg="res://art/beauty_shots/warflashback4.png" fade="0.0"]
 Charles: If only…
 # *Looks at letter*
+[wait time="0.3"]
+[background arg="res://art/beauty_shots/warflashback5.png" fade="0.0"]
 Charles: Given it to her…
 # *Looks back up at the sky*
+[wait time="0.3"]
+[background arg="res://art/beauty_shots/warflashback6.png" fade="0.0"]
 Soldier: Charles!
+jump room_scene/

@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="DialogicStyle" load_steps=6 format=3 uid="uid://bjqj421cefqkc"]
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=8 format=3 uid="uid://bjqj421cefqkc"]
 
 [ext_resource type="Script" uid="uid://dwfs3y72tvaut" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_6dae4"]
-[ext_resource type="PackedScene" uid="uid://bquja8jyk8kbr" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn" id="2_f1l0a"]
+[ext_resource type="PackedScene" uid="uid://dmcxay0bfvjyc" path="res://VisualNovelTextbox/VisualNovelTextbox/VisualNovelTextbox/custom_visual_novel_textbox.tscn" id="2_f1l0a"]
 [ext_resource type="Script" uid="uid://dyemgtcnjc5js" path="res://addons/dialogic/Resources/dialogic_style.gd" id="2_ga2sg"]
+[ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="3_f1l0a"]
 
 [sub_resource type="Resource" id="Resource_f1l0a"]
 script = ExtResource("1_6dae4")
@@ -14,16 +15,26 @@ overrides = {
 [sub_resource type="Resource" id="Resource_ga2sg"]
 script = ExtResource("1_6dae4")
 scene = ExtResource("2_f1l0a")
+overrides = {
+"box_animation_new_text": "1",
+"text_custom_color": "Color(1, 0, 0, 1)",
+"text_use_global_color": "false"
+}
+
+[sub_resource type="Resource" id="Resource_ubr3o"]
+script = ExtResource("1_6dae4")
+scene = ExtResource("3_f1l0a")
 overrides = {}
 
 [resource]
 script = ExtResource("2_ga2sg")
 name = "thinking_style"
-layer_list = Array[String](["10"])
+layer_list = Array[String](["10", "11"])
 layer_info = {
 "": SubResource("Resource_f1l0a"),
-"10": SubResource("Resource_ga2sg")
+"10": SubResource("Resource_ga2sg"),
+"11": SubResource("Resource_ubr3o")
 }
 base_overrides = {}
 layers = Array[ExtResource("1_6dae4")]([])
-metadata/_latest_layer = ""
+metadata/_latest_layer = "10"
