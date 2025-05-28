@@ -103,7 +103,7 @@ text = "Quit"
 [connection signal="pressed" from="CanvasLayer/Control/clickoff/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/clickoff/VBoxContainer/Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/clickoff/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/clickoff/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/clickoff/VBoxContainer/Settings" to="." method="_on_sound_control_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/clickoff/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/clickoff/VBoxContainer/Go to main menu" to="." method="_on_go_to_main_menu_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/clickoff/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

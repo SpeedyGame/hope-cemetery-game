@@ -39,6 +39,7 @@ func _process(delta):
 	
 
 func _on_backpack_pressed():
+	$AudioStreamPlayer.play()
 	if journal.visible == true:
 		journal.visible = false
 		journal_control.hide_canvas()
@@ -73,11 +74,14 @@ func _on_inventory_button_pressed():
 		inventory.visible = true
 
 func play_book_animation():
+	$backpack_buttons/Control/AudioStreamPlayer.play()
 	qbutanim.play("open")
 	qbutanim.play("finishopen")
 
 func reverse_book_animation():
+	$backpack_buttons/Control/AudioStreamPlayer.play()
 	qbutanim.play("close")
 	qbutanim.play("finishclose")
 func _on_quest_journal_button_triggered():
 	qbutanim.play("turnright")
+	$backpack_buttons/Control/AudioStreamPlayer.play()
