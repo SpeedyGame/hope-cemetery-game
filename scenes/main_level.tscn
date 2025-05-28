@@ -10,6 +10,7 @@ size = Vector2(100.952, 5.11995)
 [gd_scene load_steps=7 format=4 uid="uid://oh2basiek65h"]
 [gd_scene load_steps=3 format=3 uid="uid://oh2basiek65h"]
 [gd_scene load_steps=6 format=3 uid="uid://oh2basiek65h"]
+[gd_scene load_steps=6 format=3 uid="uid://cbiw3yspn035m"]
 
 [ext_resource type="PackedScene" uid="uid://cb6q4s8g4n1qm" path="res://scenes/player/player_cat.tscn" id="1_6we3w"]
 [ext_resource type="PackedScene" uid="uid://dhnijtw7hrb0t" path="res://scenes/ui/mini_map.tscn" id="3_8ra5a"]
