@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://pc6ujaccnolj"]
+[gd_scene load_steps=13 format=4 uid="uid://c8sys3msyjs8i"]
 
 [ext_resource type="Texture2D" uid="uid://cgrbkh6ngv08t" path="res://art/sprites/pixil-frame-0.png" id="1_4g13s"]
 [ext_resource type="Texture2D" uid="uid://b5orhbsxwpxxk" path="res://art/tilesets/pixil-frame-0 (3).png" id="1_m3mva"]
