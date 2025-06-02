@@ -5,12 +5,14 @@ func _ready():
 	pause_canvas.visible = false
 
 func turnbutton():
+		# Toggle blur visibility
 	if pause_canvas.visible == false:
 		pause_canvas.visible = true
 	else:
 		pause_canvas.visible = false
 
 func pause():
+	# External trigger to toggle pause menu
 	get_tree().paused = true
 	self.visible = true
 
