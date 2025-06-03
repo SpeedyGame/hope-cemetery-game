@@ -6,6 +6,7 @@ func _ready():
 	pause_canvas.visible = false
 	blur.visible = false
 
+#this runs to make the blur turn off and the pause layer to turn off and on
 func turnbutton():
 	blur.visible = !blur.visible
 	if pause_canvas.visible == false:
