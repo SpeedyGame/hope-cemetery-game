@@ -5,6 +5,7 @@ var ItemClass = preload("res://scenes/ui/branch.tscn")
 @onready var slots_container = $InventoryPanel/InventorySlots
 @onready var add_button = $InventoryPanel/InventorySlots/AddBtton
 
+#connects the signal to adding a button to be put on an action somewhere else
 func _ready():
 	add_button.pressed.connect(add_item)
 
