@@ -6,7 +6,7 @@ extends CanvasLayer
 @onready var woman_pop = $PanelContainer/VBoxContainer/woman/woman_popup
 @onready var henry = $PanelContainer/VBoxContainer/henry
 @onready var henry_pop = $PanelContainer/VBoxContainer/henry/henry_popup
-
+##Sets all popups under their buttons including a close button
 func _on_alex_toggled(toggled_on):
 	alex_pop.popup()
 	var pos1 = alex.get_global_position() + Vector2(0, alex.size.y)
@@ -31,7 +31,7 @@ func _on_henry_toggled(toggled_on):
 func _on_henry_close_pressed():
 	henry_pop.hide()
 
-
+#checks what people should be showing from glob_people
 func update_people():
 	#should be automated better
 	if glob_people.henry:

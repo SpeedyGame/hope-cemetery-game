@@ -6,11 +6,11 @@ extends VBoxContainer
 @onready var masoleum_desc = $masoleum
 @onready var masoleum_pop = $masoleum/masoleum_pop_up
 
+## Puts the popups under the correct quest and gives a button to hide them
 func _on_letter_quest_toggled(toggled_on):
 	letter_pop.popup()
 	var pos1 = letter_desc.get_global_position() + Vector2(0, letter_desc.size.y)
 	letter_pop.set_position(pos1)
-
 
 func _on_close_letter_pressed():
 	letter_pop.hide()
