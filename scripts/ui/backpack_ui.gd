@@ -12,16 +12,17 @@ extends CanvasLayer
 @onready var qbutanim = $backpack_buttons/Control/quest_button/quest_button_animation
 
 
-
+#close all canvas layers
 func _ready():
 	journal.visible = false
 	backpack_items.visible = false
 	inventory.visible = false
 	pause_layer.visible = false
 	quest.visible = false 
+	#connect signal to book flip animation
 	journal_control.connect("quest_button_pressed", Callable(self, "_on_quest_journal_button_triggered"))
 	
-
+#constantly check if the puase if active and disable all buttons if so
 func _process(delta):
 	if pause_layer.visible == true:
 		$backpack.disabled = true
@@ -37,7 +38,8 @@ func _process(delta):
 	if journal_control:
 		pass
 	
-
+#hide all buttons and turn off journal canvas layers
+#or show backpack buttons
 func _on_backpack_pressed():
 	$AudioStreamPlayer.play()
 	if journal.visible == true:
@@ -48,7 +50,7 @@ func _on_backpack_pressed():
 	else:
 		backpack_items.visible = false
 
-
+#close or open journal gui and play animation
 func _on_quest_button_pressed():
 	if journal.visible == false:
 		inventory.visible = false
@@ -60,7 +62,7 @@ func _on_quest_button_pressed():
 		journal_control.hide_canvas()
 	
 
-
+#close or open inventory (not connected yet)
 func _on_inventory_button_pressed():
 	quest.visible = false
 	journal_control.hide_canvas()
@@ -72,16 +74,17 @@ func _on_inventory_button_pressed():
 		inventory.visible = false
 	else:
 		inventory.visible = true
-
+#grabs book opening animation and plays soundfx
 func play_book_animation():
 	$backpack_buttons/Control/AudioStreamPlayer.play()
 	qbutanim.play("open")
 	qbutanim.play("finishopen")
-
+#grabs book closing animation and plays soundfx
 func reverse_book_animation():
 	$backpack_buttons/Control/AudioStreamPlayer.play()
 	qbutanim.play("close")
 	qbutanim.play("finishclose")
+#grabs turning animation and plays soundfx
 func _on_quest_journal_button_triggered():
 	qbutanim.play("turnright")
 	$backpack_buttons/Control/AudioStreamPlayer.play()
